@@ -1,0 +1,532 @@
+<!DOCTYPE html><!-- ceci n'est pas une balise mais une directive
+	Indique la version de HTML utilisée : HTML5
+-->
+<!-- ceci est un commentaire-->
+<html>
+<head> <!-- en-tête de la page-->
+	<title>exo sur les tableaux</title>
+	<meta charset="utf-8"> 
+	<!--encodage de la page-->
+</head>
+<body>
+	<a id="Debut de la page">
+<!-- corps de la page -->
+	<header><nav>
+		<ul>Tableau :
+			<li><a href="#exo 1">exo 1</a></li>
+			<li><a href="#exo 2">exo 2</a></li>
+			<li><a href="#exo 3">exo 3</a></li>
+			<li><a href="#presentation des ouvrages">presentation des ouvrages</a></li>
+			<li><a href="#exo 5">exo 5</a></li>
+			<li><a href="#exo 6">exo 6</a></li>
+			<li><a href="#Stastiques des conrôles radars sur autoroute A7">Stastiques des conrôles radars sur autoroute A7</a></li>
+			<li><a href="#Facture de commande de livre">Facture de commande de livre</a></li>
+			<li><a href="#exo 9">exo 9</a></li>
+			<li><a href="#Un tableau irrégulier"> tableau irrégulier</a></li>
+			<li><a href="#Calendrier septembre 2012">Calendrier septembre 2012</a></li>
+			<li><a href="#Un tableau elementaire">tableau elementaire</a></li>
+			<li><a href="#Stastiques des conrôles radars sur autoroute A7">Stastiques des conrôles radars sur autoroute A7</a></li>
+		</ul>
+	</nav></header>
+
+	<h2 id="exo 1"> Exo 1</h2>
+    <table rules="all" cellpadding="5px" style="width: 500px; border: solid 1px black; font-family: verdana; font-size: 12px">
+    	<tr>
+    		<th colspan="2">A</th>
+    	</tr>
+    	<tr>
+    		<th>B</th>
+    		<td style="border-bottom: none;"></td>
+    	</tr>
+    	<tr>
+    		<th>C</th>
+    		<th style="border-top: none;">D</th>
+    	</tr>
+    </table>
+	<a href="#Debut de la page">Retourner au debut de la page </a>
+
+	<h2 id="exo 2"> Exo 2</h2>
+	<table rules="all" cellpadding="5px" style="width: 100%; border: solid 1px black; font-family: verdana; font-size: 12px">
+		<tr>
+    		<th style="width: 50%;">PAIR</th>
+    		<th>IMPAIR</th>
+    	</tr>
+    	<tr>
+    		<th>4</th>
+    		<th>7</th>
+    	</tr>
+    	<tr>
+    		<th>2</th>
+    		<th>1</th>
+    	</tr>
+    </table>
+    <main>
+	    <h2 id="exo 3">Exo 3</h2>
+	    <table border="2" width="800" cellpadding="20" cellspacing="0">
+	    	<thead>
+				<tr>
+					<th>1</th>	
+					<th>2</th>
+					<th>3</th>
+					<th>4</th>
+					<th>6</th>	
+				</tr>
+			</thead>
+
+			<tbody valign="middle">
+				<tr>
+					<th align="left">L1-C1</th>	
+					<th align="left">L1-C2</th>
+					<th align="center">L1-C3</th>
+					<th align="right">L1-C4</th>
+					<th align="right">L1-C5</th>	
+				</tr>
+				<tr>
+					<th align="left" >L2-C1</th>	
+					<th align="left">L2-C2</th>
+					<th align="center">L2-C3</th>
+					<th align="right">L2-C4</th>
+					<th align="right">L2-C5</th>	
+				</tr>
+			</tbody>
+
+			<tfoot valign="bottom">
+				<tr>
+					<th align="right">L3-C1</th>	
+					<th align="center">L3-C2</th>
+					<th align="center">L3-C3</th>
+					<th align="center">L3-C4</th>
+					<th align="left">L3-C5</th>	
+				</tr>
+				<tr>
+					<th align="right">L4-C1</th>	
+					<th align="center">L4-C2</th>
+					<th align="center">L4-C3</th>
+					<th align="center">L4-C4</th>
+					<th align="left">L4-C5</th>	
+				</tr>
+			</tfoot>
+		</table>
+	</main>
+    <a href="#Debut de la page">Retourner au debut de la page </a>
+
+	<h2 id="presentation des ouvrages"> presentation des ouvrages</h2>
+	<table rules="all" cellpadding="5px" style="width: 100%; border: solid 3px steelblue; font-family: verdana; font-size: 12px">
+		<tr style="background-color:lightblue;">
+			<th style="width :25%"></th>
+			<th style="width :25%">Débutants</th>
+			<th style="width :25%">Experts</th>
+			<th style="width :25%">Gourous</th>
+		</tr>
+		<tr>
+			<th rowspan="2" style="background-color: lightblue;">Tristan MATHIEU</th>
+			<td colspan="2">Introduction à l'algorithmie</td>
+			<td></td>
+		</tr>
+			<td colspan="3">Créer ses pages web en toutes simplicité</td>
+		</tr>
+		<tr>
+			<th rowspan="2" style="background-color: lightblue;">David BORGONDO</th>
+			<td>Les Media Queries</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td colspan="2"> Progresser en FLEXBOX</td>
+		</tr>
+		<tr style="background-color:lightblue;">
+			<td></td>
+			<th>Débutants</th>
+			<th>Experts</th>
+			<th>Gourous</th>
+		</tr>
+	</table>
+	<a href="#Debut de la page">Retourner au debut de la page </a>
+
+	<h2 id="exo 5"> Exo 5</h2>
+	<table rules="all" cellpadding="5px" style="width: 100%; border: solid 1px white; font-size: 12px">
+		<tr align="center" style="background-color:grey; color: white">
+			<td>#</td>
+			<td>1</td>
+			<td>2</td>
+			<td>3</td>
+			<td>4</td>
+			<td>5</td>
+			<td>6</td>
+		</tr>
+		<tr align="center">
+			<td style="background-color: grey; color: white">1</td>
+			<td>1</td>
+			<td>2</td>
+			<td>3</td>
+			<td>4</td>
+			<td>5</td>
+			<td>6</td>
+		</tr>
+		<tr align="center">
+			<td style="background-color: grey ;color: white">2</td>
+			<td>7</td>
+			<td>8</td>
+			<td>9</td>
+			<td>10</td>
+			<td>11</td>
+			<td>12</td>
+		</tr>
+		<tr align="center">
+			<td style="background-color: grey; color: white">3</td>
+			<td>13</td>
+			<td>14</td>
+			<td>15</td>
+			<td>16</td>
+			<td>17</td>
+			<td>18</td>
+		</tr >
+		<tr align="center">
+			<td style="background-color: grey; color: white">4</td>
+			<td>19</td>
+			<td>20</td>
+			<td>21</td>
+			<td>22</td>
+			<td>23</td>
+			<td>24</td>
+		</tr>
+		<tr align="center">
+			<td style="background-color: grey; color: white">5</td>
+			<td>25</td>
+			<td>26</td>
+			<td>27</td>
+			<td>28</td>
+			<td>29</td>
+			<td>30</td>
+		</tr>
+		<tr align="center">
+			<td style="background-color: grey; color: white">6</td>
+			<td>31</td>
+			<td>32</td>
+			<td>33</td>
+			<td>34</td>
+			<td>35</td>
+			<td>36</td>
+		</tr>
+	</table>
+	<a href="#Debut de la page">Retourner au debut de la page </a>
+
+	<h2 id="exo 6"> Exo 6</h2>
+	<table rules="all" cellpadding="5px" style="width: 100%;font-size: 12px;">
+		<tr>	
+			<th colspan="3" style="color: white; background-color: #696969; ">Exemple de tableau mis en forme</th>
+		</tr>	
+		<tr style="background-color: grey; color: white;">
+			<th align="left" style="width: 70%">Description</th>
+			<th style="width: 15%">Qte</th>
+			<th style="width: 15%">Total</th>
+		</tr>	
+		<tr style="background-color:#D3D3D3;">
+			<td>L'ill</td>
+			<td align="right">1</td>
+			<td align="right">28</td>
+		</tr>
+		<tr style="background-color: #A9A9A9">
+			<td>Le Rhin</td>
+			<td align="right">1</td>
+			<td align="right">-20</td>
+		</tr>
+
+		<tr style="background-color:#D3D3D3;">
+			<td>Danube</td>
+			<td align="right">1</td>
+			<td align="right">21</td>
+		</tr>
+
+		<tr style="background-color: #A9A9A9">
+			<td>Pô</td>
+			<td align="right">1</td>
+			<td align="right">26</td>
+		</tr>
+
+		<tr style="background-color:#D3D3D3;">
+			<td>Espelette</td>
+			<td align="right">1</td>
+			<td align="right">-12</td>
+		</tr>
+
+		<tr style="background-color: #A9A9A9">
+			<td>Madoukou</td>
+			<td align="right">1</td>
+			<td align="right">32</td>
+		</tr>
+
+		<tr style="background-color:#D3D3D3;">
+			<td>Canal de la Marne</td>
+			<td align="right">1</td>
+			<td align="right">470</td>
+		</tr>
+
+		<tr style="background-color: #A9A9A9">
+			<td>Bruges</td>
+			<td align="right">1</td>
+			<td align="right">49</td>
+		</tr>
+
+		<tr style="background-color:#D3D3D3;">
+			<td>L'aar</td>
+			<td align="right">1</td>
+			<td align="right">39</td>
+		</tr>
+
+		<tr style="background-color: grey;">
+			<td></td>
+			<td align="right">10</td>
+			<td align="right">633</td>
+		</tr>
+	</table>
+	<a href="#Debut de la page">Retourner au debut de la page </a>
+
+	<h2 id="Stastiques des conrôles radars sur autoroute A7">Stastiques des conrôles radars sur autoroute A7</h2>
+	<table border="1" style=" border: solid 2px red; width: 100%">
+		<tr>	
+			<td style="width: 33%">Vitesse mesurée en km/h</td>
+			<td style="width: 33%">Nombre de Véhicules</td>
+			<td style="width: 33%">Sanction opérées</td>
+		</tr>
+		<tr style="background-color: yellow">
+			<td>de 90 à 110 km/h</td>
+			<td>325</td>
+			<td>NON</td>
+		</tr>
+		<tr style="background-color: yellow">
+			<td>de 110 à 130 km/h</td>
+			<td>564</td>
+			<td>NON</td>
+		</tr>
+		<tr style="background-color: yellow">
+			<td>de 130 à 140 km/h</td>
+			<td>323</td>
+			<td>NON</td>
+		</tr>
+		<tr style="background-color: grey">
+			<td>de 140 à 160 km/h</td>
+			<td>223</td>
+			<td>Amende</td>
+		</tr>
+		<tr style="background-color: grey">
+			<td>de 160 à 190 km/h</td>
+			<td>87</td>
+			<td>Retrait</td>
+		</tr>
+		<tr>
+			<th>Vitesse mesurée en km/h</th>
+			<th>Nombre de véhicules</th>
+			<th>Sanction opérées</th>
+		</tr>
+	</table>
+	<a href="#Debut de la page">Retourner au debut de la page </a>
+
+	<h2 id="Facture de commande de livre">Facture de commande de livre</h2>
+	<table border="1" style=" border: solid 1px grey; width: 100%">
+		<tr>
+			<th style="background-color: grey">Date</th>
+			<th style="background-color: yellow">Titre</th>
+			<th style="background-color: yellow">Auteur</th>
+			<th style="background-color:#D3D3D3;">Quantité</th>
+			<th>Prix Unitaire</th>
+			<th>Prix Total</th>
+		</tr>
+		<tr>
+			<td style="background-color: grey">29/05/2005</td>
+			<td style="background-color: yellow">XHTML Design</td>
+			<td style="background-color: yellow">Jeffrey Zeldman</td>
+			<td style="background-color:#D3D3D3;">3</td>
+			<td>32.00€</td>
+			<td>96.00€</td>
+		</tr>
+		<tr>
+			<td style="background-color: grey">15/03/2011</td>
+			<td style="background-color: yellow">CSS</td>
+			<td style="background-color: yellow">Raphael Goetter</td>
+			<td style="background-color:#D3D3D3;">2</td>
+			<td>38.00€</td>
+			<td>76.00€</td>
+		</tr>
+		<tr>
+			<td style="background-color: grey">10/01/2012</td>
+			<td style="background-color: yellow">HTML 5 ET CSS 3</td>
+			<td style="background-color: yellow">Jean Engels</td>
+			<td style="background-color:#D3D3D3;">5</td>
+			<td>29.90€</td>
+			<td>149.50€</td>
+		</tr>
+		<tr>
+			<td style="background-color: grey">Date</td>
+			<td style="background-color: yellow">Désignation</td>
+			<td style="background-color: yellow">Auteur</td>
+			<td style="background-color:#D3D3D3;">Quantité</td>
+			<td>Prix Unitaire</td>
+			<td>Prix Total</td>
+		</tr>
+	</table>
+	<a href="#Debut de la page">Retourner au debut de la page </a>
+
+	<h2 id="exo 9">Exo 9</h2>
+	<table border="1" style=" border: solid 1px grey; background-color: lightblue;">
+		<tr>
+			<td colspan="2">Colonne 1 et 2 fusionnées</td>
+			<td>Colonne 3</td>
+			<td colspan="2">Colonne 4 et 5 fusionnées</td>
+		</tr>
+		<tr>
+			<td>Colonne 1</td>
+			<td>Colonne 2</td>
+			<td>Colonne 3</td>
+			<td>Colonne 4</td>
+			<td>Colonne 5</td>
+		</tr>
+		<tr>
+			<td>Colonne 1</td>
+			<td colspan="3">Colonne 2,3 et 4 fusionnées</td>
+			<td>Colonne 5</td>			
+		</tr>
+	</table>
+	<a href="#Debut de la page">Retourner au debut de la page </a>
+
+	<h2 id="Un tableau irrégulier"> Un tableau irrégulier</h2>	
+	<table border="1" style=" border: solid 1px grey; background-color: lightblue;">
+		<tr>
+			<td colspan="6">Colonne 1 à 6 fusionnées</td>
+		</tr>
+		<tr>
+			<td colspan="3">Colonne 1 à 3 fusionnées</td>
+			<td colspan="3">Colonne 4 à 6 fusionnées</td>
+		</tr>
+		<tr>
+			<td colspan="2">Colonne 1 et 2 fusionnées</td>
+			<td colspan="2">Colonne 3 et 4 fusionnées</td>
+			<td colspan="2">Colonne 5 et 6 fusionnées</td>			
+		</tr>
+		<tr>
+			<td>Colonne 1</td>
+			<td>Colonne 2</td>
+			<td>Colonne 3</td>
+			<td>Colonne 4</td>
+			<td>Colonne 5</td>
+			<td>Colonne 6</td>
+		</tr>
+	</table>
+	<a href="#Debut de la page">Retourner au debut de la page </a>
+
+	<h2 id="Calendrier septembre 2012">Calendrier septembre 2012</h2>
+	<table border="1" style=" border: solid 1px grey;">
+		<tr>
+			<td rowspan="8">2012</td>
+		</tr>	
+		<tr>
+			<th colspan="7">Septembre</th>
+		</tr>
+		<tr>
+			<th>Lundi</th>
+			<th>Mardi</th>
+			<th>Mercredi</th>
+			<th>Jeudi</th>
+			<th>Vendredi</th>
+			<th>Samedi</th>
+			<th>Dimanche</th>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td>4</td>
+			<td>5</td>
+			<td>6</td>
+			<td>7</td>
+			<td>8</td>
+			<td>9</td>
+		</tr>
+		<tr>
+			<td>10</td>
+			<td>11</td>
+			<td>12</td>
+			<td>13</td>
+			<td>14</td>
+			<td>15</td>
+			<td>16</td>
+		</tr>
+		<tr>
+			<td>17</td>
+			<td>18</td>
+			<td>19</td>
+			<td>20</td>
+			<td>21</td>
+			<td>22</td>
+			<td>23</td>
+		</tr>
+		<tr>
+			<td>24</td>
+			<td>25</td>
+			<td>26</td>
+			<td>27</td>
+			<td>28</td>
+			<td>29</td>
+			<td>30</td>
+		</tr>
+	</table>
+	<a href="#Debut de la page">Retourner au debut de la page </a>
+
+	<h2 id="Un tableau elementaire">Un tableau elementaire</h2>
+	<table border="1" style=" border: solid 1px black;">
+		<tr>
+			<td>Ligne 1 Collone 1</td>
+			<td>Ligne 1 Collone 2</td>
+			<td>Ligne 1 Collone 3</td>
+		</tr>
+		<tr>
+			<td>Ligne 2 Collone 1</td>
+			<td>Ligne 2 Collone 2</td>
+			<td>Ligne 2 Collone 3</td>
+		</tr>
+		<tr>
+			<td>Ligne 3 Collone 1</td>
+			<td>Ligne 3 Collone 2</td>
+			<td>Ligne 3 Collone 3</td>
+		</tr>
+	</table>
+	<a href="#Debut de la page">Retourner au debut de la page </a>
+
+	<h2 id="stastistiques des contrôles radars sur l'autoroutes A7">stastistiques des contrôles radars sur l'autoroutes A7</h2>
+	<table border="1" style=" border: solid 1px black;">
+		<tr>
+			<th>Vitesse mesurée en km/h</th>
+			<td>de 90 à 110 km/h</td>
+			<td>de 110 à 130 km/h</td>
+			<td>de 130 à 140 km/h</td>
+			<td>de 140 à 160 km/h</td>
+			<td>de 160 à 190 km/h</td>
+		</tr>
+		<tr>
+			<th>Nombres de Véhicules</th>
+			<td>325</td>
+			<td>564</td>
+			<td>323</td>
+			<td>223</td>
+			<td>87</td>
+		</tr>
+		<tr>
+			<th>Sanction opérées</th>
+			<td>NON</td>
+			<td>NON</td>
+			<td>NON</td>
+			<td>Amende</td>
+			<td>Retrait</td>
+		</tr>
+	</table>
+	<a href="#Debut de la page">Retourner au debut de la page </a>
+</body>
+</html>
