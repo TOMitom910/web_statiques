@@ -96,7 +96,8 @@
 			<textarea rows="5" cols="25" placeholder="ecrire vos motivations"></textarea>
 
 			<label>niveau en anglais</label>
-			<input type="range" name="range" min="0" max="10" step="1" value="2"><br/>
+			<input type="range" name="range" min="0" max="10" step="1" value="2" oninput="this.nextElementSibling.value = this.value"><br/>
+			<output> </output>
 
 			<label for="Jeux">Nombres de Jeux</label>
 			<input type="number" name="Jeux" step="5" max="100" min="10"><br/><!-- disabled rend inactif un champ-->
