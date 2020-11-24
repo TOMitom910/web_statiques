@@ -1,0 +1,59 @@
+<!DOCTYPE html><!-- ceci n'est pas une balise mais une directive
+	Indique la version de HTML utilisée : HTML5
+-->
+<!-- ceci est un commentaire-->
+<html>
+<head> <!-- en-tête de la page-->
+	<title> gestion des images </title>
+	<meta charset="utf-8"> 
+	<!--encodage de la page-->
+</head>
+<body>
+<!-- corps de la page -->
+<h1> gestion des images </h1>
+
+<h2> inserer des images</h2>
+<img src="images/images1.jpg" title="ok ça marche">
+
+<img src="images/images2.png"> <!-- image normal -->
+<img style="opacity:0.6;filter:alpha(opacity=60)" height="100" src="../images/images2.png"> <!-- image réduite ainsi que plus clair que celle original -->
+<h2> Miniature cliquable</h2>
+<p>
+    Vous souhaitez voir l'image dans sa taille d'origine ? Cliquez dessus !<br />
+    <a href="images/images2.png"><img src="../images/images2_mini.png" alt="Photo de vague" title="Cliquez pour agrandir" /></a>
+</p>
+<h2> Les figures</h2>
+<h2> L'histoire des navigateurs web :</h2>
+<pre>
+	Les navigateurs web sont des logiciels complexes et en constante évolution, tant au niveau des fonctionnalités, qu'au niveau de la sécurité, car des nouvelles fonctionnalités offrent de nouveaux angles d'attaque.
+</pre>
+<h2> voici different navigateurs web :</h2>
+	<ol>
+		<li>Google Chrome</li>
+		<li>Mozilla Firefox</li>
+		<li>Internet Explorer</li>
+		<li>Safari</li>
+		<li>Opera</li>
+	</ol>
+
+	<figure>
+		<figcaption>Logos des différents navigateurs</figcaption>
+    	<img src="images/explorer.png" alt="Logo Internet Explorer" />
+    	<img src="images/mozila.png" alt="Logo Mozilla Firefox" />
+    	<img src="images/logo_de_chrome.png" alt="Logo Google Chrome" />
+    	<img src="images/opera.png" alt="Logo d'opera">
+    	<img src="images/safari.png" alt="logo de safari"> 
+    </figure>
+<figure></figure>
+<link rel="stylesheet" type="text/css" href="">
+
+<!--Balise <area> HTML5 - ZONE cliquable ou lien dans une image  -->
+Rouge = acceuil, vert = google
+<img src="logowindows.png" width="145" alt="Plan" usemap="#logo"/>
+<map name="logo">
+	<area shape="rect" coords="0,0,70,70"  href="https://google.fr" alt="Google" target="_BLANK">
+	<area shape="rect" coords="80,80,145,145" href="#" alt="orange"/>
+</map>
+</body>
+</html>
+<!-- ResizeImage.net, pour modifier le format et la taille de l'image -->
