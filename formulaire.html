@@ -1,0 +1,113 @@
+<!DOCTYPE html><!-- ceci n'est pas une balise mais une directive
+	Indique la version de HTML utilisée : HTML5
+-->
+<!-- ceci est un commentaire-->
+<html>
+<head> <!-- en-tête de la page-->
+	<title>formulaire</title>
+	<meta charset="utf-8"> 
+	<!--encodage de la page-->
+</head>
+<body>
+<!-- corps de la page -->
+	<h1>Les formulaires</h1>
+	<h2>A quoi sert un formulaire ?</h2>
+	<p>un formulaire en HTMLest une manière pratique de demander de l'information à un utilisateur et de les adresser à un serveur web</p>
+
+	<h3>1er formulaire</h3>
+	<form method="get" action="./traitement_formulaire.html" id="form1" name="form1"> <!-- method permet de dire comment on envoie les données que l'on aura saisie dans le formulaires, "get" envoie une chaine de caractere a la page recevante qui est limitée a 255 caractere, avec"post" on a aucune limitation de caractere, avec get les couples clé/valeurs que vous allez transmettre seront affiché dans l'url ce qui permet de voir les valeur qu'on a saisies -->
+	<!--  l'action permet de dire a qui on va envoyer les valeurs, # permet d'envoyer a la page entrante, sinon on peut ecrire : 
+	action="./traitement_formulaire.html" -->
+
+		<fieldset>
+
+			<label for="radio">homme :</label>
+			<input type="radio" name="radio" id="homme" checked="">
+
+			<label for="radio">femme :</label>
+			<input type="radio" name="radio" id="femme">
+
+
+			<legend>Données personnelles</legend>
+			<label for="nom">Nom :</label>
+			<input type="text" name="nom" id="nom" placeholder="Saisir nom :" value="" maxlength="10" size="2	0" /><br/><!--  input est une balise de type orpheline et inline -->
+			<label for="prenom">Prénom :</label>
+			<input type="text" name="prenom" id="prenom" placeholder="Saisir Prénom"><br/>
+
+			<label for="email">Email :</label>
+			<input type="email" name="email" id="email" placeholder="Saisir votre Email" required><br/>
+
+			<label for="date">date de naissance :</label>
+			<input type="date" name="date" id="date" placeholder="Saisir date de naissance"><br/>
+
+			<label for="tel">Saisir numero de telephone :</label>
+			<input type="telephone" name="tel" id="tel"><br/>
+			<!--  le name de chaque input est pris en compte dans l'url -->
+		</fieldset>
+
+<!-- Sélection unique-->
+		<fieldset>
+			<legend>Diplômes</legend>
+			<select type="text" name="Diplomes2" id="Diplomes" size="6">
+				<option selected>Choisir diplôme</option>
+		  		<option value="1">BAC</option>
+		  		<option value="2">BTS</option>
+		  		<option value="3">DUT</option>
+		  		<option value="4">Master</option>
+		  		<option value="5">Doctorat</option>
+			</select>
+		</fieldset>
+
+<!-- Sélection multiple  avec Ctrl+clic-->
+		<fieldset>
+			<legend>Diplômes</legend>
+			<select type="text" name="Diplomes" id="Diplomes" size="6" multiple>
+				<option selected>Choisir diplôme</option>
+		  		<option value="BAC">BAC</option>
+		  		<option value="BTS">BTS</option>
+		  		<option value="DUT">DUT</option>
+		  		<option value="Master">Master</option>
+		  		<option value="Doctorat">Doctorat</option>
+			</select>
+		</fieldset>
+
+		
+
+
+		<fieldset>
+			<legend>Compétences techniques</legend>
+			<label for="cbxPascal">Pascal :</label>
+			<input type="checkbox" name="cbxPascal" id="cbxPascal">
+
+			<label for="cbxHTML">HTML :</label>
+			<input type="checkbox" name="cbxHTML" id="cbxHTML">
+
+			<label for="cbxCSS">CSS :</label>
+			<input type="checkbox" name="cbxCSS" id="cbxCSS">
+
+			<label for="cbxHTML">C :</label>
+			<input type="checkbox" name="cbxC" id="cbxC">
+		</fieldset>
+
+
+		<fieldset>
+			<legend>motivations</legend>
+			<textarea rows="5" cols="25" placeholder="ecrire vos motivations"></textarea>
+
+			<label>niveau en anglais</label>
+			<input type="range" name="range" min="0" max="10" step="1" value="2"><br/>
+
+			<label for="Jeux">Nombres de Jeux</label>
+			<input type="number" name="Jeux" step="5" max="100" min="10"><br/><!-- disabled rend inactif un champ-->
+		</fieldset>
+
+
+		<input type="button" name="test" onclick="alert('clic !	');">
+		<input type="button" name="test" onclick="submit();">
+
+		<input type="submit" name="soumettre" value="soumettre"/>
+		<input type="reset" name="raz" value="effacer formulaire"/>
+
+	</form>
+</body>
+</html>
