@@ -1,0 +1,183 @@
+<!DOCTYPE html><!-- ceci n'est pas une balise mais une directive
+	Indique la version de HTML utilisée : HTML5
+-->
+<!-- ceci est un commentaire-->
+<html>
+<head> <!-- en-tête de la page-->
+	<title></title>
+	<meta charset="utf-8"> 
+	<!--intégrer un fichier CSS externe-->
+	<link rel="stylesheet" type="text/css" href="..css/monstyle.css">
+	<!--Afficher une image dans l'onglet de sa page-->
+	<link rel="shortcut icon" type="image/c-icon" href="../images/TOM.png">
+	<!--encodage de la page-->
+	<style type="text/css">
+		#para1
+			{
+			    border-left: 5px solid black;
+			    border-right: 5px solid black;
+			}
+
+		#arrondies
+			{
+				border: solid red;
+				border-radius: 25px;
+			}
+
+		#shadow
+			{
+				box-shadow: 1px 1px 15px blue;
+			}
+
+		#shadow2
+			{
+				text-shadow: 1px 1px 15px blue;
+			}
+
+		a /*lien par defaut */
+			{
+				text-decoration: none;
+				color: red;
+				font-style: italic;
+			}
+
+		a:hover /* Apparence au survol des liens */
+			{
+				text-decoration: underline;
+				color: green;
+			}
+
+		a:visited /* lien une fois qu'il a été cliqué */
+			{
+				color: yellow;
+				font-style: oblique;
+			}
+
+		a:active /* permet d'apliquer un style particulier au moment du clic.*/
+			{
+				background-color: #FFCC66;
+			}
+
+		a:focus /* applique un style lorsque l'élement est selectioné et reste sélectionné.*/
+			{
+				border-style: dotted;
+			}
+
+		
+		input:required /* Cible les éléments <input> qui ont *//* l'attribut required */
+			{
+  				border: 1px dashed red;
+			}
+
+	</style>
+
+</head>
+<body style="background-color: black; color: white;">
+<!-- corps de la page -->
+	<header>
+		<img src="../images/TOM.png" width="150">
+	</header>
+	<hr>
+
+	<main>
+		<h1>Bordures et ombres</h1>
+		<section>
+			<header>
+				<h2 style="color: red; border-bottom: solid;">Bordures Standard</h2>
+			</header>
+			<h3>Les propiétés border :</h3>
+			<li style="border: solid 5px">Border-width : largeur en px</li>
+			<li>Border-style :
+			<ul>
+				<li style="border-style: none;">none : pas de bordure (par défaut) ;</li>
+				<li style="border-style: solid;">solid : un trait simple ;</li>
+				<li style="border-style: dotted;">dotted : pointillés ;</li>
+				<li style="border-style: dashed;">dashed : tirets ;</li>
+				<li style="border-style: double;">double : bordure double ;</li>
+				<li style="border-style: groove;">groove : en relief ;</li>
+				<li style="border-style: ridge;">ridge : autre effet relief ;</li>
+				<li style="border-style: inset;">inset : effet 3D global enfoncé ;</li>
+				<li style="border-style: outset;">outset : effet 3D global surélevé.</li>
+				<li style="border: dotted blue;">Border-color, se servir des couleurs comme vu pour le background.</li>
+				<li style="border: dashed #FF0000;">couleur en utilisant de l'hexadecimal</li>
+				<li style="border: rgb(0,255,0) solid ;">couleur en utilisant le RBG</li>
+				<li>La super propriété border vous facilitera la tâche</li>
+			</ul>
+			</li>
+		</section>
+
+		<section>
+			<header>
+				<h2>bordure partielles :</h2>
+			</header>
+			<ul>
+				<li style="border-top: solid;">border-top : bordure du haut ;</li>
+				<li style="border-bottom: solid;">border-bottom : bordure du bas ;</li>
+				<li style="border-left: solid;">border-left : bordure de gauche ;</li>
+				<li style="border-right: solid;">border-right : bordure de droite.</li>
+			</ul>
+			<p id="para1">
+			Il existe aussi des équivalents pour paramétrer chaque détail de la bordure si vous le désirez :
+			border-top-width pour modifier l'épaisseur de la bordure du haut, border-top-color pour la couleur du haut, etc.
+			Vous pouvez donc écrire :
+			NB : Les bordures sont applicables et modifiables sur n’importe quel élément de la page.
+			</p>
+		</section>
+
+		<section>
+			<header>
+				<h2>Bordures arrondies :</h2>
+			</header>
+			<p id="arrondies">La propriété border-radius : indiquer l’importance de l’angle en pixels.
+	On peut aussi préciser la forme de l'arrondi pour chaque coin. 
+	Il est possible d'affiner l'arrondi des angles en créant des courbes elliptiques. Dans ce cas,
+	il faut indiquer deux valeurs séparées par /
+			</p>
+		</section>
+
+		<section>
+			<header>
+				<p style="font-weight: bold; color: #0000FF">Les ombres</p>
+				<ul> 2 types d'ombres:
+					<li>Les ombres des boîtes;</li>
+					<li>les ombres du texte.</li>
+				</ul>
+				<ul>
+				<span style="font-weight: bold;">box-shadow</span>:les ombres des boîtes la propriété dox-shadow s'applique à tout le bloc et prend quatre valeurs dans l'ordre suivant
+				</ul>
+				<ol>
+					<li>le décalage horizontal de l'ombre ;</li>
+					<li>le décalage vertical de l'ombre ;</li>
+					<li>l'adoucissement du dégradé ;</li>
+					<li>la couleur de l'ombre</li>
+				</ol>
+			</header>
+			<p id="shadow">des boîtes la propriété dox-shadow s'applique à tout le bloc et prend quatre valeurs dans l'ordre suivantdes boîtes la propriété dox-shadow s'applique à tout le bloc et prend quatre valeurs dans l'ordre suivant</p>
+
+			<p id="shadow2">des boîtes la propriété dox-shadow s'applique à tout le bloc et prend quatre valeurs dans l'ordre suivantdes boîtes la propriété dox-shadow s'applique à tout le bloc et prend quatre valeurs dans l'ordre suivant</p>
+		</section>
+
+		<section>
+			<header>
+				<h2>Créations d'apparence dynamique</h2>
+			</header>
+			<p>C'est une de ses forces : le CSS nous permet aussi de modifier l'apparence des éléments de façon dynamique, c'est-à-dire que des éléments peuvent changer de forme une fois que la page a été chargée. Nous allons faire appel à une fonctionnalité puissante du CSS : les pseudo-formats.</p>
+			
+			<h3>Pseudo-format :hover au survol</h3>
+			<a href="https://google.com">lien de test</a>
+
+		</section>
+
+		<legend>Données personnelles</legend>
+			<label for="nom">Nom :</label>
+			<input type="text" name="nom" id="nom" placeholder="Saisir nom :" value="" maxlength="10" size="2	0" /><br/><!--  input est une balise de type orpheline et inline -->
+	</main>
+
+	<hr>
+	<footer>
+		<a href="http://copyright.be" target="_blank">Copyright © 2020 Sémantique_structurer - Tous droits réservés</a><br/>
+		<a href="mailto:t.lejeune@ludus-academie.com?subject=test_envoi"....> envoyez-moi un mail pour plus d'information</a>
+	</footer>
+
+</body>
+</html>

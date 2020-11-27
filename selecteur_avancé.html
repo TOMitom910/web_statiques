@@ -1,0 +1,144 @@
+<!DOCTYPE html><!-- ceci n'est pas une balise mais une directive
+	Indique la version de HTML utilisée : HTML5
+-->
+<!-- ceci est un commentaire-->
+<html>
+<head> <!-- en-tête de la page-->
+	<title></title>
+	<meta charset="utf-8"> 
+	<!--intégrer un fichier CSS externe-->
+	<link rel="stylesheet" type="text/css" href="..css/monstyle.css">
+	<!--Afficher une image dans l'onglet de sa page-->
+	<link rel="shortcut icon" type="image/c-icon" href="../images/TOM.png">
+	<!--encodage de la page-->
+	<style type="text/css">
+		/*  selecteur universel
+		*{ 
+			border: solid;
+		}
+		*/
+		h2 em{
+			color: red;
+		}
+
+		h3+p{
+			border: solid;
+			border-color: yellow;
+		}
+		/*  on gere la style des paragraphes avec l'atribut name*/
+		p[name]{
+			color: green;
+		}
+		/* on gère le style des liens avec*/
+		a[title]{
+			border: solid;
+		}
+
+		/* A[attribut="Valeur"] : une balise, un attribut et une valeur exacte */
+		a[title="infobulle"]{
+			color: blue;
+		}
+
+		input[type="email"]{
+			border: solid red;
+		}	
+
+		input[required]{
+			background-color: blue;
+		}
+		/* *etoile prend toute la souche infobulle*/ 
+		a[title*="infobulle"]{
+			background-color: pink;
+		}
+	</style>
+</head>
+<body>
+<!-- corps de la page -->
+	<header>
+		<img src="../images/TOM.png" width="150">
+	</header>
+	<hr>
+
+	<main>
+		<h1>Selecteur Avancé</h1>
+		<p> definition d'un selecteur</p>
+
+		<section>
+			<h2>
+				* : Selecteur universel
+			</h2>
+		</section>
+
+		<section>
+			<h2>A B: une balise <em>incluse</em> dans l'autre</h2>
+			<h3>A B: une balise <em>incluse</em> dans l'autre</h3>
+			<em>A B: une balise incluse dans l'autre</em>
+		</section>
+		<section>
+			<h2> A+B donne le style a la premiere balise B après A</h2>
+				<p>
+					Amour, que t'ai-je fait ? dis-moi quel est mon crime :
+					D'où vient que je te sers tous les jours de victime ?
+					Qui t'oblige à m'offrir encor de nouveaux fers ?
+					N'es-tu point satisfait des maux que j'ai soufferts ?
+				</p>
+
+				<p>
+					Innocent ! Ah ! pourquoi hâtait-on mon bonheur ?
+					Chloris se pressa trop ; au contraire, Amarille
+					Attendit trop longtemps à se rendre facile.
+					Un an s'était déjà sans faveurs écoulé,
+					Quand, l'époux de la belle aux champs étant allé,	
+				</p>
+		</section>
+
+		<section>
+			<h3> A[Attribut] une balise que posède un attribut </h3>
+				<p name="name">
+					Innocent ! Ah ! pourquoi hâtait-on mon bonheur ?
+					Chloris se pressa trop ; au contraire, Amarille
+					Attendit trop longtemps à se rendre facile.
+					Un an s'était déjà sans faveurs écoulé,
+					Quand, l'époux de la belle aux champs étant allé,	
+				</p>
+			
+		</section>
+		<a href="https://google.com" title="google">lien vers google</a><br>
+		<a href="https://google.com">google</a>
+
+		<section>
+			<header>
+				<h2> A[attribut="Valeur"] : une balise, un attribut et une valeur exacte</h2>
+					<a href="https://google.com" title="infobulle">lien vers google</a><br>
+					<a href="https://google.com" title="infobulle2">google</a>
+			</header>
+		</section>
+
+		<fieldset>
+			<legend>formulaire</legend>
+			<label for="mail">Email :</label>
+			<input type="email" name="mail" id="email" placeholder="Saisir votre Email"><br/>
+
+			<label for="prenom">Prénom :</label>
+			<input type="text" name="prenom" id="prenom" placeholder="Saisir Prénom"><br/>
+
+			<label for="nom">Nom :</label>
+			<input type="text" name="nom" id="nom" placeholder="Saisir nom" required><br/>
+		</fieldset>
+	</main>
+
+
+	<section>
+		<h2>TEST infobulle</h2>
+		<a href="https://google.com" title="infobulle">lien vers google</a><br>
+		<a href="https://google.com" title="infobulle2">google</a>
+	</section>
+
+
+	<hr>
+	<footer>
+		<a href="http://copyright.be" target="_blank">Copyright © 2020 Sémantique_structurer - Tous droits réservés</a><br/>
+		<a href="mailto:t.lejeune@ludus-academie.com?subject=test_envoi"....> envoyez-moi un mail pour plus d'information</a>
+	</footer>
+</body>
+</html>

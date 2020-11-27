@@ -1,0 +1,214 @@
+<!DOCTYPE html><!-- ceci n'est pas une balise mais une directive
+	Indique la version de HTML utilisée : HTML5
+-->
+<!-- ceci est un commentaire-->
+<html>
+<head> <!-- en-tête de la page-->
+	<title></title>
+	<meta charset="utf-8"> 
+	<!--intégrer un fichier CSS externe-->
+	<link rel="stylesheet" type="text/css" href="..css/monstyle.css">
+	<!--Afficher une image dans l'onglet de sa page-->
+	<link rel="shortcut icon" type="image/c-icon" href="../images/TOM.png">
+	<!--encodage de la page-->
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+	<style type="text/css">
+
+		@font-face {
+			font-family:"Pacifico";
+			src: url("../css/police/Pacifico-Regular.ttf") format("truetype");
+		}
+
+		p[id="gras"]{
+			font-weight: bold;
+		}
+
+		span[id="gras"]{
+			font-weight: bold;
+		}
+
+		p[id="bleu"]{
+			color: blue;
+			font-weight: bold;
+		}
+
+		span[id="souligné"]{
+			text-decoration: underline;
+		}
+
+		li[id="aligne"]{
+			list-style: none;
+			margin-left: -16px
+		}
+
+		li{
+			list-style: disc;
+		}
+
+		p[id="police"]{
+			font-family: Verdana;
+		}
+		/*
+ 		body{
+ 			font-family: "Pacifico", sans-serif;
+ 		}
+ 		*/
+ 		#under{
+ 				text-decoration: underline;
+ 		}
+ 		#line{
+ 				text-decoration: line-through;
+ 		}
+
+ 		#over{
+ 				text-decoration: overline;
+ 		}
+
+ 		#none{
+ 				text-decoration: none;
+ 		}
+
+ 		.imageflottante{
+ 			float: left;
+ 		}
+
+ 		.dessous{
+ 			clear: both;
+ 		}
+
+ 		#small{
+ 			font-size: xx-small;
+ 		}
+
+ 		#small2{
+ 			font-size: x-small;
+ 		}
+
+ 		#small3{
+ 			font-size: small;
+ 		}
+
+ 		#medium{
+ 			font-size: medium;
+ 		}
+
+ 		#large{
+ 			font-size: large;
+ 		}
+
+ 		#large2{
+ 			font-size: x-large;
+ 		}
+
+ 		#large3{
+ 			font-size: xx-large;
+ 		}
+
+ 		#couleur{
+ 			color:#00FF00;
+ 		}
+
+ 		#couleur2{
+ 			color: rgb(0,255,0);
+ 		}
+
+ 		body
+ 		{
+ 			background: url("../images/TOM.png") fixed no-repeat top right,url("../TOM.png") fixed no-repeat;
+ 		}
+ 			/*background-repeat: no-repeat;
+ 			background-position: top;
+ 			background-attachment: fixed;*/
+ 		
+
+ 		#transparence{
+ 			background-color: red;
+ 			opacity: 0.5;
+ 		}
+
+ 		#transparence2{
+ 			background-color:rgba(255,0,0,0.5);
+ 		}
+
+	</style>
+</head>
+<body>
+<!-- corps de la page -->
+	<header>
+		<img src="../images/TOM.png" width="150">
+	</header>
+	<hr>
+
+	<main>
+
+		<p id="bleu">formatage du texte</p>
+		<p id="gras">La taille</p>
+		<p>propriété CSS <span id="gras">font-size</span></p>
+		<section>
+			<ul>
+				<li><span id="souligné">Exprimée en taille absolue:</span> en pixels (px),centimètre, millimètres...</li>
+				<li><span id="souligné">Exprimée en taille relative:</span> en pourcentage, <span id="gras">"em"</span>ou "ex", cette technique a l'avantage d'être plus souple. Elle s'adapte plus facilemnt aux préférences de taille des visiteurs.</li>
+				<ul>
+					<li id="small">XX-small:minuscule ;</li>
+					<li id="small2">x-small:très petit ;</li>
+					<li id="small3">small: petit ;</li>
+					<li id="medium">medium: moyen ;</li>
+					<li id="large">large: grand ;</li>
+					<li id="large2">x-large: très grand ;</li>
+					<li id="large3">xx-large: gigantesque</li>
+					<li id="aligne">Uniquement 7 tailles.</li>
+				</ul>
+			</ul>
+
+			<ul>
+				<ul>
+					<li id="aligne">Préférez les tailles exprimées en em</li>
+					<li>Si vous écrivez 1em, le texte a une taille normale.</li>
+					<li>Si vous voulez grossir le texte, vous pouvez inscrire unevaleur supérieure à 1,comme 1.3em.</li>
+					<li>Si vous voulez réduire le texte, inscrivez une valeur inférieur à 1, comme 0.8em.</li>
+				</ul>
+			</ul>
+		</section>
+			<p id="police">Police principal</p>
+
+	<section>
+		<h2>italique,gras,souligné</h2>
+		<ul>
+			<li id="under">underline:souligné.</li>
+			<li id="line">line-through:barré.</li>
+			<li id="over">overline:ligne au-dessus.</li>
+			<li id="none">none:normal(par défaut)</li>
+		</ul>
+	</section>
+
+	<h2>les images flottantes</h2>
+	<p><img src="../images/TOM.png" class="imageflottante" alt="imageflottante" width="150"/>Ceci est un texte normal de paragraphe, écrit à la suite de l'image et qui l'habillera car l'image est flottante.</p>
+
+	<p class="dessous">Ce texte est écrit sous l'image flottante</p>
+
+
+	<h2>les couleurs</h2>
+	<input type="color" name="color">
+
+	<h3>la notation hexadecimale</h3>
+	<p id="couleur">Ce texte est écrit sous l'image flottanteCe texte est écrit sous l'image flottanteCe texte est écrit sous l'image flottanteCe texte est écrit sous l'image flottante</p>
+
+	<h3>la méthode RGB</h3>
+	<p id="couleur2">Ce texte est écrit sous l'image flottanteCe texte est écrit sous l'image flottanteCe texte est écrit sous l'image flottanteCe texte est écrit sous l'image flottante</p>
+
+	<p id="transparence"><img src="../images/TOM.png" width="100"> Ce texte est écrit sous l'image flottanteCe texte est écrit sous l'image flottanteCe texte est écrit sous l'image flottanteCe texte est écrit sous l'image flottanteCe texte est écrit sous l'image flottanteCe texte est écrit sous l'image flottanteCe texte est écrit sous l'image flottanteCe texte est écrit sous l'image flottante</p>
+
+
+	<p id="transparence2"><img src="../images/TOM.png" width="100"> Ce texte est écrit sous l'image flottanteCe texte est écrit sous l'image flottanteCe texte est écrit sous l'image flottanteCe texte est écrit sous l'image flottanteCe texte est écrit sous l'image flottanteCe texte est écrit sous l'image flottanteCe texte est écrit sous l'image flottanteCe texte est écrit sous l'image flottante</p>
+
+	</main>
+
+	<hr>
+	<footer>
+		<a href="http://copyright.be" target="_blank">Copyright © 2020 Sémantique_structurer - Tous droits réservés</a><br/>
+		<a href="mailto:t.lejeune@ludus-academie.com?subject=test_envoi"....> envoyez-moi un mail pour plus d'information</a>
+	</footer>
+
+</body>
+</html>
