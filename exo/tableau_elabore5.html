@@ -1,0 +1,104 @@
+<!DOCTYPE html><!-- ceci n'est pas une balise mais une directive
+	Indique la version de HTML utilisée : HTML5
+-->
+<!-- ceci est un commentaire-->
+<html>
+<head> <!-- en-tête de la page-->
+	<title></title>
+	<meta charset="utf-8"> 
+	<!--intégrer un fichier CSS externe-->
+	<link rel="stylesheet" type="text/css" href="..css/monstyle.css">
+	<!--Afficher une image dans l'onglet de sa page-->
+	<link rel="shortcut icon" type="image/c-icon" href="../images/TOM.png">
+	<!--encodage de la page-->
+	<style type="text/css">
+		.gris
+			{
+				background-color: grey;
+			}
+
+		.jaune
+			{
+				background-color: yellow;
+			}
+
+		.clair
+			{
+				background-color: #D3D3D3
+			}
+
+		table
+			{
+				border: solid 1px grey;
+				width: 100%;
+				font-size: 200%;
+			}
+	</style>
+	
+</head>
+<body>
+<!-- corps de la page -->
+	<header>
+		<img src="../images/TOM.png" width="150">
+	</header>
+	<hr>
+
+	<main>
+		<h2 id="Facture de commande de livre">Facture de commande de livre</h2>
+	<table border="1">
+		<colgroup>
+			<col span="1" class="gris">
+			<col span="2" class="jaune">
+			<col span="1" class="clair">
+		</colgroup>
+		<tr>
+			<th class="gris">Date</th>
+			<th class="jaune">Titre</th>
+			<th class="jaune">Auteur</th>
+			<th class="clair">Quantité</th>
+			<th>Prix Unitaire</th>
+			<th>Prix Total</th>
+		</tr>
+		<tr>
+			<td class="gris">29/05/2005</td>
+			<td class="jaune">XHTML Design</td>
+			<td class="jaune">Jeffrey Zeldman</td>
+			<td class="clair">3</td>
+			<td>32.00€</td>
+			<td>96.00€</td>
+		</tr>
+		<tr>
+			<td class="gris">15/03/2011</td>
+			<td class="jaune">CSS</td>
+			<td class="jaune">Raphael Goetter</td>
+			<td class="clair">2</td>
+			<td>38.00€</td>
+			<td>76.00€</td>
+		</tr>
+		<tr>
+			<td class="gris">10/01/2012</td>
+			<td class="jaune">HTML 5 ET CSS 3</td>
+			<td class="jaune">Jean Engels</td>
+			<td class="clair">5</td>
+			<td>29.90€</td>
+			<td>149.50€</td>
+		</tr>
+		<tr>
+			<td class="gris">Date</td>
+			<td class="jaune">Désignation</td>
+			<td class="jaune">Auteur</td>
+			<td class="clair">Quantité</td>
+			<td>Prix Unitaire</td>
+			<td>Prix Total</td>
+		</tr>
+	</table>
+	</main>
+
+	<hr>
+	<footer>
+		<a href="http://copyright.be" target="_blank">Copyright © 2020 - Tous droits réservés</a><br/>
+		<a href="mailto:t.lejeune@ludus-academie.com?subject=test_envoi"....> envoyez-moi un mail pour plus d'information</a>
+	</footer>
+
+</body>
+</html>

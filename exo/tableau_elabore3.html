@@ -1,0 +1,147 @@
+<!DOCTYPE html><!-- ceci n'est pas une balise mais une directive
+	Indique la version de HTML utilisée : HTML5
+-->
+<!-- ceci est un commentaire-->
+<html>
+<head> <!-- en-tête de la page-->
+	<title></title>
+	<meta charset="utf-8"> 
+	<!--intégrer un fichier CSS externe-->
+	<link rel="stylesheet" type="text/css" href="..css/monstyle.css">
+	<!--Afficher une image dans l'onglet de sa page-->
+	<link rel="shortcut icon" type="image/c-icon" href="../images/TOM.png">
+	<!--encodage de la page-->
+	<style type="text/css">
+		table
+			{
+				width: 100%;
+				font-size: 12px;
+			}
+
+		.gris
+			{
+				color: white; 
+				background-color: #696969;
+			}
+
+		.clair
+			{
+				background-color:#D3D3D3;
+			}
+
+		.blanc
+			{
+				background-color: #A9A9A9;
+			}
+
+		.noir
+			{
+				background-color: grey;
+				color: white;
+			}
+
+		.taille
+			{
+				width: 15%;
+			}
+
+	</style>
+
+	
+</head>
+<body>
+<!-- corps de la page -->
+	<header>
+		<img src="../images/TOM.png" width="150">
+	</header>
+	<hr>
+
+	<main>
+		<h2></h2>
+	<table rules="all" cellpadding="5px">
+	<colgroup>
+		<col class="gris" span="3">
+		<col class="clair" span="3">
+		<col class="blanc" span="3">
+		<col class="noir" span="3">
+	</colgroup>
+		<tr>	
+			<th colspan="3" class="gris">Exemple de tableau mis en forme</th>
+		</tr>
+
+		<tr class="noir">
+			<th align="left">Description</th>
+			<th class="taille">Qte</th>
+			<th class="taille">Total</th>
+		</tr>
+
+		<tr class="clair">
+			<td>L'ill</td>
+			<td align="right">1</td>
+			<td align="right">28</td>
+		</tr>
+
+		<tr class="blanc">
+			<td>Le Rhin</td>
+			<td align="right">1</td>
+			<td align="right">-20</td>
+		</tr>
+
+		<tr class="clair">
+			<td>Danube</td>
+			<td align="right">1</td>
+			<td align="right">21</td>
+		</tr>
+
+		<tr class="blanc">
+			<td>Pô</td>
+			<td align="right">1</td>
+			<td align="right">26</td>
+		</tr>
+
+		<tr class="clair">
+			<td>Espelette</td>
+			<td align="right">1</td>
+			<td align="right">-12</td>
+		</tr>
+
+		<tr class="blanc">
+			<td>Madoukou</td>
+			<td align="right">1</td>
+			<td align="right">32</td>
+		</tr>
+
+		<tr class="clair">
+			<td>Canal de la Marne</td>
+			<td align="right">1</td>
+			<td align="right">470</td>
+		</tr>
+
+		<tr class="blanc">
+			<td>Bruges</td>
+			<td align="right">1</td>
+			<td align="right">49</td>
+		</tr>
+
+		<tr class="clair">
+			<td>L'aar</td>
+			<td align="right">1</td>
+			<td align="right">39</td>
+		</tr>
+
+		<tr class="noir">
+			<td></td>
+			<td align="right">10</td>
+			<td align="right">633</td>
+		</tr>
+	</table>
+	</main>
+
+	<hr>
+	<footer>
+		<a href="http://copyright.be" target="_blank">Copyright © 2020 - Tous droits réservés</a><br/>
+		<a href="mailto:t.lejeune@ludus-academie.com?subject=test_envoi"....> envoyez-moi un mail pour plus d'information</a>
+	</footer>
+
+</body>
+</html>
