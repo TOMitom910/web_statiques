@@ -11,9 +11,17 @@
 	<!--Afficher une image dans l'onglet de sa page-->
 	<link rel="shortcut icon" type="image/c-icon" href="../images/TOM.png">
 	<!--encodage de la page-->
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 	<style type="text/css">
 
-		section
+		@font-face
+			{
+				font-family:"Pacifico";
+				src: url("../css/police/Pacifico-Regular.ttf") format("truetype");
+			}
+
+		div
 			{
 				border: solid;
 				border-radius: 25px;
@@ -22,16 +30,30 @@
 				margin: auto;
 			}
 		
-		p::first-letter
+		span::first-letter
 			{
 				color: red;
+				text-transform: uppercase;
 			}
 
-		p
+		span
 			{
-				margin-bottom: 0px;
-				margin-top: 0px;
+				display: block;
 			}
+
+		#gras
+			{
+				font-weight: bold;
+				border: none;
+				margin-top: 15px;
+				margin-bottom: 15px;
+			}
+
+		body
+			{ 	
+				font-family: "Pacifico", sans-serif;
+			}
+
 	</style>
 </head>
 <body>
@@ -41,18 +63,16 @@
 	</header>
 	<hr>
 
-	<main>
-	<section>
-		<h2>EPITAPHE D'UN PARESSEUX</h2>
-		<p>Jean s'en alla comme il était venu,</p>
-		<p>Mangea le fonds avec le revenu,</p>
-		<p>Tint les trésors chose peu nécessaire.</p>
-		<p>Quant à son temps, bien le sut dispenser :</p>
-		<p>Deux parts en fit, dont il soulait passer</p>
-		<p>L'une à dormir et l'autre à ne rien faire.</p><br>
-	</section>
-	</main>
-	
+
+	<div>
+		<div id="gras">EPITAPHE D'UN PARESSEUX</div>
+		<span>Jean s'en alla comme il était venu,</span>
+		<span>Mangea le fonds avec le revenu,</span>
+		<span>Tint les trésors chose peu nécessaire.</span>
+		<span>Quant à son temps, bien le sut dispenser :</span>
+		<span>Deux parts en fit, dont il soulait passer</span>
+		<span>L'une à dormir et l'autre à ne rien faire.</span><br>
+	</div>
 
 	<hr>
 	<footer>
