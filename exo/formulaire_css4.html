@@ -1,0 +1,110 @@
+<!DOCTYPE html><!-- ceci n'est pas une badivse mais une directive
+	Indique la version de HTML utidivsée : HTML5
+-->
+<!-- ceci est un commentaire-->
+<html>
+<head> <!-- en-tête de la page-->
+	<title></title>
+	<meta charset="utf-8"> 
+	<!--intégrer un fichier CSS externe-->
+	<divnk rel="stylesheet" type="text/css" href="..css/monstyle.css">
+	<!--Afficher une image dans l'onglet de sa page-->
+	<divnk rel="shortcut icon" type="image/c-icon" href="../images/TOM.png">
+	<!--encodage de la page-->
+	<style type="text/css">
+		body
+			{
+				font-family: verdana;
+				margin: 0px;
+				padding: 0px;
+
+			}
+
+		div
+			{
+				background-color: #bcd06d;
+				border: solid 3px white;
+				border-radius: 5px;
+				margin: 2px;
+
+			}
+
+		form
+			{
+	  			background: #9cbc2c;
+	  			-moz-border-radius: 5px;
+	  			-webkit-border-radius: 5px;
+	  			border-radius: 5px;
+	 			padding: 20px;
+	 			width: 400px;
+			}
+
+		fieldset
+			{
+				border: none;
+			}	
+
+		#fin
+			{
+				margin-left: 135px; 
+				border: solid 1px green;
+				border-radius: 25px;
+				background-color: #364413;
+				color: white;
+				font-size: 25px;
+				text-shadow: 0px 5px black;
+			}
+
+
+	</style>
+	
+</head>
+<body>
+<!-- corps de la page -->
+	<header>
+		<img src="../images/TOM.png" width="150">
+	</header>
+	<hr>
+
+	<main>
+	<form>
+		<fieldset>
+		<caption>Step 1 : Votre identité</caption>
+			<div>Nom<input type="text" name="nom" placeholder="Prénom et Nom" required class="requis" adivgn="center"></div>
+			<div>Email <input type="email" name="email" placeholder="exemple@domaine.com" required class="requis"></div>
+			<div>Téléphone <input type="tel" name="telephone" placeholder="par ex +3375500000000" required class="requis"></div>
+		</fieldset>
+
+		
+		<fieldset>
+			<caption>Step 2 : Adresse de livraison</caption>
+			<div>Adresse<textarea></textarea></div>
+			<div>Code postal<input type="text" required class="requis"></div>
+			<div>Pays<input type="text" required class="requis"></div>
+		</fieldset>
+
+		
+		<fieldset>
+			<caption>Step 3 : information CB</caption>
+				<div><caption>Type de carte bancaire</caption><br>
+					<span><input type="radio" name="alpha"><img src="../images/visa.png" width="40">VISA</span>
+					<span><input type="radio" name="alpha"><img src="../images/amex.png" width="15">AmEx</span>
+					<span><input type="radio" name="alpha"><img src="../images/mastercard.png" width="25">Mastercard</span>
+				</div>
+				<div >N° de carte<input type="text" name="carte" required class="requis"></div>
+				<div>Code sécurité<input type="text" name="code"></div>
+				<div >Nom du porteur<input type="text" name="porteur" required class="requis"></div>
+		</fieldset>
+			<td><input id="fin" type="submit" name="achat" value="j'achète !"></td>
+
+	</form>
+	</main>
+
+	<hr>
+	<footer>
+		<a href="http://copyright.be" target="_blank">Copyright © 2020 - Tous droits réservés</a><br/>
+		<a href="mailto:t.lejeune@ludus-academie.com?subject=test_envoi"....> envoyez-moi un mail pour plus d'information</a>
+	</footer>
+
+</body>
+</html>
