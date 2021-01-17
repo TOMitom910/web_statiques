@@ -1,0 +1,106 @@
+program bataille_navale;
+
+uses crt;
+
+type
+    TBateau = (porte_avion=1 , torpilleur1, torpilleur2, vstorpilleur ,croiseur);
+
+    TJoueurs = (joueur1, joueur2);
+
+
+
+    Tcoord = record
+        bateau:Tbateau;
+        joueur:TJoueurs;
+        x : integer;
+        y : integer;
+    end;
+
+var
+    poubelle : Tcoord;
+     j,i: integer;
+    pos_y_char : char;
+    ocean : array [1..10,1..10] of char;
+    hangar : array[1..5] of Tcoord;
+
+
+Procedure traduction;
+
+BEGIN
+end;
+
+Procedure Init_bateau;
+var i, j : integer;
+
+BEGIN
+    for i:= 1 to 5 do
+    BEGIN
+        hangar[i].bateau:= Tbateau(i);
+    end;
+end;
+
+Procedure Init_ocean;
+var i,j : integer;
+
+BEGIN
+
+end;
+
+BEGIN
+clrscr;
+textcolor(10);
+writeln;
+writeln('                                           ========================');
+writeln('                                            LA BATAILLE NAVALE ');
+writeln('                                           ========================');
+writeln;
+writeln;
+writeln('vous avez cinq bateaux a placer sur une grille ave des coordonnees allant de 1 a 10 et A a J');
+writeln('votre ennemie à le meme nombre de bateaux et la meme grille vous devez detruit les bateaux adverse');
+
+textcolor(11);
+writeln('pour commencer le joueur 1 doit placer ses 5 bateaux');
+writeln;
+for j := 1 to 5 do
+	BEGIN
+		writeln('veuillez entrer les abscisses du ', TBateau(j));
+		readln(poubelle.x);
+		writeln('veuillez entrer les ordonnes du ', TBateau(j));
+		readln(poubelle.y);
+		textcolor(9);
+		writeln('  1 2 3 4 5 6 7 8 9 10');
+		textcolor(13);
+		writeln( 'A ');
+		textcolor(15);
+		textcolor(13);
+		writeln( 'B ');
+		textcolor(15);
+		textcolor(13);
+		writeln( 'C ');
+		textcolor(15);
+		textcolor(13);
+		writeln( 'D ');
+		textcolor(15);
+		textcolor(13);
+		writeln( 'E ');
+		textcolor(15);
+		textcolor(13);
+		writeln( 'F ');
+		textcolor(15);
+		textcolor(13);
+		writeln( 'G ');
+		textcolor(15);
+		textcolor(13);
+		writeln( 'H ');
+		textcolor(15);
+		textcolor(13);
+		writeln( 'I ');
+		textcolor(15);
+		textcolor(13);
+		writeln( 'J ');
+	END;
+
+Init_bateau;
+readln;
+
+END.
