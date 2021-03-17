@@ -1,0 +1,125 @@
+<!DOCTYPE html><!-- ceci n'est pas une balise mais une directive
+  Indique la version de HTML utilisée : HTML5
+-->
+<!-- ceci est un commentaire-->
+<html>
+<head> <!-- en-tête de la page-->
+  <title>Cours sur les canvas</title>
+  <meta charset="utf-8"> 
+  <!--intégrer un fichier CSS externe
+  <link rel="stylesheet" type="text/css" href="..css/monstyle.css">-->
+  <!--Afficher une image dans l'onglet de sa page-->
+  <link rel="shortcut icon" type="image/c-icon" href="../images/TOM.png">
+  <!--encodage de la page-->
+  <style type="text/css">
+    .principale 
+    {
+      width: 600px;
+      height: 400px;
+      border: solid 1px black;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .quart 
+    {
+      width: 300px;
+      height: 200px;
+      background-color: white;
+    }
+
+    .quart:first-child 
+    {
+      background-color: red;
+    }
+
+    .quart:last-child {
+      background-color: rgba(0,255,0,1);
+    }
+
+    .globale 
+    {
+      width: 600px;
+      height: 400px;
+      border: solid 1px black;
+    }
+
+    .demi:first-child
+    {
+      width: 300px;
+      height: 200px;
+      position: relative;
+      background-color: red;
+    }
+
+    .demi:last-child
+    {
+      width: 300px;
+      height: 200px;
+      position: relative;
+      background-color: rgba(0,255,0,1);
+      margin-left: 300px;
+    }
+
+  </style>
+  
+</head>
+<body>
+<!-- corps de la page -->
+  <header>
+    <img src="../images/TOM.png" width="150">
+  </header>
+  <hr>
+  <main>
+  <canvas id="jo" width="400" height="300" style="border: solid 1px black;"></canvas>
+    <script type="text/javascript">
+      var jo = document.getElementById("jo");
+
+      var flame = jo.getContext("2d");
+
+          //Dessiner cercle bleu
+        flame.beginPath();
+        flame.arc(60, 75, 50, 0, 2 * Math.PI);
+        flame.strokeStyle = '#0000FF';
+        flame.lineWidth=5;
+        flame.stroke();
+
+        //Dessiner cercle jaune
+        flame.beginPath();
+        flame.arc(117, 140, 50, 0, 2 * Math.PI);
+        flame.strokeStyle = '#FFFF33';
+        flame.lineWidth=5;
+        flame.stroke();
+      //Dessiner cercle noir
+        flame.beginPath();
+        flame.arc(175, 75, 50, 0, 2 * Math.PI);
+        flame.strokeStyle = '#000000';
+        flame.lineWidth=5;
+        flame.stroke();
+
+        //Dessiner cercle vert
+        flame.beginPath();
+        flame.arc(232, 140, 50, 0, 2 * Math.PI);
+        flame.strokeStyle = '#00FF00';
+        flame.lineWidth=5;
+        flame.stroke();
+      //Dessiner cercle rouge
+        flame.beginPath();
+        flame.arc(290, 75, 50, 0, 2 * Math.PI);
+        flame.strokeStyle = '#FF0000';
+        flame.lineWidth=5;
+        flame.stroke();
+  </script>
+    
+  </main>
+  <hr>
+  
+    <a href="../cours_html/index_canvas.html">Cliquez pour retourner a la page de selection des canvas</a>
+  <hr>
+  
+  <footer>
+    <a href="http://copyright.be" target="_blank">Copyright © 2020 - Tous droits réservés</a><br/>
+    <a href="mailto:t.lejeune@ludus-academie.com?subject=test_envoi"....> envoyez-moi un mail pour plus d'information</a>
+  </footer>
+</body>
+</html>

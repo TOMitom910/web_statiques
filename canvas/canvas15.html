@@ -1,0 +1,123 @@
+<!DOCTYPE html><!-- ceci n'est pas une balise mais une directive
+  Indique la version de HTML utilisée : HTML5
+-->
+<!-- ceci est un commentaire-->
+<html>
+<head> <!-- en-tête de la page-->
+  <title>Cours sur les canvas</title>
+  <meta charset="utf-8"> 
+  <!--intégrer un fichier CSS externe
+  <link rel="stylesheet" type="text/css" href="..css/monstyle.css">-->
+  <!--Afficher une image dans l'onglet de sa page-->
+  <link rel="shortcut icon" type="image/c-icon" href="../images/TOM.png">
+  <!--encodage de la page-->
+  <style type="text/css">
+    .principale 
+    {
+      width: 600px;
+      height: 400px;
+      border: solid 1px black;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .quart 
+    {
+      width: 300px;
+      height: 200px;
+      background-color: white;
+    }
+
+    .quart:first-child 
+    {
+      background-color: red;
+    }
+
+    .quart:last-child {
+      background-color: rgba(0,255,0,1);
+    }
+
+    .globale 
+    {
+      width: 600px;
+      height: 400px;
+      border: solid 1px black;
+    }
+
+    .demi:first-child
+    {
+      width: 300px;
+      height: 200px;
+      position: relative;
+      background-color: red;
+    }
+
+    .demi:last-child
+    {
+      width: 300px;
+      height: 200px;
+      position: relative;
+      background-color: rgba(0,255,0,1);
+      margin-left: 300px;
+    }
+
+  </style>
+  
+</head>
+<body>
+<!-- corps de la page -->
+  <header>
+    <img src="../images/TOM.png" width="150">
+  </header>
+  <hr>
+  <main>
+    <h2>petit bateau</h2>
+    <canvas id="petitbateau" width="400" height="400" style="border: solid 1px black;"></canvas>
+    <script type="text/javascript">
+      var petitbateau = document.getElementById("petitbateau");
+
+      var mer = petitbateau.getContext("2d");
+
+      // dessiner la voile du bateau
+      mer.beginPath();
+        mer.moveTo(150,80);
+        mer.lineTo(300,230);
+        mer.lineTo(150,230);
+        mer.fillStyle= '#ADD8E6';
+        mer.fill();
+        mer.strokeStyle="#ADD8E6";
+        mer.stroke();
+
+      // dessiner la coque du bateau
+      mer.beginPath();
+        mer.strokeStyle="#882d17";
+        mer.lineWidth=4;
+        mer.moveTo(50,250);
+        mer.lineTo(100,300);
+        mer.lineTo(250,300);
+        mer.lineTo(300,250);
+        mer.fillStyle = '#cd853f';
+        mer.fill();
+        mer.stroke();
+
+          // dessiner le mat du bateau
+      mer.beginPath();
+        mer.strokeStyle="#882d17";
+        mer.lineWidth=10;
+        mer.moveTo(140,55);
+        mer.lineTo(140,250);
+        mer.stroke();
+        </script>
+        <hr>
+  </main>
+  <hr>
+  
+ <a href="../cours_html/index_canvas.html">Cliquez pour retourner a la page de selection des canvas</a>
+  <hr>
+  
+  <footer>
+    <a href="http://copyright.be" target="_blank">Copyright © 2020 - Tous droits réservés</a><br/>
+    <a href="mailto:t.lejeune@ludus-academie.com?subject=test_envoi"....> envoyez-moi un mail pour plus d'information</a>
+  </footer>
+</body>
+</html>

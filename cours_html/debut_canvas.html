@@ -380,8 +380,6 @@
 			//démarrer le trait
             ctx.beginPath();
 
-
-
             /*on définit une courbe en fait. le cercle est une courbe particulière
             arc(x,y,r,angle_départ,angle_fin) 
             Pour dessiner un cercle angle_départ=0 et angle_fin=2 * Math.PI
@@ -705,6 +703,86 @@
 				}
 			}
 		</script>
+
+		<h2>petit bateau</h2>
+		<canvas id="petitbateau" width="400" height="400" style="border: solid 1px black;"></canvas>
+		<script type="text/javascript">
+			var petitbateau = document.getElementById("petitbateau");
+
+			var mer = petitbateau.getContext("2d");
+
+			// dessiner la voile du bateau
+			mer.beginPath();
+			mer.moveTo(150,80);
+			mer.lineTo(300,230);
+			mer.lineTo(150,230);
+			mer.fillStyle= '#ADD8E6';
+			mer.fill();
+			mer.strokeStyle="#ADD8E6";
+			mer.stroke();
+
+			// dessiner la coque du bateau
+			mer.beginPath();
+        	mer.strokeStyle="#882d17";
+        	mer.lineWidth=4;
+        	mer.moveTo(50,250);
+        	mer.lineTo(100,300);
+        	mer.lineTo(250,300);
+       		mer.lineTo(300,250);
+        	mer.fillStyle = '#cd853f';
+        	mer.fill();
+        	mer.stroke();
+
+        	// dessiner le mat du bateau
+        	mer.beginPath();
+        	mer.strokeStyle="#882d17";
+        	mer.lineWidth=10;
+        	mer.moveTo(140,55);
+        	mer.lineTo(140,250);
+        	mer.stroke();
+        </script>
+        <hr>
+
+        <canvas id="jo" width="400" height="300" style="border: solid 1px black;"></canvas>
+		<script type="text/javascript">
+			var jo = document.getElementById("jo");
+
+			var flame = jo.getContext("2d");
+
+        	//Dessiner cercle bleu
+		    flame.beginPath();
+		    flame.arc(60, 75, 50, 0, 2 * Math.PI);
+		    flame.strokeStyle = '#0000FF';
+		    flame.lineWidth=5;
+		    flame.stroke();
+
+		    //Dessiner cercle jaune
+		    flame.beginPath();
+		    flame.arc(117, 140, 50, 0, 2 * Math.PI);
+		    flame.strokeStyle = '#FFFF33';
+		    flame.lineWidth=5;
+		    flame.stroke();
+			//Dessiner cercle noir
+		    flame.beginPath();
+		    flame.arc(175, 75, 50, 0, 2 * Math.PI);
+		    flame.strokeStyle = '#000000';
+		    flame.lineWidth=5;
+		    flame.stroke();
+
+		    //Dessiner cercle vert
+		    flame.beginPath();
+		    flame.arc(232, 140, 50, 0, 2 * Math.PI);
+		    flame.strokeStyle = '#00FF00';
+		    flame.lineWidth=5;
+		    flame.stroke();
+			//Dessiner cercle rouge
+		    flame.beginPath();
+		    flame.arc(290, 75, 50, 0, 2 * Math.PI);
+		    flame.strokeStyle = '#FF0000';
+		    flame.lineWidth=5;
+		    flame.stroke();
+	</script>
+		
 	</main>
 	<hr>
 	
