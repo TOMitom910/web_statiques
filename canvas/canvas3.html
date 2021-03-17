@@ -1,0 +1,110 @@
+<!DOCTYPE html><!-- ceci n'est pas une balise mais une directive
+	Indique la version de HTML utilisée : HTML5
+-->
+<!-- ceci est un commentaire-->
+<html>
+<head> <!-- en-tête de la page-->
+	<title>Cours sur les canvas</title>
+	<meta charset="utf-8"> 
+	<!--intégrer un fichier CSS externe
+	<link rel="stylesheet" type="text/css" href="..css/monstyle.css">-->
+	<!--Afficher une image dans l'onglet de sa page-->
+	<link rel="shortcut icon" type="image/c-icon" href="../images/TOM.png">
+	<!--encodage de la page-->
+	<style type="text/css">
+	</style>
+	
+</head>
+<body>
+<!-- corps de la page -->
+	<header>
+		<img src="../images/TOM.png" width="150">
+	</header>
+	<hr>
+
+	<main>
+		<h2>premier canvas en utilisant la balise canvas </h2>
+		<canvas id="Canvas1" name="Canvastest" width="300" height="200"  style="border:solid 1px black;"></canvas>
+		<script type="text/javascript"> 
+			//Récupérer l'objet canvas par son ID
+			var canvas = document.getElementById("Canvas1");
+
+			//Créer un objet de dessin sur le canvas
+			var ctx = canvas.getContext("2d");
+
+			var h = canvas.height;
+
+			var w = canvas.width;
+
+			console.log("test"); // affiche test dans l'inspecteur des element
+
+			console.log(document.location);//affiche la localisation de la page dans l'inspecteur de l'element
+
+			console.log("location.href",document.location.href); // affiche le chemin vers la ressource
+
+			console.log(document.location.search); // affiche une ligne vide, affiche se qu'on ecrit apres ? dans l'url de la page
+
+			console.log(canvas.id); // affiche Canvas1 dans l'inspecteur des elements
+
+			console.log(canvas.name);
+
+			console.log(canvas.width);// affiche la largeur dans //
+
+			console.log(canvas.height);// affiche la hauteur dans //
+
+			console.log(canvas.style); // affiche le style dans //
+
+			//Dessiner : affecter un style à l'objet dessin : le style par défaut est noir
+			ctx.fillStyle = "#FF0000";//red
+			//On dessine un rectangle avec le fillstyle précédent sur le canvas
+			ctx.fillRect(0,0,w/2,h/2);
+
+			ctx.fillStyle = "#00FF00";//green
+			ctx.fillRect(w/2,h/2,150,100)
+
+			ctx.fillStyle = "#0000FF";//blue
+			ctx.fillRect(0,100,150,100);
+
+			ctx.fillStyle ="#FFFF00";//yellow
+			ctx.fillRect(150,0,150,100);
+		</script> 
+		<hr>
+
+		<h2>canvas 2 fois plus petit que le prescedant en utilisant la balise canvas</h2>
+<!-- ce canvas est 2 fois plus petit que le prescedent -->
+		<canvas id="canvasmini" style="border: solid 1px black"></canvas>
+		<script type="text/javascript">
+			var canvasmini = document.getElementById("canvasmini");
+
+			var ctx = canvasmini.getContext("2d");
+// les valeurs des hauteurs et des largeurs sont divisé par 2
+			h = h/2;
+			w/=2;
+
+			canvasmini.height=h;
+
+			canvasmini.width=w;
+
+			ctx.fillStyle = "#FF0000";//red
+			ctx.fillRect(0,0,w/2,h/2);
+
+			ctx.fillStyle = "#00FF00";//green
+			ctx.fillRect(w/2,h/2,w,h)
+
+			ctx.fillStyle = "#0000FF";//blue
+			ctx.fillRect(0,h/2,w/2,h);
+
+
+			ctx.fillStyle ="#FFFF00";//yellow
+			ctx.fillRect(w/2,0,w/2,h/2);
+
+		</script>
+		<hr>
+	<a href="../cours_html/index_canvas.html">Cliquez pour retourner a la page de selection des canvas</a>
+	<hr>
+	<footer>
+		<a href="http://copyright.be" target="_blank">Copyright © 2020 - Tous droits réservés</a><br/>
+		<a href="mailto:t.lejeune@ludus-academie.com?subject=test_envoi"....> envoyez-moi un mail pour plus d'information</a>
+	</footer>
+</body>
+</html>

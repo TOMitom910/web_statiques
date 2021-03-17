@@ -1,0 +1,50 @@
+<!DOCTYPE html><!-- ceci n'est pas une balise mais une directive
+	Indique la version de HTML utilisée : HTML5
+-->
+<!-- ceci est un commentaire-->
+<html>
+<head> <!-- en-tête de la page-->
+	<title>Gradient linéaire</title>
+	<meta charset="utf-8"> 
+	<!--intégrer un fichier CSS externe
+	<link rel="stylesheet" type="text/css" href="..css/monstyle.css">-->
+	<!--Afficher une image dans l'onglet de sa page-->
+	<link rel="shortcut icon" type="image/c-icon" href="../images/TOM.png">
+	<!--encodage de la page-->
+</head>
+<body>
+<!-- corps de la page -->
+	<header>
+		<img src="../images/TOM.png" width="150">
+	</header>
+	<hr>
+
+	<main>
+<!-- canvas gradient linéaire -->
+		<h2>Gradient linéaire</h2>
+		<canvas id="Canvaslineaire" width="300" height="250" style="border: solid 1px black;"></canvas>
+		<script type="text/javascript">
+
+   			var Canvaslineaire = document.getElementById("Canvaslineaire");
+
+    		var ctx = Canvaslineaire.getContext("2d");
+    		//Le gradient est un style de remplissage
+    		var grd=ctx.createLinearGradient(0,0,200,0);
+
+    		grd.addColorStop(0,"red");//Ajouter couleurs à votre gradient 
+   			grd.addColorStop(0.4,"green");//Ajouter couleurs à votre gradient 
+    		grd.addColorStop(0.9,"yellow");//Ajouter couleurs à votre gradient 
+
+
+    		ctx.fillStyle=grd;
+    		ctx.fillRect(10,10,200,80);
+		</script>
+		<hr>
+	<a href="../cours_html/index_canvas.html">Cliquez pour retourner a la page de selection des canvas</a>
+	<hr>
+	<footer>
+		<a href="http://copyright.be" target="_blank">Copyright © 2020 - Tous droits réservés</a><br/>
+		<a href="mailto:t.lejeune@ludus-academie.com?subject=test_envoi"....> envoyez-moi un mail pour plus d'information</a>
+	</footer>
+</body>
+</html>

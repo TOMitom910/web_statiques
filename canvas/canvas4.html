@@ -1,0 +1,92 @@
+<!DOCTYPE html><!-- ceci n'est pas une balise mais une directive
+	Indique la version de HTML utilisée : HTML5
+-->
+<!-- ceci est un commentaire-->
+<html>
+<head> <!-- en-tête de la page-->
+	<title>Cours sur les canvas</title>
+	<meta charset="utf-8"> 
+	<!--intégrer un fichier CSS externe
+	<link rel="stylesheet" type="text/css" href="..css/monstyle.css">-->
+	<!--Afficher une image dans l'onglet de sa page-->
+	<link rel="shortcut icon" type="image/c-icon" href="../images/TOM.png">
+	<!--encodage de la page-->
+	<style type="text/css">
+	</style>
+	
+</head>
+<body>
+<!-- corps de la page -->
+	<header>
+		<img src="../images/TOM.png" width="150">
+	</header>
+	<hr>
+	<main>
+<!-- canvas degradé en jouant su l'opacité  -->
+		<h2>canvas en dregadé en jouant sur l'opacité avec RGBA </h2>
+		<canvas id="canvasdegradé" width="300" height="200" style="border: solid 1px black;"></canvas>
+		<script type="text/javascript">
+			var canvasdegradé = document.getElementById("canvasdegradé");
+
+			var ctx = canvasdegradé.getContext("2d");
+
+// variable qui permet d'augmenter l'opaciter
+			var o = 1/8;
+
+			var w = canvasdegradé.width;
+
+			var w2 = w/4;
+
+			var h = canvasdegradé.height;
+
+			const pas = 1/8;
+
+			ctx.fillStyle = "rgba(0,0,255,"+o+")";
+			ctx.fillRect(0,0,w/4,h/2);
+
+			o+=pas;
+
+			ctx.fillStyle = "rgba(0,0,255,"+o+")";
+			ctx.fillRect(w2,0,w/4,h/2);
+
+			o+=pas;
+
+			ctx.fillStyle ="rgba(0,0,255,"+o+")";
+			ctx.fillRect(w2*2,0,w/4,h/2);
+
+			o+=1/8;
+
+			ctx.fillStyle ="rgba(0,0,255,"+o+")";
+			ctx.fillRect(w2*3,0,w/4,h/2);
+
+			o+=1/8;
+
+			ctx.fillStyle ="rgba(0,0,255,"+o+")";
+			ctx.fillRect(w2*3,h/2,w/4,h/2);
+
+			o+=1/8;
+
+			ctx.fillStyle ="rgba(0,0,255,"+o+")";
+			ctx.fillRect(w2*2,h/2,w/4,h/2);
+
+			o+=1/8;
+
+			ctx.fillStyle ="rgba(0,0,255,"+o+")";
+			ctx.fillRect(w2,h/2,w/4,h/2);
+
+			o+=1/8;
+
+			ctx.fillStyle ="rgba(0,0,255,"+o+")";
+			ctx.fillRect(0,h/2,w/4,h/2);
+
+			o+=1/8;
+		</script>
+		<hr>
+	<a href="../cours_html/index_canvas.html">Cliquez pour retourner a la page de selection des canvas</a>
+	<hr>
+	<footer>
+		<a href="http://copyright.be" target="_blank">Copyright © 2020 - Tous droits réservés</a><br/>
+		<a href="mailto:t.lejeune@ludus-academie.com?subject=test_envoi"....> envoyez-moi un mail pour plus d'information</a>
+	</footer>
+</body>
+</html>

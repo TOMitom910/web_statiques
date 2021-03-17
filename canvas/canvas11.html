@@ -1,0 +1,46 @@
+<!DOCTYPE html><!-- ceci n'est pas une balise mais une directive
+	Indique la version de HTML utilisée : HTML5
+-->
+<!-- ceci est un commentaire-->
+<html>
+<head> <!-- en-tête de la page-->
+	<title>Gradient circulaire</title>
+	<meta charset="utf-8"> 
+	<!--intégrer un fichier CSS externe
+	<link rel="stylesheet" type="text/css" href="..css/monstyle.css">-->
+	<!--Afficher une image dans l'onglet de sa page-->
+	<link rel="shortcut icon" type="image/c-icon" href="../images/TOM.png">
+	<!--encodage de la page-->
+</head>
+<body>
+<!-- corps de la page -->
+	<header>
+		<img src="../images/TOM.png" width="150">
+	</header>
+	<hr>
+
+	<main>
+		<h2>Gradient circulaire</h2>
+		<canvas id="Canvascirculaire" width="300" height="250" style="border: solid 1px black;"></canvas>
+		<script type="text/javascript">
+    		var Canvascirculaire = document.getElementById("Canvascirculaire");
+
+    		var ctx = Canvascirculaire.getContext("2d");
+
+    		var gradient=ctx.createRadialGradient(120,170,30,100,200,80);
+
+   			gradient.addColorStop(0,"red");
+    		gradient.addColorStop(0.7,"blue");
+
+    		ctx.fillStyle=gradient;
+    		ctx.fillRect(20,20,250,230);
+		</script>
+		<hr>
+	<a href="../cours_html/index_canvas.html">Cliquez pour retourner a la page de selection des canvas</a>
+	<hr>
+	<footer>
+		<a href="http://copyright.be" target="_blank">Copyright © 2020 - Tous droits réservés</a><br/>
+		<a href="mailto:t.lejeune@ludus-academie.com?subject=test_envoi"....> envoyez-moi un mail pour plus d'information</a>
+	</footer>
+</body>
+</html>

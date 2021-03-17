@@ -1,0 +1,69 @@
+<!DOCTYPE html><!-- ceci n'est pas une balise mais une directive
+	Indique la version de HTML utilisée : HTML5
+-->
+<!-- ceci est un commentaire-->
+<html>
+<head> <!-- en-tête de la page-->
+	<title>canvas en utilisant ctx pour créer des lignes</title>
+	<meta charset="utf-8"> 
+	<!--intégrer un fichier CSS externe
+	<link rel="stylesheet" type="text/css" href="..css/monstyle.css">-->
+	<!--Afficher une image dans l'onglet de sa page-->
+	<link rel="shortcut icon" type="image/c-icon" href="../images/TOM.png">
+	<!--encodage de la page-->
+</head>
+<body>
+<!-- corps de la page -->
+	<header>
+		<img src="../images/TOM.png" width="150">
+	</header>
+	<hr>
+	<main>
+<!-- canvas en dessinant des lignes droites -->
+		<h2>canvas en utilisant ctx pour créer des lignes</h2>
+		<canvas id="canvastrait" width="300" height="200" style="border: solid 1px blue;"></canvas>
+		<script type="text/javascript">
+			var canvastrait = document.getElementById("canvastrait");
+
+			var ctx = canvastrait.getContext("2d");
+
+			ctx.beginPath();
+			//se positionner en 0,0 du canvas 
+			ctx.moveTo(0,0);
+			//coordonées du dernier point de la droite
+			ctx.lineTo(300,200);
+			//dessiner la droite	
+			ctx.strokeStyle= "red";
+			ctx.lineWidth=2;
+			ctx.stroke();
+
+			ctx.beginPath();
+			ctx.moveTo(300,0);
+			ctx.lineTo(0,200);
+			ctx.lineWidth=3;
+			ctx.strokeStyle= "pink";
+			ctx.stroke();
+
+            ctx.beginPath();
+			ctx.moveTo(150,0);
+			ctx.lineTo(150,200);
+			ctx.lineWidth=4;
+			ctx.strokeStyle= "blue";
+			ctx.stroke();
+
+			ctx.beginPath();
+			ctx.moveTo(0,100);
+			ctx.lineTo(300,100);
+			ctx.lineWidth=5;
+			ctx.strokeStyle="yellow";
+			ctx.stroke();
+		</script>
+		<hr>
+	<a href="../cours_html/index_canvas.html">Cliquez pour retourner a la page de selection des canvas</a>
+	<hr>
+	<footer>
+		<a href="http://copyright.be" target="_blank">Copyright © 2020 - Tous droits réservés</a><br/>
+		<a href="mailto:t.lejeune@ludus-academie.com?subject=test_envoi"....> envoyez-moi un mail pour plus d'information</a>
+	</footer>
+</body>
+</html>

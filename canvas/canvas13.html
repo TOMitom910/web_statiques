@@ -1,0 +1,62 @@
+<!DOCTYPE html><!-- ceci n'est pas une balise mais une directive
+	Indique la version de HTML utilisée : HTML5
+-->
+<!-- ceci est un commentaire-->
+<html>
+<head> <!-- en-tête de la page-->
+	<title>canvas avec une image charger dynamiquement</title>
+	<meta charset="utf-8"> 
+	<!--intégrer un fichier CSS externe
+	<link rel="stylesheet" type="text/css" href="..css/monstyle.css">-->
+	<!--Afficher une image dans l'onglet de sa page-->
+	<link rel="shortcut icon" type="image/c-icon" href="../images/TOM.png">
+	<!--encodage de la page-->
+	<style type="text/css">
+	</style>
+	
+</head>
+<body>
+<!-- corps de la page -->
+	<header>
+		<img src="../images/TOM.png" width="150">
+	</header>
+	<hr>
+	<main>
+<!-- canvas image dynamique -->
+		<h2>canvas avec une image charger dynamiquement</h2>
+		<canvas id="canvasimage" width="300" height="200" style="border: solid 1px black;"></canvas>
+		<script type="text/javascript">
+			window.onload = function() 
+			//function draw()
+			{
+				var canvasimage = document.getElementById("canvasimage");
+    			var ctx = canvasimage.getContext("2d");
+    			//je crée l'objet de type image
+				var objImg = new Image();
+				objImg.src="../images/graphique.png";
+				objImg.width=canvasimage.width/2;
+				objImg.height=canvasimage.height/2;
+				ctx.drawImage(objImg,(canvasimage.width-objImg.width)/2, (canvasimage.height-objImg.height)/2,objImg.width, objImg.height);
+				objImg.onload = function()
+				{
+					ctx.drawImage(objImg,0,0);
+					ctx.moveTo(30,96);
+					ctx.lineTo(70,66);
+					ctx.lineTo(103,76);
+					ctx.lineTo(170,15);
+					ctx.stroke();
+					ctx.fillText("dessiner un graphique",70,170);
+				}
+			}
+		</script>
+	</main>
+	<hr>
+	<a href="../cours_html/index_canvas.html">Cliquez pour retourner a la page de selection des canvas</a>
+	<hr>
+	
+	<footer>
+		<a href="http://copyright.be" target="_blank">Copyright © 2020 - Tous droits réservés</a><br/>
+		<a href="mailto:t.lejeune@ludus-academie.com?subject=test_envoi"....> envoyez-moi un mail pour plus d'information</a>
+	</footer>
+</body>
+</html>

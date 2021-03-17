@@ -1,0 +1,108 @@
+<!DOCTYPE html><!-- ceci n'est pas une balise mais une directive
+	Indique la version de HTML utilisée : HTML5
+-->
+<!-- ceci est un commentaire-->
+<html>
+<head> <!-- en-tête de la page-->
+	<title>Cours sur les canvas</title>
+	<meta charset="utf-8"> 
+	<!--intégrer un fichier CSS externe
+	<link rel="stylesheet" type="text/css" href="..css/monstyle.css">-->
+	<!--Afficher une image dans l'onglet de sa page-->
+	<link rel="shortcut icon" type="image/c-icon" href="../images/TOM.png">
+	<!--encodage de la page-->
+	<style type="text/css">
+	</style>
+	
+</head>
+<body>
+<!-- corps de la page -->
+	<header>
+		<img src="../images/TOM.png" width="150">
+	</header>
+	<hr>
+
+	<main>
+<!--  un canvas avec un random-->
+		<h2>canvas en utilisant un random</h2>
+		<canvas id="canvasrandom" width="300" height="200" style="border: solid 1px black;"></canvas>
+		<script type="text/javascript">
+			var canvasrandom = document.getElementById("canvasrandom");
+
+			var ctx = canvasrandom.getContext("2d");
+			//permet de stocker la largeur dans une variable
+			var w = canvasrandom.width;
+
+			var w2 = w/4;
+			//permet de stocker la hauteur dans une variable
+			var h = canvasrandom.height;
+			//definir 3 variable pour avoir des valeurs RGB aléatoire
+			var r = Math.floor(Math.random() * 256);
+			var g = Math.floor(Math.random() * 256);
+			var b = Math.floor(Math.random() * 256);
+
+			console.log(r);
+			console.log(g);
+			console.log(b);
+
+			ctx.fillStyle = "rgb("+r+","+g+","+b+")";
+			ctx.fillRect(0,0,w/4,h/2);
+			//reactualiser les variables pour eviter d'avoir les mêmes couleurs.
+			var r = Math.floor(Math.random() * 256);
+			var g = Math.floor(Math.random() * 256);
+			var b = Math.floor(Math.random() * 256);
+
+			ctx.fillStyle = "rgb("+r+","+g+","+b+")";
+			ctx.fillRect(w2,0,w/4,h/2);
+
+			var r = Math.floor(Math.random() * 256);
+			var g = Math.floor(Math.random() * 256);
+			var b = Math.floor(Math.random() * 256);
+
+			ctx.fillStyle ="rgb("+r+","+g+","+b+")";
+			ctx.fillRect(w2*2,0,w/4,h/2);
+
+			var r = Math.floor(Math.random() * 256);
+			var g = Math.floor(Math.random() * 256);
+			var b = Math.floor(Math.random() * 256);
+
+			ctx.fillStyle ="rgb("+r+","+g+","+b+")";
+			ctx.fillRect(w2*3,0,w/4,h/2);
+
+			var r = Math.floor(Math.random() * 256);
+			var g = Math.floor(Math.random() * 256);
+			var b = Math.floor(Math.random() * 256);
+
+			ctx.fillStyle ="rgb("+r+","+g+","+b+")";
+			ctx.fillRect(w2*3,h/2,w/4,h/2);
+
+			var r = Math.floor(Math.random() * 256);
+			var g = Math.floor(Math.random() * 256);
+			var b = Math.floor(Math.random() * 256);
+
+			ctx.fillStyle ="rgb("+r+","+g+","+b+")";
+			ctx.fillRect(w2*2,h/2,w/4,h/2);
+
+			var r = Math.floor(Math.random() * 256);
+			var g = Math.floor(Math.random() * 256);
+			var b = Math.floor(Math.random() * 256);
+
+			ctx.fillStyle ="rgb("+r+","+g+","+b+")";
+			ctx.fillRect(w2,h/2,w/4,h/2);
+
+			var r = Math.floor(Math.random() * 256);
+			var g = Math.floor(Math.random() * 256);
+			var b = Math.floor(Math.random() * 256);
+
+			ctx.fillStyle ="rgb("+r+","+g+","+b+")";
+			ctx.fillRect(0,h/2,w/4,h/2);
+		</script>
+		<hr>
+	<a href="../cours_html/index_canvas.html">Cliquez pour retourner a la page de selection des canvas</a>
+	<hr>
+	<footer>
+		<a href="http://copyright.be" target="_blank">Copyright © 2020 - Tous droits réservés</a><br/>
+		<a href="mailto:t.lejeune@ludus-academie.com?subject=test_envoi"....> envoyez-moi un mail pour plus d'information</a>
+	</footer>
+</body>
+</html>

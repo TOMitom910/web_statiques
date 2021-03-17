@@ -1,0 +1,71 @@
+<!DOCTYPE html><!-- ceci n'est pas une balise mais une directive
+	Indique la version de HTML utilisée : HTML5-->
+<!-- ceci est un commentaire-->
+<html>
+	<head> <!-- en-tête de la page-->
+		<title>canvas avec une image charger dynamiquement</title>
+		<meta charset="utf-8"> 
+		<!--intégrer un fichier CSS externe
+		<link rel="stylesheet" type="text/css" href="..css/monstyle.css">-->
+		<!--Afficher une image dans l'onglet de sa page-->
+		<link rel="shortcut icon" type="image/c-icon" href="../images/TOM.png">
+		<!--encodage de la page-->
+		<style type="text/css">
+		</style>
+	</head>
+	<body>
+	<!-- corps de la page -->
+		<header>
+			<img src="../images/TOM.png" width="150">
+		</header>
+		<hr>
+		<main>
+	    <canvas id="CanvasTxt" width="300" height="200" style="border:1px solid #FF0000;display:block;"></canvas>
+	    <script>
+	        var hauteur = CanvasTxt.height; //stocker la height dans une variable 
+	        var largeur = CanvasTxt.width; //stocker la width dans une variable
+	        //Récupérer l'objet canvas par son ID
+	        var canvas = document.getElementById("CanvasTxt");
+	        //Créer un objet de dessin sur le canvas
+	        var ctx = canvas.getContext("2d");
+	        //Dessiner : affecter un style à l'objet dessin : le style par défaut est noir
+	        ctx.font="40px serif";
+	        ctx.fillText("Texte n°1",150,100);
+	    </script>
+	    <hr>
+	    <canvas id="CanvasTxt2" width="300" height="200" style="border:2px dotted #00FF00;display:block;"></canvas>
+	    <script>
+	        var hauteur = CanvasTxt2.height; //stocker la height dans une variable 
+	        var largeur = CanvasTxt2.width; //stocker la width dans une variable
+	        //Récupérer l'objet canvas par son ID
+	        var canvas = document.getElementById("CanvasTxt2");
+	        //Créer un objet de dessin sur le canvas
+	        var ctx = canvas.getContext("2d");
+	        //Dessiner : affecter un style à l'objet dessin : le style par défaut est noir
+	        ctx.font='40px serif';
+	        ctx.strokeText('Texte n°2',100,50)
+	    </script>
+	    <hr>
+	    <canvas id="CanvasTxt3" width="300" height="200" style="border:3px double #0000FF;display:block;"></canvas>
+	    <script>
+	        var hauteur = CanvasTxt3.height; //stocker la height dans une variable 
+	        var largeur = CanvasTxt3.width; //stocker la width dans une variable
+	        //Récupérer l'objet canvas par son ID
+	        var canvas = document.getElementById("CanvasTxt3");
+	        //Créer un objet de dessin sur le canvas
+	        var ctx = canvas.getContext("2d");
+	        //Dessiner : affecter un style à l'objet dessin : le style par défaut est noir
+	        ctx.font='40px serif';
+	        ctx.fillStyle='blue';
+	        ctx.fillText('Texte n°3',50,25);
+	    </script>
+	    <hr>
+	    <a href="../cours_html/index_canvas.html">Cliquez pour retourner a la page de selection des canvas</a>
+	    <hr>
+		<footer>
+			<a href="http://copyright.be" target="_blank">Copyright © 2020 - Tous droits réservés</a><br/>
+			<a href="mailto:t.lejeune@ludus-academie.com?subject=test_envoi"....> envoyez-moi un mail pour plus d'information</a>
+		</footer>
+	    <hr>
+	</body>
+</html>
