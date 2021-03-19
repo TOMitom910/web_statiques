@@ -1,0 +1,149 @@
+<!DOCTYPE html><!-- ceci n'est pas une balise mais une directive
+	Indique la version de HTML utilisée : HTML5
+-->
+<!-- ceci est un commentaire-->
+<html>
+<head> <!-- en-tête de la page-->
+	<title></title>
+	<meta charset="utf-8"> 
+	<!--intégrer un fichier CSS externe-->
+	<!--Afficher une image dans l'onglet de sa page-->
+	<link rel="shortcut icon" type="image/c-icon" href="../images/TOM.png">
+	<!--encodage de la page-->
+	<style type="text/css">
+		#test
+		{
+			background-image: url("../images/maison.png");
+			background-size: cover;
+			width: 150px;
+			height: 150px;
+		}
+	</style>
+	
+</head>
+<!-- on appelle la fonction bienvenue creer plus bas -->
+<body onload="Bienvenue()">
+<!-- corps de la page -->
+	<header>
+		<img src="../images/TOM.png" width="150">
+	</header>
+	<hr>
+<!-- on creer un boutton avec une image a l'interieur et un texte qui s'affiche quand on survole l'image -->
+	<main>
+		<button onclick="alert('bienvenue')"><img src="../images/TOM.png" width="100" height="100" title="voila sa marche"></button>
+<!-- un boutton avec un texte a l'interieur -->
+		<button id="test">cliquez</button>
+		<script type="text/javascript">
+//on créer une fonction pour faire une alerte 
+			function Bienvenue()
+			{
+				alert("test n°1");
+			}
+
+			function aleatoire()
+			{
+				var alea = Math.floor(Math.random() * 5) + 1;
+				alert(alea);
+				console.log(alea);
+            	var paragraphe=document.getElementById('paragraphe');
+            	alert(paragraphe.innerHTML);
+            	alert(paragraphe.value);
+            	var non=document.getElementById('oui');
+            	alert(non.value);
+            	alert(non.type);
+            	non.value=number;
+			}
+
+			function imgalea()
+			{
+				var nbralea = Math.floor(Math.random()*5)+1;
+				console.log(nbralea);
+				if ((nbralea == 1)) 
+				{
+					console.log("nbr1");
+					//document.getElementById('btn').style.backgroundImage="url(../images/img1.png)";
+					document.getElementById('btnn').src="../images/img1.png";
+				}
+				else
+					if ((nbralea == 2))
+				{
+					console.log("nbr2");
+					//document.getElementById('btn').style.backgroundImage="url(../images/img1.png)";
+					document.getElementById('btnn').src="../images/img2.png";
+				}
+				else
+					if ((nbralea == 3))
+				{
+					console.log("nbr3");
+					//document.getElementById('btn').style.backgroundImage="url(../images/img1.png)";
+					document.getElementById('btnn').src="../images/img3.png";
+				}
+				else
+					if ((nbralea == 4))
+				{
+					console.log("nbr4");
+					//document.getElementById('btn').style.backgroundImage="url(../images/img1.png)";
+					document.getElementById('btnn').src="../images/img4.png";
+				}
+				else
+					if ((nbralea == 5))
+				{
+					console.log("nbr5");
+					//document.getElementById('btn').style.backgroundImage="url(../images/img1.png)";
+					document.getElementById('btnn').src="../images/img5.png";
+				}
+
+			}
+
+			/*function rndm()
+			{
+                var chiffre=Math.round(Math.random()*4+1;
+                var resultat="img"+chiffre+".png";
+                var img=new Image();
+                img.src="../images/"+resultat;
+                var test=document.getElementById("btnn");
+                test.src="../images/"+resultat;
+                console.log(resultat);
+
+                return resultat;
+            }*/
+            function 
+            var idImg="";
+			var chemin ="../images/img";
+      		var ext =".png";
+            for (i=1;i<=5;i++)
+            	{
+            		idImg="idImg"+i;
+            		monsrc=chemin+i+ext;
+            		console.log(monsrc);
+            		document.write("<IMG src=",monsrc," alt=",idImg," id=",idImg,"/>");
+            	}
+		</script>
+		<button onclick="aleatoire()"></button>
+<!-- p avec un id et un texte a l'interieur -->
+		<p id="paragraphe">toto</p>
+
+    	<input type="text" name="senfout" value="" id="oui">
+
+    	<hr>
+<!-- voici 5 images importé dans la page -->
+    	<img src="../images/img1.png" alt="img1" id="img1" width="100" height="100">
+    	<img src="../images/img2.png" alt="img2" id="img2" width="100" height="100">
+    	<img src="../images/img3.png" alt="img3" id="img3" width="100" height="100">
+    	<img src="../images/img4.png" alt="img4" id="img4" width="100" height="100">
+    	<img src="../images/img5.png" alt="img5" id="img5" width="100" height="100">
+    	<br>
+
+    	<button id="btn" onclick="imgalea()" style=" width: 100px; height:100px; ">clique pour avoir une image</button>
+    	<hr>
+    	<img id="btnn" width="100" height="100">
+	</main>
+
+	<hr>
+	<footer>
+		<a href="http://copyright.be" target="_blank">Copyright © 2020 - Tous droits réservés</a><br/>
+		<a href="mailto:t.lejeune@ludus-academie.com?subject=test_envoi"....> envoyez-moi un mail pour plus d'information</a>
+	</footer>
+
+</body>
+</html>
