@@ -75,6 +75,7 @@
 	<main>
 		<h2>premier canvas avec des div</h2>
 		<div class="principale">
+		<!-- on fais le premier canvas en utilisant 4 div et du CSS -->
 			<div class="quart"></div>
 			<div class="quart"></div>
 			<div class="quart"></div>
@@ -84,6 +85,7 @@
 
 		<h2>deuxieme canvas avec des div</h2>
 		<div class="globale">
+		<!-- on fais le deuxieme canvas en utilisant 2 div et du CSS -->
 			<div class="demi"></div>
 			<div class="demi"></div>
 		</div>
@@ -163,7 +165,7 @@
 
 			var ctx = canvasdegradé.getContext("2d");
 
-// variable qui permet d'augmenter l'opaciter
+			// variable qui permet d'augmenter l'opaciter
 			var o = 1/8;
 
 			var w = canvasdegradé.width;
@@ -177,7 +179,7 @@
 			ctx.fillStyle = "rgba(0,0,255,"+o+")";
 			ctx.fillRect(0,0,w/4,h/2);
 
-			o+=pas;
+			o+=pas;	//o+=pas signifie o=o+pas
 
 			ctx.fillStyle = "rgba(0,0,255,"+o+")";
 			ctx.fillRect(w2,0,w/4,h/2);
@@ -187,7 +189,7 @@
 			ctx.fillStyle ="rgba(0,0,255,"+o+")";
 			ctx.fillRect(w2*2,0,w/4,h/2);
 
-			o+=1/8;
+			o+=1/8;	//o+=1/8 signifie o=o+1/8
 
 			ctx.fillStyle ="rgba(0,0,255,"+o+")";
 			ctx.fillRect(w2*3,0,w/4,h/2);
@@ -225,7 +227,7 @@
 			var ctx = canvasrandom.getContext("2d");
 			//permet de stocker la largeur dans une variable
 			var w = canvasrandom.width;
-
+			// permet d'utiliser une variable plutot que d'ecrire w/4
 			var w2 = w/4;
 			//permet de stocker la hauteur dans une variable
 			var h = canvasrandom.height;
@@ -622,9 +624,9 @@
     		//Le gradient est un style de remplissage
     		var grd=ctx.createLinearGradient(0,0,200,0);
 
-    		grd.addColorStop(0,"red");//Ajouter couleurs à votre gradient 
-   			grd.addColorStop(0.4,"green");//Ajouter couleurs à votre gradient 
-    		grd.addColorStop(0.9,"yellow");//Ajouter couleurs à votre gradient 
+    		grd.addColorStop(0,"red");	//Ajouter couleurs à votre gradient 
+   			grd.addColorStop(0.4,"green");	//Ajouter couleurs à votre gradient 
+    		grd.addColorStop(0.9,"yellow");	//Ajouter couleurs à votre gradient 
 
 
     		ctx.fillStyle=grd;
@@ -637,7 +639,7 @@
     		var Canvascirculaire = document.getElementById("Canvascirculaire");
 
     		var ctx = Canvascirculaire.getContext("2d");
-
+    		// création d'un gradient circulaire 
     		var gradient=ctx.createRadialGradient(120,170,30,100,200,80);
 
    			gradient.addColorStop(0,"red");
@@ -651,9 +653,8 @@
 
 		<h2>création d'une image</h2>
              <img id="image_TOM" width="20%" height="20%" src="../images/TOM.png" alt="Mon Icone" style="transform: rotate(90deg);">
-
+<!-- canvas avec une image a l'interieur-->
         <h2>Le canvas</h2>
-             
              <canvas id="CanvasTOM" width="300" height="200" style="border:1px solid #000000; transform: rotate(90deg);"></canvas>
                     <script type="text/javascript">
                         var canvasTOM = document.getElementById("CanvasTOM");
@@ -679,6 +680,7 @@
 				objImg.width=canvasimage.width/2;
 				objImg.height=canvasimage.height/2;
 				ctx.drawImage(objImg,(canvasimage.width-objImg.width)/2, (canvasimage.height-objImg.height)/2,objImg.width, objImg.height);
+				//objImg.onload signifie quand l'objImg charge 
 				objImg.onload = function()
 				{
 					ctx.drawImage(objImg,0,0);
@@ -691,7 +693,7 @@
 				}
 			}
 		</script>
-
+		<!-- canavs d'un petit bateau en dessinant les trais-->
 		<h2>petit bateau</h2>
 		<canvas id="petitbateau" width="400" height="400" style="border: solid 1px black;"></canvas>
 		<script type="text/javascript">
@@ -730,7 +732,7 @@
         	mer.stroke();
         </script>
         <hr>
-
+        <!-- canavas avec les anneaux des jeux olympique -->
         <h2>anneaux des jeux olymique</h2>
         <canvas id="jo" width="400" height="300" style="border: solid 1px black;"></canvas>
 		<script type="text/javascript">
