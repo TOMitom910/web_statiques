@@ -2,10 +2,10 @@
 // première fonction qui premet de calculer la somme des 3 nombres saisie pas l'utilisateur et l'affiche
 function calculsomme()
 {
-	nbr1=Number(document.getElementById("nbr1").value);
+	nbr1=Number(document.getElementById("nbr1").value);	//number permet de definir la valeur comme un nombre 
 	nbr2=Number(document.getElementById("nbr2").value);
 	nbr3=Number(document.getElementById("nbr3").value);
-	somme = nbr1+nbr2+nbr3;
+	somme = nbr1+nbr2+nbr3;	//somme des 3 nombres
 	document.getElementById("somme").value=somme;
 }
 
@@ -15,7 +15,7 @@ function calculproduit()
 	nbr1=Number(document.getElementById("nbr1").value);
 	nbr2=Number(document.getElementById("nbr2").value);
 	nbr3=Number(document.getElementById("nbr3").value);
-	produit = nbr1*nbr2*nbr3;
+	produit = nbr1*nbr2*nbr3;	// produit des 3 nombres
 	document.getElementById("produit").value=produit;
 }
 
@@ -25,7 +25,7 @@ function calculmoy()
 	nbr1=Number(document.getElementById("nbr1").value);
 	nbr2=Number(document.getElementById("nbr2").value);
 	nbr3=Number(document.getElementById("nbr3").value);
-	moy = (nbr1+nbr2+nbr3)/3;
+	moy = (nbr1+nbr2+nbr3)/3;	// moyenne des 3 nombres
 	document.getElementById("moyenne").value=moy;
 }
 
@@ -36,7 +36,7 @@ function calculmax()
 	nbr2=Number(document.getElementById("nbr2").value);
 	nbr3=Number(document.getElementById("nbr3").value);
 	TabNombre=[nbr1,nbr2,nbr3];
-	max=nbr1;
+	max=nbr1; // if pour verifier lequel des nombres est le plus grand
 	if (nbr2>max) 
 	{
 		max=nbr2;
@@ -53,8 +53,8 @@ function prixTVA()
 	prixHorsTaxe=Number(document.getElementById("prixHT").value);
 	nbrArticle =Number(document.getElementById("article").value);
 	tauxTva =Number(document.getElementById("TauxTVA").value);
-	console.log(tauxTva);
-	tauxTTC=((prixHorsTaxe*tauxTva)+ (prixHorsTaxe*nbrArticle));
+	console.log(tauxTva);	//console.log pour verifier si le taux de TVA est bien pris en compte
+	tauxTTC=((prixHorsTaxe*tauxTva)+ (prixHorsTaxe*nbrArticle));	//calcul pour avoir le prix total
 	document.getElementById("prixTTC").value=tauxTTC+" €";
 
 }
@@ -67,7 +67,7 @@ function validation()
 			alert("ce n'est pas un verbe du premier groupe");
 			Verbe=prompt(" quel est votre verbe ?");
 			document.getElementById("verbe").value=Verbe;
-			TabVerbe=[Verbe.substring(Verbe.length-2,Verbe.length)];	
+			TabVerbe=[Verbe.substring(Verbe.length-2,Verbe.length)];	//tableau contenant la terminaison du verbe saisie par l'utilisateur
 		}
 	}
 
@@ -76,12 +76,13 @@ function conjugaison()
 {
 	
 	Verbe=document.getElementById("verbe").value;
-	TabVerbe=[Verbe.substring(Verbe.length-2,Verbe.length)];
+	TabVerbe=[Verbe.substring(Verbe.length-2,Verbe.length)];	//tableau contenant la terminaison du verbe saisie par l'utilisateur
 	validation(); // permet d'appeler la fonction validation si-dessus
-	baseVerbe=Verbe.substring(0,Verbe.length-2);
+	baseVerbe=Verbe.substring(0,Verbe.length-2);	// variable qui stock le radical du verbe saisie par l'utilisateur
 	TabPersonne=["je ","tu ","il, elle, on ","nous ","vous ","ils, elles "]; // creation de tableau pour les personnes
 	TabTerminaison=["e","es","e","ons","ez","ent"]; // création de tableau pour les terminaison
 
+	//	if qui permet de remplacer le je par j' si le verbe commence par une voyelle
 	if (Verbe.substring(0,1)=="a" || Verbe.substring(0,1)=="e" || Verbe.substring(0,1)=="i" || Verbe.substring(0,1)=="o" || Verbe.substring(0,1)=="u" || Verbe.substring(0,1)=="y" ) 
 	{
 		TabPersonne[0]="j'";
@@ -167,6 +168,7 @@ function child()
 	}
 }
 
+// fonction qui donne une categorie au enfant entre 6 et 18 ans avec un switch case
 function enfant ()
 {
 	child();
@@ -189,7 +191,7 @@ function enfant ()
 	}
 }
 
-
+// fonction qui permet de verifier si le nombre est bien entre 1 et 5 
 function nombreStyle ()
 {
 	x = Number(document.getElementById("textStyle").value);
@@ -204,7 +206,7 @@ function nombreStyle ()
 	}
 }
 
-nbralea = Math.round(Math.random() * 100) + 1;
+nbralea = Math.round(Math.random() * 100) + 1; // variable avec un nombre créer aléatoirement entre 1 et 100
 y = 0;
 function justeNombre ()
 {
@@ -226,12 +228,13 @@ function justeNombre ()
 	}
 }
 
-
+// fonction pour pouvoir abandonner au juste Nombre qui donne le nombre quand on clique sur le bouton pour abandonner
 function abandon ()
 {
 	document.getElementById("verifNombre").value=("le nombre était " + nbralea);
 }
 
+// fonction avec un switch case pour obtenir le mois de l'année grace a son chiffre 
 function moisAnnée ()
 {
 	mois = document.getElementById("nombreMois").value;
