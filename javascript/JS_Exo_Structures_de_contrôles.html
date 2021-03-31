@@ -155,14 +155,67 @@
 		<section id="Exo_11">
 			<fieldset>
 				<legend>Exercice 11 : donner le jour suivant </legend>
-				<input type="text" id="jourSuivant" name="jourSuivant" placeholder="veuillez saisir le jour " size="">
+				<input type="text" id="joursuivant" name="joursuivant" placeholder="veuillez saisir le jour " size="25">
+				<select type="text" name="moisuivant" id="moisuivant">
+					<option selected>choisir le mois auquel vous êtes</option>
+			  		<option value="0">Janvier</option>
+			  		<option value="1">Février</option>
+			  		<option value="2">Mars</option>
+			  		<option value="3">Avril</option>
+			  		<option value="4">Mai</option>
+			  		<option value="5">Juin</option>
+			  		<option value="6">Juillet</option>
+			  		<option value="7">Aoùt</option>
+			  		<option value="8">Septembre</option>
+			  		<option value="9">Octobre</option>
+			  		<option value="10">Novembre</option>
+			  		<option value="11">Décembre</option>
+				</select>
+				<input type="text" id="anneesuivant" name="annéesuivant" placeholder="veuillez saisir l'année" size="25">
+				<button onclick="jourSuivant()">cliquez pour avoir le jour qui suit</button>
+				<input type="text" id="JourSuivant" name="JourSuivant" size="20">
+			</fieldset>
+		</section>
+
+		<section id="Exo_12">
+			<fieldset>
+				<legend>Exercice 12 : boulangerie</legend>
+				<input type="text" id="heure" name="heure" placeholder="veuillez entrer l'heure a laquel vous souhaitez passer à la boulangerie"><br>
+
+				<select type="text" name="jourBoulangerie" id="jourBoulangerie" >
+					<option selected>choisir le jour de la semaine auquel vous voulez passer</option>
+			  		<option value="0">Lundi</option>
+			  		<option value="1">Mardi</option>
+			  		<option value="2">Mercredi</option>
+			  		<option value="3">Jeudi</option>
+			  		<option value="4">Sendredi</option>
+			  		<option value="5">Samedi</option>
+			  		<option value="6">Dimanche</option>
+				</select>
+				<button onclick="boulangerie()">cliquez pour voir si la boulangerie est ouverte ou pas. </button>
+				<input type="text" id="ouverture" name="ouverture" size="20">
 
 			</fieldset>
 		</section>
+
+
+		<section id="Exo_13">
+			<fieldset>
+				<legend>Exercice 13 : auberge </legend>
+				<input type="text" id="auberge" name="auberge" placeholder="veuillez entrer votre age" size="20">
+				<input type="text" id="bagage" name="bagage" placeholder="veuillez entre le poids de vos bagages" size="30">
+				<button onclick="aubergeDeLile()">cliquez pour avoir le prix de votre chambre</button>
+				<input type="text" id="prixauberge" name="prixauberge" size="30">
+			</fieldset>
+		</section>
 	</main>
-				<!--javascript et style pour l'intervale 1 a 5
-boulangerie fonction ESTouverte qui renvoie un bouléen et on peut le faire en une ligne en reflechissant bien-->
-<!-- moi paires et les mois impaires ont ne peut pas saisir un jour après 31, le mois sera une valeur de 1 a 12 puis valider, 1,3,5,7,8,10,12, max 31 et pour les autres max 30, boucle de validation, apres on saisie une valeur qui va bien si la valeur saisie est la maximum le jur suivant est le premier de celui d'apres, fevrier  a soit 28 soit 29 jours divisible par 4 et par 400 mais pas par 100 si anné bisex alors on passe a 1mars si la date saisie est le 31 decembre alors il faut passer a 1,1 et année + 1 -->
+
+<!-- mois paires et les mois impaires ont ne peut pas saisir un jour après 31, le mois sera une valeur de 1 a 12 puis valider, 1,3,5,7,8,10,12, max 31 et pour les autres max 30, boucle de validation, apres on saisie une valeur qui va bien si la valeur saisie est la maximum le jur suivant est le premier de celui d'apres, fevrier  a soit 28 soit 29 jours divisible par 4 et par 400 mais pas par 100 si anné bisex alors on passe a 1mars si la date saisie est le 31 decembre alors il faut passer a 1,1 et année + 1 -->
+
+
+<!-- boulangerie il faut savoir si on est lundi aprem ou mardi premiere entrée l'heure deuxieme entrer le jour , select pour afficher et recuperer lundi a 0 j'usqu'a dimanche a 7 il faut passer les 2 valeurs dans une fonction(c'est une expression booléenne) 7h a 13h et de 16h a 20h -->
+
+<!-- auberge var age, var bagage  -->
 	<hr>
 	<a href="../index.html">Cliquez pour retourner a la page d'accueil</a>
 	<hr>		

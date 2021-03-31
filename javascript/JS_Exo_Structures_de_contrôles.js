@@ -280,3 +280,72 @@ function moisAnnée ()
 		document.getElementById("moisValider").value=("ce n'est pas un mois");
 	}
 }
+
+function jourSuivant()
+{
+	mois=0;
+	jour = Number(document.getElementById("joursuivant").value);
+	mois = document.getElementById("moisuivant").value;
+	annee = Number(document.getElementById("anneesuivant").value);
+	if (((mois==0) || (mois==2) || (mois==4) || (mois==6) || (mois==7) || (mois==9)) && (jour==31))
+	{
+		mois+=2;
+		document.getElementById("JourSuivant").value=("Nous sommes le 01/"+mois+"/"+annee)
+	}
+}
+
+
+function boulangerie()
+{
+	heure = document.getElementById("heure").value;
+	jour = document.getElementById("jourBoulangerie").value;
+	if ((jour == 0) && (heure >= 7) && (heure <=13)) 
+	{
+		document.getElementById("ouverture").value=("la boulangerie est ouverte ");
+	}
+
+	if ((jour == 0) && (heure >= 16) && (heure <=20)) 
+	{
+		document.getElementById("ouverture").value=("la boulangerie est fermée");
+	}
+
+	else if (((heure >= 7) && (heure <= 13)) || ((heure >= 16) && (heure <=20)))
+	{
+		document.getElementById("ouverture").value=("la boulangerie est ouverte");
+	}
+
+	if (jour == 1)
+	{
+		document.getElementById("ouverture").value=("la boulangerie est fermée ");
+	}
+
+	else
+	{
+		document.getElementById("ouverture").value=("la boulangerie est fermée");
+	}
+}
+
+
+function aubergeDeLile()
+{
+	écus = 0;
+	client = document.getElementById("auberge").value;
+	poids = document.getElementById("bagage").value;
+	if (client == 60)
+	{
+		écus+=0;
+	}
+	if (client < 10)
+	{
+		écus+=5;
+	}
+	if ((client > 10) &&  (client <60) || (client >60)) 
+	{
+		écus+=30;
+	}
+	if (poids >= 20)
+	{
+		écus+=10
+	}
+	document.getElementById("prixauberge").value=("le prix de votre chambre est :" + écus + " écus");
+}
