@@ -1,0 +1,14 @@
+/* css pour le styles des fieldset */
+fieldset
+		{
+			border: dashed 3px darkgreen;
+			width: 20%; 
+			margin: auto;
+		}
+/* css pour le style de la page  */
+.page 
+		{
+			width: 400px;
+			margin: auto;
+			text-align: center;
+		}

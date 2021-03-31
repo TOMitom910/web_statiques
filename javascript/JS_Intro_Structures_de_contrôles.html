@@ -1,0 +1,300 @@
+<!DOCTYPE html><!-- ceci n'est pas une balise mais une directive
+	Indique la version de HTML utilisée : HTML5
+-->
+<!-- ceci est un commentaire-->
+<html>
+<head> <!-- en-tête de la page-->
+	<title></title>
+	<!--encodage de la page-->
+	<meta charset="utf-8"> 
+	<!--intégrer un fichier CSS externe-->
+	<!--<link rel="stylesheet" type="text/css" href="..css/monstyle.css">-->
+	<!--Afficher une image dans l'onglet de sa page-->
+	<link rel="shortcut icon" type="image/c-icon" href="../images/TOM.png">
+	
+	<style type="text/css">
+		
+	</style>
+	
+</head>
+<body onload="testTernaire();testTernaire2();tableMultipication();tablesMultipication();alerter();paires();multiple();verif();Note()">
+<!-- corps de la page -->
+	<header>
+		<img src="../images/TOM.png" width="150">
+	</header>
+	<hr>
+
+	<main>
+		<script type="text/javascript">
+			//Les structures de contrôle:
+			x = prompt ("votre age?","age");
+			if ( x < 40) 
+			{ 
+				alert ('vous êtes jeune') ; 
+			}
+			else 
+			{ 
+				alert ('vous êtes vieux') ; 
+			}
+
+			//la ternaire est l'équivalent de l'alternative : if(....){}else{}
+			//Le prompt sert à ouvrir une boite de dialogue dans laquelle l'utilisateur saist une valeur.
+			//Regarder le type de la valeur retournée...
+			function testTernaire()
+			{
+				x = prompt ("votre age?","age");
+				// en utilisant if et else : 
+				if(x<40)
+				{
+					alert('vous êtes jeune');
+				}
+				else
+				{
+					alert('vous êtes vieux');
+				}
+				// en utilisant la ternaire :
+				//age = (x < 40)? "jeune" : "vieux";
+				//alert ('vous êtes ' + age) ; 
+				//console.log(typeof(age));
+			}
+
+			function testTernaire2()
+			{
+				x = prompt ("votre age?","age");
+				//en utilisant if et else :
+				if(x<40)
+				{
+					alert("vous êtes jeune");
+				} 
+				if(x>40 && x<60)
+				{
+					alert("vous êtes Expérimenté");
+				}
+				if(x>60)
+				{
+					alert("vous êtes vieux");
+				}
+
+				// en utilisant la ternaire :
+				//age = (x < 40)? "jeune" : (x < 60)? "Expérimenté": "vieux";
+				//alert ('vous êtes ' + age);
+				//console.log(typeof(age)); 
+			}
+			
+			//table de multiplication de notre choix avec la boucle for
+			function tableMultipication()
+			{
+				x = prompt ("votre nombre?","Entier");
+				document.write("<h3>Table de multiplication</h3>");
+				for (i=1;i<=10;i++)
+				{
+					document.write(x+" * "+i+"="+x*i,"<BR/>");
+				}
+			}
+
+			//	tables de multiplication de 1 à 10 avec deux boucle for
+			function tablesMultipication()
+			{
+				document.write("<h3>Ensemble des Tables de multiplication</h3>");
+				for (i=1;i<=10;i++)
+				{
+					document.write("<strong><em>Table des ", i," :</em></strong><BR/>");
+					for (j=1;j<=10;j++)
+					{
+						document.write("\t",i+" * "+ j +" = "+j*i,"<BR/>");
+					}
+				}
+			}
+
+			//Ecrire une Boucle d'inversion (au lieu d'afficher les valeurs paires entre 0 et 100,les afficher de 100 à O. Attention, la boucle fonctionne toujours par indice croissant)
+
+			
+			function paires()
+			{
+				for(i=1;i<=101;i=i+2)
+				{
+					console.log(101-i);
+					document.write(101-i);
+				}
+			}
+			
+
+			
+			function paires()
+			{
+				for(i=1;i<=102;i++)
+				{
+					if(i%2==0)//i%2 signifie modulo en algo, si on renvoie 0 cela signifie que la nombre est pair
+					{
+					console.log(102-i);
+					document.write(102-i);
+					}
+				}
+			}
+			
+
+			
+			function paires()
+			{
+				cpt=100;
+				while(cpt>=0)
+				{
+					if(cpt%2==0)
+					{
+						console.log(cpt);
+					}
+				cpt=cpt-1;
+				}
+			}
+			
+
+			// autre facon de faire une boucle de décrementation
+			cpt=100;
+			while(cpt>=0)
+			{
+				console.log(cpt);
+				cpt-=2;
+			}
+
+		// methode pour une boucle 
+			
+			var i =1;
+			for(	;i<=10;i++)
+			{
+				console.log(i);
+			}
+			
+
+				
+			//Utilisation de break et continue
+			//exercice :
+			//Afficher les multiples de 3 et 9 compris entre 0 et 100
+			//Ne pas afficher les multiples de 10
+			//et afficher 100 en gras
+
+			function multiple()
+			{
+				for(i=1;i<=200;i++)
+				{					
+					if(i%100==0)
+					{
+						document.write("<strong>",i,"</strong>")
+						break;
+					}
+					if(i%10==0)
+					{
+						continue;
+					}
+					if((i%3==0)||(i%9==0))
+					{
+						document.write(i);
+						console.log(i);
+					}
+
+				}
+			}
+
+			//Les boîtes de dialogue
+			//Après prompt, voici confirm
+
+			
+			function alerter()
+			{
+				document.write('<h2>Boîtes de dialogue</h2>')
+				x = prompt ("votre nombre ?","Entier");
+				alert ('Le nombre saisi est ' + x) ;
+				taille = prompt ("votre taille ?","Entier en cms");
+				y = confirm ('Votre taille est bien ' + taille + ' ?') ;
+				alert('Votre taille est ' + taille + ' : '+ y);
+			}
+			
+
+			// verification d'age à l'aide de parseInt et de isNaN 
+			function verif()
+			{
+				x = prompt ("quel est votre age ?","age");
+				y = parseInt(x);	//parseInt permet de definir si la valeur rentrer est un nombre ou pas
+				while(isNaN(y))	//isNan permet de verifier si la valeur renvoie NaN(Not a Number) ou pas
+				{
+					alert("ce n'est pas un nombre");
+					x = prompt (" quel est votre age ?","age");
+					y = parseInt(x);	
+				}
+					age = (x < 40)? "jeune" : "vieux";
+					alert ('vous êtes ' + age) ;
+			}
+		
+			/*Exercice :
+			Demander à l’utilisateur de saisir une note entre 0 et 20.
+			Valider sa saisie avec boucle while (valeur entière entre 0 et 20)
+			Puis en fonction de la note, afficher la mention
+			Note <= 6 : Recalé
+			Note <= 8 : Rattrapage
+			Note <= 10 : Admis
+			Note <= 12 : Passable
+			Note <= 14 : Assez Bien
+			Note <= 16 : Bien
+			Note <=20 : Félicitation*/
+
+			//Switch....case
+			function validation()
+			{
+				x = prompt ("quel est votre note ?","note");
+				y = parseInt(x);	
+				while((isNaN(y))&&((x>0)&&(x<20)))	
+				{
+					alert("ce n'est pas un nombre");
+					x = prompt (" quel est votre note ?","note");
+					y = parseInt(x);	
+				}
+			}
+			function Note()
+			{
+				validation();
+				switch(true) 
+				{
+					
+					case 1:
+					case 2:
+					case 3:
+					case 4:
+					case 5:
+					case 6:
+					console.log("recalé");
+					break;
+					
+					case x<=6: 
+					console.log("recalé");
+					break;
+					case x<=8: 
+					console.log("Rattrapage");
+					break;
+					case x<=10: 
+					console.log("Admis");
+					break;
+					case x<=12: 
+					console.log("Passable");
+					break;
+					case x<=14: 
+					console.log("Assez Bien");
+					break;
+					case x<=16: 
+					console.log("Bien");
+					break;
+					case x<=20: 
+					console.log("Félicitations");
+					break;
+					default:alert("chiffre impossible");
+				}
+			}
+		</script>
+	</main>
+
+	<hr>
+	<footer>
+		<a href="http://copyright.be" target="_blank">Copyright © 2020 - Tous droits réservés</a><br/>
+		<a href="mailto:t.lejeune@ludus-academie.com?subject=test_envoi"....> envoyez-moi un mail pour plus d'information</a>
+	</footer>
+
+</body>
+</html>

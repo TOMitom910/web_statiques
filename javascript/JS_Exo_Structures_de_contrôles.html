@@ -1,0 +1,166 @@
+<!DOCTYPE html><!-- ceci n'est pas une balise mais une directive
+	Indique la version de HTML utilisée : HTML5
+-->
+<!-- ceci est un commentaire-->
+<html>
+<head> <!-- en-tête de la page-->
+	<title></title>
+	<!--encodage de la page-->
+	<meta charset="utf-8"> 
+	<!--intégrer un fichier CSS externe-->
+	<link rel="stylesheet" type="text/css" href="../cours_css/JS_Exo__Structures_de_controles.css">
+	<!--Afficher une image dans l'onglet de sa page-->
+	<link rel="shortcut icon" type="image/c-icon" href="../images/TOM.png">
+	<script type="text/javascript" src="JS_Exo_Structures_de_contrôles.js"></script>
+</head>
+<body class="page">
+<!-- corps de la page -->
+	<header>
+		<img src="../images/TOM.png" width="150">
+	</header>
+	<hr>
+	<main>
+		<!-- premier exercice où il faut calculer la somme, le produit, la moyenne et la valeur maximal -->
+		<section id="Exo_1">
+			<fieldset>
+				<legend>Exercice 1 : somme,produit,moyenne et max</legend>
+				<!-- plusieurs input qui permettent à l'utilisateur de saisir les nombres -->
+				<input type="text" id="nbr1" name="zone1" placeholder="Saisir nombre 1"value="" maxlength="10" size="10"><br>
+				<input type="text" id="nbr2" name="zone2" placeholder="Saisir nombre 2"value="" maxlength="10" size="10"><br>
+				<input type="text" id="nbr3" name="zone3" placeholder="Saisir nombre 3"value="" maxlength="10" size="10"><br> 
+				<hr>
+
+				<button onclick="calculsomme()">cliquez pour la somme des 3 nombres</button>
+				<input type="text" id="somme" name="sommefinal" size="5"><br>
+
+				<button onclick="calculproduit()">cliquez pour le produit des 3 nombres</button>
+				<input type="text" id="produit" name="produitfinal" size="5"><br>
+
+				<button onclick="calculmoy()">cliquez pour la moyenne des 3 nombres</button>
+				<input type="text" id="moyenne" name="moyennefinal" size="5"><br>
+
+				<button onclick="calculmax()">cliquez pour le nombre max des 3</button>
+				<input type="text" id="maximum" name="maximumfinal" size="5" ><br>
+			</fieldset>
+		</section>
+
+		<!-- exercice 2 où il faut calculer le prix total d'un ou de plusieurs articles avec le pris hors taxes, le nombre d'articles et le taux de TVA correspondant -->
+		<section id="Exo_2">
+			<fieldset>
+				<legend>Exercice 2 : TVA</legend>
+				<input type="text" id="prixHT" name="prixHT" placeholder="veuillez entrer le prix Hors Taxe de votre article" size="40">
+				<input type="text" id="article" name="article" placeholder="veuillez entrer le nombre d'article" size="30">
+				<fieldset>
+					<legend>TVA</legend><!-- utilisation d'un select avec option pour la selection des taux de TVA -->
+					<select type="text" name="TauxTVA" id="TauxTVA" size="6">
+						<option selected>choisir le Taux de TVA</option>
+				  		<option value="0.021">2.1%</option>
+				  		<option value="0.055">5.5%</option>
+				  		<option value="0.1">10%</option>
+				  		<option value="0.2">20%</option>
+					</select>
+				</fieldset>
+				<!--//onchange ou onselectchange a partir de la on lance le calcul,onblur on quite le champ, onfocus on met le curseur sur le champs-->
+				<input onfocus="prixTVA()" type="text" id="prixTTC" name="TTC" size="6"placeholder="cliquez">
+			</fieldset>
+		</section>
+
+		<!--//exo francais :substr ou substring, sous chaine pour, on peut mettre un bouton, on affiche le verbe dans une textarea, saut de ligne pour chaque personne, on peut changer juste la terminaison en la metant en gras et d'une  certaine couleur , on peut utiliser un tableau avec la personne et le radical ou on peut faire une boucle-->
+
+		<!-- exercice 3 sur le verbe du premier groupe où il y à une verification si le verbe est bien du premier groupe-->
+		<section id="Exo_3">
+			<fieldset>
+				<legend>Exercie 3 : verbe du premier groupe</legend>
+				<input type="text" id="verbe" name="verbe" size="11" placeholder="entrer votre verbe">
+				<button onclick="conjugaison()">cliquez pour valider</button><hr>
+				<textarea id="conjugfin" rows="5" cols="25" placeholder="voici votre verbe conjugez a la première personne du singulier"></textarea>
+			</fieldset>
+		</section>
+
+
+		<!-- exercice 4 où le programme afiche les initiales du nom et du prenom entrer par l'utilisateur -->
+		<section id="Exo_4">
+			<fieldset>
+				<legend>Exercice 4 : initiales</legend>
+				<input type="text" id="prenom" name="prenom" placeholder="prenom" size="5">
+				<input type="text" id="nom" name="nom" placeholder="nom" size="5"><br>
+				<button onclick="initiales()">cliquez pour avoir vos initilaes</button><br>
+				<input type="text" id="init" name="init" size="15">
+			</fieldset>
+		</section>
+
+		<!-- exercice 5 où le programme verifie si le mot entrer par l'utilisateur est un palindrome ou pas -->
+		<section id="Exo_5">
+			<fieldset>
+				<legend>Exercice 5 : palindrome</legend>
+				<input type="text" id="mot" name="mot"placeholder="entrer votre palindrome"><br>
+				<button onclick="palindrome()">cliquez pour verifier si votre mot est un palindrome</button><br>
+				<input type="text" id="palindrome" name="palindrome">
+			</fieldset>
+		</section>
+
+		<!-- exercice incomplet qui ne fonctionne pas et par manque de temps je n'ai pas pus le finir -->
+		<!--<section id="Exo_6">
+			<fieldset>
+				<legend>Exercice 6 : moyenne des entiers positifs</legend>
+				<input type="text" id="nbr1positif" name="positif1" placeholder="Saisir nombre 1"value="" size="10"><br>
+				<input type="text" id="nbr2positif" name="positif2" placeholder="Saisir nombre 2"value="" size="10"><br>
+				<input type="text" id="nbr3positif" name="positif3" placeholder="Saisir nombre 3"value="" size="10"><br>
+				<input type="text" id="nbr4positif" name="positif4" placeholder="Saisir nombre 4"value="" size="10"><br>
+				<button onclick="positif()">cliquez pour avoir la moyenne des nombres positifs</button><br>
+				<input type="text" id="moypositif" name="moypositif" size="10">
+			</fieldset>
+		</section>-->
+
+		<!-- exercice 7 où le programme suite a l'age entrer par l'utilisateur donne une categorie au enfant de 6 à 18 ans -->
+		<section id="Exo_7">
+			<fieldset>
+				<legend>Exercice 7 : categorie des enfant</legend>
+				<input type="text" id="categorieEnfant" name="categorieEnfant" placeholder="saisir age " size="10"><br>
+				<button onclick="enfant()">cliquez pour avoir votre categorie</button><br>
+				<input type="text" id="categorieFinal" name="categorieFinal" size="10">
+			</fieldset>
+		</section>
+
+		<!-- exercice 8 où il y a une verification si le nombre est dans la bonne intervalle ou pas, on le remarque avec la bordure et le fond de la zone de saisie qui change -->
+		<section id="Exo_8">
+			<fieldset>
+				<legend>Exercice 8 : verifier qu'un nombre est bien dans la zone où il doit être</legend>
+				<input type="text" id="textStyle" name="textStyle" placeholder="saisir chiffre entre 1 et 5"><br>
+				<button onclick="nombreStyle()"> cliquez pour voir si votre nombre convient</button>
+			</fieldset>
+		</section>
+
+		<!-- exercice 9 où il faut trouver le nombre exacte entre 1 et 100 -->
+		<section id="Exo_9">
+			<fieldset>
+				<legend>Exercice 9 : trouvez le nombre exacte entre 1 et 100</legend>
+				<input type="text" id="nombreEntrer" name="nombreEntrer" placeholder=" veuillez saisir un nombre entre 1 et 100" size="30"><br>
+				<button onclick="justeNombre()">cliquez pour verifier votre nombre</button><br>
+				<input type="text" id="verifNombre" name="verifNombre" size="50"><br>
+				<button onclick="abandon()">abandon</button>
+			</fieldset>
+		</section>
+
+		<!-- exercice 10 où le nom du mois de l'année est donné apres que l'utilisateur est rentré son chifre -->
+		<section id="Exo_10">
+			<fieldset>
+				<legend>Exercice 10 : avoir le nom du mois avec son chiffre </legend>
+				<input type="text" id="nombreMois" name="nombreMois" placeholder="veuillez saisir le nombre de votre mois" size="30"><br>
+				<button onclick="moisAnnée()">cliquez pour valider</button><br>
+				<input type="text" id="moisValider" name="moisValider" size="30">
+			</fieldset>
+		</section>
+		
+	</main>
+				<!--javascript et style pour l'intervale 1 a 5
+
+				boulangerie fonction ESTouverte qui renvoie un bouléen et on peut le faire en une ligne en reflechissant bien-->
+	<hr>
+	<footer>
+		<a href="http://copyright.be" target="_blank">Copyright © 2020 - Tous droits réservés</a><br/>
+		<a href="mailto:t.lejeune@ludus-academie.com?subject=test_envoi"....> envoyez-moi un mail pour plus d'information</a>
+	</footer>
+
+</body>
+</html>
