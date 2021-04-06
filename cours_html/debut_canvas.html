@@ -774,6 +774,82 @@
 		    flame.lineWidth=5;
 		    flame.stroke();
 	</script>
+	
+	<h2>Canvas carré</h2>
+	<canvas id="carre" width="400" height="400" style="border: solid 1px black; background-color: red;"></canvas>
+	<script type="text/javascript">
+		var carre = document.getElementById("carre");
+
+		var sortieCarre = carre.getContext("2d");
+
+		sortieCarre.beginPath();
+		sortieCarre.lineWidth=10;
+		sortieCarre.moveTo(100,300);
+		sortieCarre.lineTo(300,300);
+		sortieCarre.lineTo(300,500);
+		sortieCarre.lineTo(100,500);
+		sortieCarre.lineTo(100,295);
+		sortieCarre.fillStyle= "#FFFF00";	// definir la couleur a l'interieur de la formes géometriques
+		sortieCarre.fill();	
+		sortieCarre.strokeStyle = "#FFFFFF";	//definir la couleur des bords
+		sortieCarre.stroke();
+	</script>
+
+	<h2>Canvas Polygone à 6 cotés</h2>
+	<canvas id="polygone" width="400" height="400" style="border: solid 1px black;"></canvas>
+	<script type="text/javascript">
+		var polygone = document.getElementById("polygone");
+
+		var dessinPoly = polygone.getContext("2d");
+
+		dessinPoly.beginPath();
+		dessinPoly.lineWidth = 3;
+		dessinPoly.moveTo(0,200);
+		dessinPoly.lineTo(100,0);
+		dessinPoly.lineTo(300,0);
+		dessinPoly.lineTo(400,200);
+		dessinPoly.lineTo(300,400);
+		dessinPoly.lineTo(100,400);
+		dessinPoly.lineTo(0,200);
+		dessinPoly.strokeStyle = "#FF0000";
+		dessinPoly.stroke();
+	</script>
+
+	<!-- a finir car incomplet -->
+	<!--<h2>Canvas spyrographe</h2>
+	<canvas id="spyrographe" width="400" height="400" style="border: solid 1px black;"></canvas>
+	<script type="text/javascript">
+		var spyrographe = document.getElementById("spyrographe");
+
+		var dessinSpyrographe=spyrographe.getContext("2d");
+
+		function drawSpirograph(ctx, R, r, O)
+		{
+             var x1 = R-O;
+             var y1 = 0;
+             var i  = 1;
+             ctx.beginPath();
+             ctx.moveTo(x1, y1);
+             do {
+                 if (i > 20000) break;
+                 var x2 = (R+r)*Math.cos(i*Math.PI/72) - (r+O)*Math.cos(((R+r)/r)*(i*Math.PI/72))
+                 var y2 = (R+r)*Math.sin(i*Math.PI/72) - (r+O)*Math.sin(((R+r)/r)*(i*Math.PI/72))
+                 ctx.lineTo(x2, y2);
+                 x1 = x2;
+                 y1 = y2;
+                 i++;
+             } while (x2 != R-O && y2 != 0);
+             ctx.stroke();
+   		}
+
+   		function draw()
+   		{
+   			drawSpirograph(dessinSpyrographe,25,15,12);
+   		}
+
+   		window.onload=draw();
+	</script>-->
+
 		
 	</main>
 	<hr>

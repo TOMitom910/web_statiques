@@ -25,9 +25,9 @@
 			<fieldset>
 				<legend>Exercice 1 : somme,produit,moyenne et max</legend>
 				<!-- plusieurs input qui permettent à l'utilisateur de saisir les nombres -->
-				<input type="text" id="nbr1" name="zone1" placeholder="Saisir nombre 1"value="" maxlength="10" size="10"><br>
-				<input type="text" id="nbr2" name="zone2" placeholder="Saisir nombre 2"value="" maxlength="10" size="10"><br>
-				<input type="text" id="nbr3" name="zone3" placeholder="Saisir nombre 3"value="" maxlength="10" size="10"><br> 
+				<input type="number" id="nbr1" name="zone1" placeholder="Saisir nombre 1"value=""  size="10"><br>
+				<input type="number" id="nbr2" name="zone2" placeholder="Saisir nombre 2"value=""  size="10"><br>
+				<input type="number" id="nbr3" name="zone3" placeholder="Saisir nombre 3"value=""  size="10"><br> 
 				<hr>
 
 				<button onclick="calculsomme()">cliquez pour la somme des 3 nombres</button>
@@ -48,8 +48,8 @@
 		<section id="Exo_2">
 			<fieldset>
 				<legend>Exercice 2 : TVA</legend>
-				<input type="text" id="prixHT" name="prixHT" placeholder="veuillez entrer le prix Hors Taxe de votre article" size="40">
-				<input type="text" id="article" name="article" placeholder="veuillez entrer le nombre d'article" size="30">
+				<input type="number" id="prixHT" name="prixHT" placeholder="prix Hors Taxe" size="40">
+				<input type="number" id="article" name="article" placeholder="nombre d'article" size="30">
 				<fieldset>
 					<legend>TVA</legend><!-- utilisation d'un select avec option pour la selection des taux de TVA -->
 					<select type="text" name="TauxTVA" id="TauxTVA" size="6">
@@ -100,23 +100,24 @@
 		</section>
 
 		<!-- exercice incomplet qui ne fonctionne pas et par manque de temps je n'ai pas pus le finir -->
-		<!--<section id="Exo_6">
+		<section id="Exo_6">
 			<fieldset>
 				<legend>Exercice 6 : moyenne des entiers positifs</legend>
-				<input type="text" id="nbr1positif" name="positif1" placeholder="Saisir nombre 1"value="" size="10"><br>
+				<h3 id="moypositif"></h3>
+				<!--<input type="text" id="nbr1positif" name="positif1" placeholder="Saisir nombre 1"value="" size="10"><br>
 				<input type="text" id="nbr2positif" name="positif2" placeholder="Saisir nombre 2"value="" size="10"><br>
 				<input type="text" id="nbr3positif" name="positif3" placeholder="Saisir nombre 3"value="" size="10"><br>
-				<input type="text" id="nbr4positif" name="positif4" placeholder="Saisir nombre 4"value="" size="10"><br>
-				<button onclick="positif()">cliquez pour avoir la moyenne des nombres positifs</button><br>
-				<input type="text" id="moypositif" name="moypositif" size="10">
+				<input type="text" id="nbr4positif" name="positif4" placeholder="Saisir nombre 4"value="" size="10"><br>-->
+				<button onclick="MoyNbPo()">cliquez pour avoir la moyenne des nombres positifs</button><br>
+				<!--<input type="text" id="moypositif" name="moypositif" size="10">-->
 			</fieldset>
-		</section>-->
+		</section>
 
 		<!-- exercice 7 où le programme suite a l'age entrer par l'utilisateur donne une categorie au enfant de 6 à 18 ans -->
 		<section id="Exo_7">
 			<fieldset>
 				<legend>Exercice 7 : categorie des enfant</legend>
-				<input type="text" id="categorieEnfant" name="categorieEnfant" placeholder="saisir age " size="10"><br>
+				<input type="number" id="categorieEnfant" name="categorieEnfant" placeholder="saisir age " size="10"><br>
 				<button onclick="enfant()">cliquez pour avoir votre categorie</button><br>
 				<input type="text" id="categorieFinal" name="categorieFinal" size="10">
 			</fieldset>
@@ -126,7 +127,7 @@
 		<section id="Exo_8">
 			<fieldset>
 				<legend>Exercice 8 : verifier qu'un nombre est bien dans la zone où il doit être</legend>
-				<input type="text" id="textStyle" name="textStyle" placeholder="saisir chiffre entre 1 et 5"><br>
+				<input type="number" id="textStyle" name="textStyle" placeholder="saisir chiffre entre 1 et 5"><br>
 				<button onclick="nombreStyle()"> cliquez pour voir si votre nombre convient</button>
 			</fieldset>
 		</section>
@@ -135,10 +136,11 @@
 		<section id="Exo_9">
 			<fieldset>
 				<legend>Exercice 9 : trouvez le nombre exacte entre 1 et 100</legend>
-				<input type="text" id="nombreEntrer" name="nombreEntrer" placeholder=" veuillez saisir un nombre entre 1 et 100" size="30"><br>
+				<input type="text" id="nombreEntrer" name="nombreEntrer" placeholder=" veuillez saisir un nombre entre 1 et 100" size="35"><br>
 				<button onclick="justeNombre()">cliquez pour verifier votre nombre</button><br>
 				<input type="text" id="verifNombre" name="verifNombre" size="50"><br>
 				<button onclick="abandon()">abandon</button>
+				<button onclick="restart()">recommencez</button>
 			</fieldset>
 		</section>
 
@@ -146,7 +148,8 @@
 		<section id="Exo_10">
 			<fieldset>
 				<legend>Exercice 10 : avoir le nom du mois avec son chiffre </legend>
-				<input type="text" id="nombreMois" name="nombreMois" placeholder="veuillez saisir le nombre de votre mois" size="30"><br>
+				<label for="nombreMois">veuillez saisir le nombre de votre mois:</label><br>
+				<input type="number" id="nombreMois" name="nombreMois" min="1" max="12"><br>
 				<button onclick="moisAnnée()">cliquez pour valider</button><br>
 				<input type="text" id="moisValider" name="moisValider" size="30">
 			</fieldset>
@@ -155,21 +158,22 @@
 		<section id="Exo_11">
 			<fieldset>
 				<legend>Exercice 11 : donner le jour suivant </legend>
-				<input type="text" id="joursuivant" name="joursuivant" placeholder="veuillez saisir le jour " size="25">
+				<label for="joursuivant">Veuillez saisir le jour auquel vous êtes :</label><br>
+				<input type="number" id="joursuivant" name="joursuivant" min="1" max="31">
 				<select type="text" name="moisuivant" id="moisuivant">
 					<option selected>choisir le mois auquel vous êtes</option>
-			  		<option value="0">Janvier</option>
-			  		<option value="1">Février</option>
-			  		<option value="2">Mars</option>
-			  		<option value="3">Avril</option>
-			  		<option value="4">Mai</option>
-			  		<option value="5">Juin</option>
-			  		<option value="6">Juillet</option>
-			  		<option value="7">Aoùt</option>
-			  		<option value="8">Septembre</option>
-			  		<option value="9">Octobre</option>
-			  		<option value="10">Novembre</option>
-			  		<option value="11">Décembre</option>
+			  		<option value="1">Janvier</option>
+			  		<option value="2">Février</option>
+			  		<option value="3">Mars</option>
+			  		<option value="4">Avril</option>
+			  		<option value="5">Mai</option>
+			  		<option value="6">Juin</option>
+			  		<option value="7">Juillet</option>
+			  		<option value="8">Aoùt</option>
+			  		<option value="9">Septembre</option>
+			  		<option value="10">Octobre</option>
+			  		<option value="11">Novembre</option>
+			  		<option value="12">Décembre</option>
 				</select>
 				<input type="text" id="anneesuivant" name="annéesuivant" placeholder="veuillez saisir l'année" size="25">
 				<button onclick="jourSuivant()">cliquez pour avoir le jour qui suit</button>
@@ -182,13 +186,14 @@
 				<legend>Exercice 12 : boulangerie</legend>
 				<input type="text" id="heure" name="heure" placeholder="veuillez entrer l'heure a laquel vous souhaitez passer à la boulangerie"><br>
 
+				<!-- input type=date option jour ? -->
 				<select type="text" name="jourBoulangerie" id="jourBoulangerie" >
 					<option selected>choisir le jour de la semaine auquel vous voulez passer</option>
 			  		<option value="0">Lundi</option>
 			  		<option value="1">Mardi</option>
 			  		<option value="2">Mercredi</option>
 			  		<option value="3">Jeudi</option>
-			  		<option value="4">Sendredi</option>
+			  		<option value="4">Vendredi</option>
 			  		<option value="5">Samedi</option>
 			  		<option value="6">Dimanche</option>
 				</select>
@@ -209,13 +214,6 @@
 			</fieldset>
 		</section>
 	</main>
-
-<!-- mois paires et les mois impaires ont ne peut pas saisir un jour après 31, le mois sera une valeur de 1 a 12 puis valider, 1,3,5,7,8,10,12, max 31 et pour les autres max 30, boucle de validation, apres on saisie une valeur qui va bien si la valeur saisie est la maximum le jur suivant est le premier de celui d'apres, fevrier  a soit 28 soit 29 jours divisible par 4 et par 400 mais pas par 100 si anné bisex alors on passe a 1mars si la date saisie est le 31 decembre alors il faut passer a 1,1 et année + 1 -->
-
-
-<!-- boulangerie il faut savoir si on est lundi aprem ou mardi premiere entrée l'heure deuxieme entrer le jour , select pour afficher et recuperer lundi a 0 j'usqu'a dimanche a 7 il faut passer les 2 valeurs dans une fonction(c'est une expression booléenne) 7h a 13h et de 16h a 20h -->
-
-<!-- auberge var age, var bagage  -->
 	<hr>
 	<a href="../index.html">Cliquez pour retourner a la page d'accueil</a>
 	<hr>		

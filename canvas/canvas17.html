@@ -1,0 +1,56 @@
+<!DOCTYPE html><!-- ceci n'est pas une balise mais une directive
+  Indique la version de HTML utilisée : HTML5
+-->
+<!-- ceci est un commentaire-->
+<html>
+<head> <!-- en-tête de la page-->
+  <title>Cours sur les canvas</title>
+  <meta charset="utf-8"> 
+  <!--intégrer un fichier CSS externe
+  <link rel="stylesheet" type="text/css" href="..css/monstyle.css">-->
+  <!--Afficher une image dans l'onglet de sa page-->
+  <link rel="shortcut icon" type="image/c-icon" href="../images/TOM.png">
+  <!--encodage de la page-->
+  <style type="text/css">
+  </style>
+  
+</head>
+<body>
+<!-- corps de la page -->
+  <header>
+    <img src="../images/TOM.png" width="150">
+  </header>
+  <hr>
+  <main>
+  <h2>Canvas carré</h2>
+  <canvas id="carre" width="400" height="400" style="border: solid 1px black; background-color: red;"></canvas>
+  <script type="text/javascript">
+    var carre = document.getElementById("carre");
+
+    var sortieCarre = carre.getContext("2d");
+
+    sortieCarre.beginPath();
+    sortieCarre.lineWidth=10;
+    sortieCarre.moveTo(100,200);
+    sortieCarre.lineTo(300,200);
+    sortieCarre.lineTo(300,500);
+    sortieCarre.lineTo(100,500);
+    sortieCarre.lineTo(100,195);
+    sortieCarre.fillStyle= "#FFFF00"; // definir la couleur a l'interieur de la formes géometriques
+    sortieCarre.fill(); 
+    sortieCarre.strokeStyle = "#FFFFFF";  //definir la couleur des bords
+    sortieCarre.stroke();
+  </script>
+    
+  </main>
+  <hr>
+  
+    <a href="../cours_html/index_canvas.html">Cliquez pour retourner a la page de selection des canvas</a>
+  <hr>
+  
+  <footer>
+    <a href="http://copyright.be" target="_blank">Copyright © 2020 - Tous droits réservés</a><br/>
+    <a href="mailto:t.lejeune@ludus-academie.com?subject=test_envoi"....> envoyez-moi un mail pour plus d'information</a>
+  </footer>
+</body>
+</html>

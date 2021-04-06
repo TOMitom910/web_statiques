@@ -1,14 +1,23 @@
 /* css pour le styles des fieldset */
 fieldset
-		{
-			border: dashed 3px darkgreen;
-			width: 20%; 
-			margin: auto;
-		}
+{
+	border: dashed 3px darkgreen;
+	width: 20%; 
+	margin: auto;
+	background-color: lightgrey;
+}
 /* css pour le style de la page  */
 .page 
-		{
-			width: 400px;
-			margin: auto;
-			text-align: center;
-		}
+{
+	width: 400px;
+	margin: auto;
+	text-align: center;
+	color: red;
+	background-color: rgb(00,00,33);/* darkblue;*/
+}
+button
+{
+	background-color: pink;
+	color: green;
+	border: none;
+}
