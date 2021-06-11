@@ -1,0 +1,76 @@
+<!DOCTYPE html><!-- ceci n'est pas une balise mais une directive
+	Indique la version de HTML utilisée : HTML5
+-->
+<!-- ceci est un commentaire-->
+<html>
+<head> <!-- en-tête de la page-->
+	<title></title>
+	<!--encodage de la page-->
+	<meta charset="utf-8"> 
+	<!--intégrer un fichier CSS externe-->
+	<!--<link rel="stylesheet" type="text/css" href="..css/monstyle.css">-->
+	<!--Afficher une image dans l'onglet de sa page-->
+	<link rel="shortcut icon" type="image/c-icon" href="../images/TOM.png">
+	<style type="text/css">
+		 body
+        {
+            font-family: comic sans ms;
+            background-color: black;
+            color: white;
+        }
+	</style>
+</head>
+<body>
+<!-- corps de la page -->
+	<header>
+		<img src="../images/TOM.png" width="150">
+	</header>
+	<hr>
+
+	<main>
+		<script type="text/javascript">
+			var recupvale = [];
+			var test;
+			var nom = [];
+			var i=0;
+			var j=0;
+			var k=0;
+			var maDate = new Date();
+			maDate = maDate.getFullYear();
+
+			//recuperer les information comprise dans l'url
+			recupvale = document.location.search;
+
+			// utilisation de split pour pouvoir enlever se dont nous avons pas besoin
+			recupvale = recupvale.split('&');
+			/*recupvale[5] = recupvale[5].split('=');*/
+			recupvale[7] = recupvale[7].split('+');
+			recupvale[13] =	recupvale[13].split('+');
+
+
+			recupvale[0] = recupvale[0].replace("?","");
+
+			console.log(maDate);
+			maDate = maDate - recupvale[5["1"]];
+			console.log(recupvale[5]["1"]);
+			console.log(maDate);
+			for(i=0;i<recupvale.length;i++)
+			{
+				document.write(recupvale[i]);
+				document.write("<br>");
+			}
+			/*document.write(recupvale[0]);
+			console.log(test);
+			console.log(recupvale[0]);
+			console.log(nom);*/
+		</script>
+	</main>
+
+	<hr>
+	<footer>
+		<a href="http://copyright.be" target="_blank">Copyright © 2020 - Tous droits réservés</a><br/>
+		<a href="mailto:t.lejeune@ludus-academie.com?subject=test_envoi"....> envoyez-moi un mail pour plus d'information</a>
+	</footer>
+
+</body>
+</html>

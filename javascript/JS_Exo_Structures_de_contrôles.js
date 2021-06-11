@@ -104,7 +104,7 @@ function conjugaison()
 		console.log(TabPersonne[i],baseVerbe+TabTerminaison[i]);
 	}
 
-	document.write("actualisez la page si vous voulez voir les autres exercices")
+	document.write("actualisez la page si vous voulez voir les autres exercices");
 }
 
 // fonction qui recupère les premières lettres de chaque mot pour afficher les initiales
