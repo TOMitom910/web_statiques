@@ -47,7 +47,7 @@ function damier()
 	    document.write("<input class='bord' type='color' name='color1' id='color1' value='#eeeeee'>");
 	    document.write("<input class='bord' type='color' name='color2' id='color2'  value='#111111'><hr>");
 	    document.write("<button class='bord' onclick='reset(),damier()'>valider</button><hr>");
-	    document.write("<button class='bord' onclick='accueil()'>retourner a al page du debut </button>")
+	    document.write("<button class='bord' onclick='accueil()'>retourner a la page du debut </button>")
 	    document.write("</fieldset>");
     }
 	document.write("<div style='display: inline; border: none' id='tab1'>");

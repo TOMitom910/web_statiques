@@ -43,84 +43,53 @@
 	<hr>
 
 	<main>
+		<div id="AncreB"></div>
+		<form method="GET" action="" id="saisons">
+			<select id="SelectSaison" onchange="saison()">
+				<option value="0">Choix saison</option>
+				<option value="1">Printemps</option>
+				<option value="2">Ete</option>
+				<option value="3">Automne</option>
+				<option value="4">Hiver</option>
+			</select>
+			
+			<br>
+			<br>
+			<a id="AncreVersSaison" href="#"><input name="butSend" type="button" value="Deplacement Vers"></a>
 
-	<!--<input type="button" id="ButSubmit" value="Selectionner" onclick="saison()">-->
+		</form>
+
+		<!--<input type="button" id="ButSubmit" value="Selectionner" onclick="saison()">-->
 		
 		<script type="text/javascript">
-
-			var Tabsaisons = ["Printemps","Eté","Automne","Hiver"];
-			var i = 0;
-			document.write("<form name='choixSaison' method='GET' action=''>");
-			document.write("<select id='saisons' name='saisons' onchange='selectsaison()'>");
-			document.write("<OPTION value='99'>saisir jours</OPTION>");
-			for(i=0;i<=Tabsaisons.length-1;i++)
-			{
-				document.write("<OPTION value='"+i+"'>"+Tabsaisons[i]+"</OPTION>");
-			}
-
-			document.write("</select></form><br>");
-
-
-			function selectsaison()
-			{
-				var selectElmt = document.getElementById("saisons");
-				var valeurselectionnee = selectElmt.options[selectElmt.selectedIndex].value;
-				var textselectionne = selectElmt.options[selectElmt.selectedIndex].text;
-				alert(valeurselectionnee);
-				alert(textselectionne);
-
-				var monformulaire = document.getElementById('choixSaison');
-				document.getElementById('choixSaison').action = textselectionne + ".html";
-				monformulaire.submit();
-
-			}
-
-
-
-
-
-
-
-
 			function saison()
-			{	
+			{		
 			
 				valueSelect = document.getElementById("SelectSaison").value;
 				console.log(valueSelect);	
 
-				if (valueSelect == 1) 
-				{
+				if (valueSelect == 1) {
 				
 					document.getElementById("AncreVersSaison").href = "#DivPrintemps";
 				
-				}
-				else
-				{
-				if (valueSelect == 2) 
-				{
+				}else{
+				if (valueSelect == 2) {
 				
 					document.getElementById("AncreVersSaison").href = "#DivEte";
 				
-				}
-				else
-				{
-				if (valueSelect == 3) 
-				{
+				}else{
+				if (valueSelect == 3) {
 				
 					document.getElementById("AncreVersSaison").href = "#DivAutomne";
 				
-				}
-				else
-				{
-				if (valueSelect == 4) 
-				{
+				}else{
+				if (valueSelect == 4) {
 				
 					document.getElementById("AncreVersSaison").href = "#DivHiver";
 				
 				}
+				}}}
 			} 
-
-
 
 		</script>
 		
