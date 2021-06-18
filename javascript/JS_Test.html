@@ -1,0 +1,78 @@
+<!DOCTYPE html><!-- ceci n'est pas une balise mais une directive
+	Indique la version de HTML utilisée : HTML5
+-->
+<!-- ceci est un commentaire-->
+<html>
+<head> <!-- en-tête de la page-->
+	<title>Printemps</title>
+	<!--encodage de la page-->
+	<meta charset="utf-8"> 
+	<!--intégrer un fichier CSS externe-->
+	<!--<link rel="stylesheet" type="text/css" href="..css/monstyle.css">-->
+	<!--Afficher une image dans l'onglet de sa page-->
+	<link rel="shortcut icon" type="image/c-icon" href="../images/TOM.png">
+	<style type="text/css">
+	</style>
+</head>
+<body>
+<!-- corps de la page -->
+	<header>
+		<img src="../images/TOM.png" width="150">
+	</header>
+	<hr>
+
+	<main>
+		<textarea id="premier">
+			Le printemps (de l'ancien français prins, premier, et temps) est l’une des quatre saisons de l’année,
+			dans les zones tempérées. Il suit l'hiver et précède l'été.Il existe plusieurs définitions du printemps,
+			notamment météorologique (demi-saison se trouvant entre les saisons froide et chaude) et calendaire
+			(dont les dates varient selon les pays).
+		</textarea>
+		<textarea id="deuxieme" value ="" style="">
+			
+		</textarea>
+		<p id="paragraphe"  style="">
+			
+		</p>
+		<input type="button" onclick="deplacer()" value="entrer"></button><hr>
+
+		<input type="number" id="taille" min="0" max="10" step="1" value="0">
+		<input type="button" onclick="epaisseur()" value="changer l'epaisseur de la bordure "><hr>
+
+		<input type="color" id="colorpicker">
+		<input type="button" onclick="couleur()" value="changer la couleur de la bordure ">
+
+		<script type="text/javascript">
+
+			function deplacer()
+			{
+				var textarea1 = document.getElementById('premier').value;
+				document.getElementById('deuxieme').value = textarea1;
+				document.getElementById('paragraphe').textContent = textarea1;
+			}
+			function epaisseur()
+			{
+				var taille =document.getElementById("taille").value;
+				var colorpicker = document.getElementById("colorpicker").value;
+				document.getElementById('deuxieme').style = ("border: solid "+ taille +"px" + colorpicker + "");
+				document.getElementById('paragraphe').style = ("border: solid "+ taille +"px" + colorpicker + "");
+			}
+
+			function couleur()
+			{
+				var taille =document.getElementById("taille").value;
+				var colorpicker = document.getElementById("colorpicker").value;
+				document.getElementById("deuxieme").style = ("border : solid "+ taille + "px" + colorpicker +"");
+				document.getElementById("paragraphe").style = ("border : solid "+ taille + "px" + colorpicker +"");
+			}
+		</script>
+	</main>
+
+	<hr>
+	<footer>
+		<a href="http://copyright.be" target="_blank">Copyright © 2020 - Tous droits réservés</a><br/>
+		<a href="mailto:t.lejeune@ludus-academie.com?subject=test_envoi"....> envoyez-moi un mail pour plus d'information</a>
+	</footer>
+
+</body>
+</html>

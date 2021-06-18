@@ -30,32 +30,34 @@
 	<main>
 		<script type="text/javascript">
 			var recupvale = [];
-			var test;
-			var nom = [];
+			var modifligne = [];
 			var i=0;
 			var j=0;
-			var k=0;
 			var maDate = new Date();
 			maDate = maDate.getFullYear();
 
 			//recuperer les information comprise dans l'url
 			recupvale = document.location.search;
-
 			// utilisation de split pour pouvoir enlever se dont nous avons pas besoin
 			recupvale = recupvale.split('&');
-			/*recupvale[5] = recupvale[5].split('=');*/
-			recupvale[7] = recupvale[7].split('+');
-			recupvale[13] =	recupvale[13].split('+');
-
-
+			recupvale[7] = recupvale[7].split('=');
 			recupvale[0] = recupvale[0].replace("?","");
+			console.log(parseInt(recupvale[7][1]));
+			/*console.log(recupvale);*/
+			/*console.log(maDate);
+			maDate = maDate - parseInt(recupvale[7[1]]);
+			console.log(maDate);*/
 
-			console.log(maDate);
-			maDate = maDate - recupvale[5["1"]];
-			console.log(recupvale[5]["1"]);
-			console.log(maDate);
 			for(i=0;i<recupvale.length;i++)
 			{
+				modifligne = recupvale[i];
+				for(j=0;j<modifligne.length;j++)
+				{
+					if (modifligne[j]== '+') 
+					{
+						modifligne[j].replace('+'," ");
+					}
+				}
 				document.write(recupvale[i]);
 				document.write("<br>");
 			}

@@ -1,8 +1,9 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
 	<meta charset="utf-8">
 	<title>formulaire</title>
+	<link rel="shortcut icon" type="image/c-icon" href="../images/TOM.png">
 	<style type="text/css">
 
         form
@@ -65,6 +66,7 @@
 			<label for="telephone">N° de téléphone</label>
             <input id="Telephone" type="tel" name="telephone" placeholder="par ex:+3375500000000" class="requis"><br>		
 			<label for="naissanceJ">Jour</label>
+			<input type="hidden" name="age" id="age" value="">
 			
 			<script>
 			//Just for the lazy ones here I also provide a customized version of the function for the format yyyy-mm-dd.			
@@ -76,7 +78,7 @@
 
 				if(!regex_date.test(dateString))
 				{
-					return false;			
+					verif = false;			
 				}
 
    				 // Parse the date parts to integers
@@ -84,9 +86,11 @@
 			    var day     = parseInt(parts[2], 10);
 			    var month   = parseInt(parts[1], 10);
 			    var year    = parseInt(parts[0], 10);
+			    console.log("isValidDate : " + year +"-" + month + "-" + day);
 
 			    // Check the ranges of month and year
-			    if(year < 1000 || year > 3000 || month == 0 || month > 12)
+			    /*if(year < 1000 || year > 3000 || month == 0 || month > 12)*/
+			    if(year < 1000 || year > 3000 || month > 11)
 			    {
 			        return false;
 			    }
@@ -103,7 +107,7 @@
 			        monthLength[1] = 29;
 			    }
 			    // Check the range of the day
-			    return day > 0 && day <= monthLength[month - 1];
+			    return day > 0 && day <= monthLength[month];
 			}
 
 			// creation des select pour le jour,le mois et l'année de naissance du formulaire
@@ -120,7 +124,7 @@
 			document.write("</select><br>");
 			
 			document.write("<label for='naissanceM'>Mois</label>");
-			document.write("<select id='naissanceM' class='requis'>");
+			document.write("<select id='naissanceM' name='naissanceM' class='requis'>");
 			document.write("<OPTION value='99'>saisir mois</OPTION>");
 			for(i=0;i<TabMois.length;i++) 
 			{
@@ -140,12 +144,13 @@
 				document.write("<OPTION value='"+i+"'>"+i+"</OPTION>");
 				
 			}
-			document.write("</select>");	
+			document.write("</select><br>");	
 				
 			// fonction qui permet de verifier que tous les champs sont bien renseigner ainsi que les deux champs mot de passe sont 
 			function verifForm() 
 			{
 				var msg ="";
+
 				var valNom = document.getElementById("Nom").value;
 				var valPrenom = document.getElementById("Prenom").value;
 				var valemail = document.getElementById("email").value;
@@ -154,21 +159,12 @@
 				var valnaissanceM = document.getElementById("naissanceM").value;
 				var valnaissanceA = document.getElementById("naissanceA").value;
 
-				/* valrien = document.getElementById("rien").value;
-				var valBAC = document.getElementById("BAC").value;
-				var valDUT = document.getElementById("DUT").value;
-				var valBTS = document.getElementById("BTS").value;
-				var valCAP = document.getElementById("CAP").value;
-				var vallicense = document.getElementById("license").value;
-				var valmaster = document.getElementById("master").value;
-				var valdoctorat = document.getElementById("doctorat").value;*/
-
+				var valdiplomes = document.getElementById("diplômes").value;
 
 				var valadresse = document.getElementById("TextAdresse").value;
 				var valcodepostale = document.getElementById("postal").value;
 				var valpays = document.getElementById("pays").value;
 
-				var valcarte = document.getElementById("carte").value;
 				var valNcarte = document.getElementById("NCarte").value;
 				var valsecurite = document.getElementById("CodeSecu").value;
 				var valnomporteur = document.getElementById("NomDuPorteur").value;
@@ -178,155 +174,215 @@
 				
 				var selectElmt = document.getElementById("naissanceA");
 				var valeurselectionnee = selectElmt.options[selectElmt.selectedIndex].value;
-				var textselectionne = selectElmt.options[selectElmt.selectedIndex].value;
+				var textselectionne = selectElmt.options[selectElmt.selectedIndex].text;
 				var strDate = textselectionne +'-';
 				var selectElmt = document.getElementById("naissanceM");
 				var valeurselectionnee = selectElmt.options[selectElmt.selectedIndex].value;
-				var textselectionne = selectElmt.options[selectElmt.selectedIndex].value;
+				/*valeurselectionnee = valeurselectionnee * 1 + 1;*/
+				var textselectionne = selectElmt.options[selectElmt.selectedIndex].text;
 				strDate += valeurselectionnee +'-';
 				var selectElmt = document.getElementById("naissanceJ");
 				var valeurselectionnee = selectElmt.options[selectElmt.selectedIndex].value;
-				var textselectionne = selectElmt.options[selectElmt.selectedIndex].value;
+				var textselectionne = selectElmt.options[selectElmt.selectedIndex].text;
 				strDate += textselectionne;
 				//alert(valNom);
 				//console.log(valNom=="");
+
+				var verif = true;
+
+				msg = "merci de renseigner :";
+				msg += "\n";
+
 				if (valNom=="")
 				{
-					msg += "merci de renseigner un NOM";
-					alert(msg);
-					return false;
-				}
-				if (valPrenom=="")
-				{
-					msg += "merci de renseigner un Prénom";
-					alert(msg);
-					return false;
-				}
-				if (valemail=="")
-				{
-					msg += "merci de renseigner un Email";
-					alert(msg);
-					return false;
-				}
-				if (valtelephone=="")
-				{
-					msg += "merci de renseigner un numéro de telephone";
-					alert(msg);
-					return false;
-				}
-				console.log(valnaissanceJ);
-				console.log(valnaissanceM);
-				console.log(valnaissanceA);
-				if (valnaissanceJ=="99") 
-				{
-					msg += "merci de renseigner le jour de votre naissance";
-					alert(msg);
-					return false;
-				}
-				if (valnaissanceM=="99") 
-				{
-					msg += "merci de renseigner le mois de votre naissance";
-					alert(msg);
-					return false;
-				}
-				if (valnaissanceA=="99") 
-				{
-					msg += "merci de renseigner l'année de votre naissance";
-					alert(msg);
-					return false;
+					msg += " un nom";
+					msg += "\n";
+					verif = false;
 				}
 
-				if ((document.getElementById("rien").checked == false)&&(document.getElementById("BAC").checked == false)&&(document.getElementById("DUT").checked == false)&&(document.getElementById("BTS").checked == false)&&(document.getElementById("CAP").checked == false)&&(document.getElementById("license").checked == false)&&(document.getElementById("master").checked == false)&&(document.getElementById("doctorat").checked == false))
+				if (valPrenom=="")
+				{	
+					msg += " un prenom";
+					msg += "\n";
+					verif = false;
+				}
+
+				if (valemail=="")
+				{	
+					msg += " un email";
+					msg += "\n";
+					verif = false;
+				}
+
+				if (valtelephone=="")
+				{	
+					msg += " un numero de telephone";
+					msg += "\n";
+					verif = false;
+				}
+
+				// verification de la date
+				if (valnaissanceJ=="99") 
 				{
-					msg += "merci de cocher une des cases diplômes"
-					alert(msg);
-					return false;
+					msg += " le jour de votre naissance";
+					msg += "\n";
+					verif = false;
+				}
+
+				if (valnaissanceM=="99") 
+				{
+					msg += " le mois de votre naissance";
+					msg += "\n";
+					verif = false;
+				}
+				valnaissanceM += 1;
+
+				if (valnaissanceA=="99") 
+				{
+					msg += " l'année de votre naissance";
+					msg += "\n";
+					verif = false;
+				}
+				// les trois champs sont renseignés;on verifie la cohérence
+				if ((valnaissanceJ !=99) && (valnaissanceM != 99) && (valnaissanceA != 99))
+				{
+					/*alert("on est ici " + isValidDate(strDate));
+					alert(strDate);
+					alert(valnaissanceA + valnaissanceM + valnaissanceJ);*/
+					if(!isValidDate(strDate))
+					{
+						verif = false;
+					}
+					else
+					{
+						calculAge(maDate);
+					}
+
+				}
+
+				/*if ((document.getElementById("rien").checked == false)&&(document.getElementById("BAC").checked == false)&&(document.getElementById("DUT").checked == false)&&(document.getElementById("BTS").checked == false)&&(document.getElementById("CAP").checked == false)&&(document.getElementById("license").checked == false)&&(document.getElementById("master").checked == false)&&(document.getElementById("doctorat").checked == false))
+				{
+					msg += " une des cases du diplômes,";
+					verif = false;
+				}*/
+
+				if(valdiplomes == 0)
+				{
+					msg += " votre diplômes";
+					msg += "\n";
+					verif = false;
 				}
 
 				if (valadresse=="") 
-				{
-					msg += "merci de renseigner votre adresse";
-					alert(msg);
-					return false;
+				{	
+					msg += " votre adresse";
+					msg += "\n";
+					verif = false;
 				}
+
 				if (valcodepostale=="") 
 				{
-					msg += "merci de renseigner votre code postale";
-					alert(msg);
-					return false;
+					msg += " votre code postale";
+					msg += "\n";
+					verif = false;
 				}
+
 				if (valpays=="") 
-				{
-					msg += "merci de renseigner votre Pays";
-					alert(msg);
-					return false;
+				{	
+					msg += " votre pays";
+					msg += "\n";
+					verif = false;
 				}
-				if (valcarte=="") 
-				{
-					msg += "merci de renseigner type de votre carte bancaire";
-					alert(msg);
-					return false;
+
+				if (valNcarte =="") 
+				{	
+					msg += " le numero de votre carte bancaire";
+					msg += "\n";
+					verif = false;
 				}
-				if (valNcarte=="") 
-				{
-					msg += "merci de renseigner le numéro de votre carte bancaire";
-					alert(msg);
-					return false;
-				}
+
 				if (valsecurite=="") 
 				{
-					msg += "merci de renseigner le code de sécurité de votre carte bancaire";
-					alert(msg);
-					return false;
+					msg += " le code de sécurité de votre carte bancaire";
+					msg += "\n";
+					verif = false;
 				}
+
 				if (valnomporteur=="") 
 				{
-					msg += "merci de renseigner le Nom et le Prénom du titulaire de la carte bancaire";
-					alert(msg);
-					return false;
+					msg += " le Nom et le Prénom du titulaire de la carte bancaire";
+					msg += "\n";
+					verif = false;
 				}
+
 				if (valmdp=="") 
-				{
-					msg += "merci de renseigner votre mot de passe";
-					alert(msg);
-					return false;
+				{	
+					msg += " votre mot de passe";
+					msg += "\n";
+					verif = false;
 				}
+
 				if (valverifmdp=="") 
 				{
-					msg += "merci de renseigner a nouveau votre mot de passe";
-					alert(msg);
-					return false;
+					msg += " a nouveau votre mot de passe";
+					msg += "\n";
+					verif = false;
 				}
+
 				if(valmdp!=valverifmdp)
 				{
-					msg += "vos deux mot de passe ne sont pas les mêmes"
-					alert(msg);
-					return false;
+					alert("vos deux mot de passe ne sont pas les mêmes");
+					msg += "\n";
+					verif = false;
 				}
-				/*alert(strDate);*/
-				console.log(isValidDate(strDate));
-				//if (valNom=="")
-				//if (valNom=="")
 
+
+				console.log(isValidDate(strDate));
+
+			// verification si tous les champs sont renseignés
+			if (verif == false) 
+			{
+				alert(msg);
+				// on donne le focus au champ nom
+				document.getElementById("Nom").focus();
+				return false;
+			}
 
 			document.getElementById("form1").action = "traitement_formulaire.html";
 			console.log(document.getElementById("form1").action);
+			document.getElementById("form1").submit();
 			return true;
 			}	
 
 			// fonction qui permet de calculer l'age de la personne 
-			function calculAge()
+			function calculAge(maDate)
 			{
-				var stockNaissance = document.getElementById("naissanceA").value;
+				var valnaissanceA = document.getElementById("naissanceA").value;
 				var agePersonne;
-				agePersonne = maDate - stockNaissance;
+				agePersonne = maDate - valnaissanceA;
 				document.getElementById("age").value = agePersonne;
-				//console.log(agePersonne);
+				console.log(agePersonne);
+				return agePersonne;
 			}
+
+
+
+			var TabDiplomes = ["sans diplomes","BAC","DUT","BTS","CAP","License","Master","Doctorat"];
+			var i = 0;
+			document.write("<label for='diplômes'>Diplômes</label>");
+			document.write("<select id='diplômes' name='diplomes' class ='requis' multiple>");
+			document.write("<OPTION value='99'>choisir diplômes : </OPTION>")
+			for(i=0;i<TabDiplomes.length;i++)
+			{
+				
+				document.write("<OPTION value='"+ TabDiplomes[i] +"'>"+TabDiplomes[i]+"</OPTION>");
+				
+			}
+			document.write("</select><br>");
 			</script>
+			
 			<br>
-				<input type="hidden" name="age"id="age">
-				<label for="diplômes"> quelles sont vos diplômes :<br>
+				<!--<label for="diplômes"> quelles sont vos diplômes :<br>
 					<span><input type="checkbox" name="sansdiplomes" id="rien">sans diplômes</span>
 					<span><input type="checkbox" name="BAC" id="BAC">BAC</span>
 					<span><input type="checkbox" name="DUT" id="DUT">DUT</span>
@@ -336,7 +392,7 @@
 					<span><input type="checkbox" name="master" id="master">MASTER</span>
 					<span><input type="checkbox" name="doctorat" id="doctorat">DOCTORAT</span>
 
-				</label>
+				</label>-->
 
 			</fieldset>
 			<br>
@@ -352,11 +408,10 @@
 			<caption>Step 3 : Informations CB</caption><br>
 
 	            <label for="carte">  
-	                <caption>Type de carte bancaire</caption><br>
-	                     
-					<span><input type="radio" name="carte_visa" id="carte" ><img href="https://cdn.visa.com/cdn/assets/images/logos/visa/logo.png">VISA</span>
-	                <span><input type="radio" name="carte_amex"id="carte"><img href="https://www.aexp-static.com/cdaas/one/statics/axp-static-assets/1.8.0/package/dist/img/logos/dls-logo-bluebox-solid.svg">AmEx</span>
-	                <span><input type="radio" name="carte_mastercard"id="carte"><img href="https://www.mastercard.fr/content/dam/public/mastercardcom/eu/fr/images/Logo/mc-logo-52.svg"> Mastercard</span><br>        
+	                <caption>Type de carte bancaire</caption><br> 
+					<span><input type="radio" name="carte" id="carte_visa" checked ><img href="https://cdn.visa.com/cdn/assets/images/logos/visa/logo.png">VISA</span>
+	                <span><input type="radio" name="carte" id="carte_amex"><img href="https://www.aexp-static.com/cdaas/one/statics/axp-static-assets/1.8.0/package/dist/img/logos/dls-logo-bluebox-solid.svg">AmEx</span>
+	                <span><input type="radio" name="carte" id="carte_mastercard"><img href="https://www.mastercard.fr/content/dam/public/mastercardcom/eu/fr/images/Logo/mc-logo-52.svg"> Mastercard</span><br>        
 	            </label>
 
 	            <label for="NCarte">N° de carte<input id="NCarte" type="text" name="numero_carte" class="requis"></Label><br>
@@ -372,8 +427,8 @@
 			</fieldset>
 
 			<input type="reset" name="recommencer"class="boutonvalider">
-        	<button type="submit" name="valider" value="Envoyer" class="boutonvalider" onclick="verifForm(),calculAge()" >Envoyer</button>
-
+			<!--<input type="submit" value="Envoyer" class="boutonvalider" onclick="verifForm(),calculAge()">-->
+			<input type="button" value="Envoyer" class="boutonvalider" onclick="verifForm()">
 	</form>
 
 	<a href="../index.html"> retourner a la page d'accueil</a>

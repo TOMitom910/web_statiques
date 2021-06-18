@@ -11,7 +11,29 @@
 	<!--<link rel="stylesheet" type="text/css" href="..css/monstyle.css">-->
 	<!--Afficher une image dans l'onglet de sa page-->
 	<link rel="shortcut icon" type="image/c-icon" href="../images/TOM.png">
-	<style type="text/css"></style>
+	<style type="text/css">
+		h2{
+			font-size: 280%;
+			margin-left: 200px;
+		}
+		img{
+			margin-left:100px;		
+		}
+		p{
+			font-size: 180%;
+			margin-left: 50px;
+		}
+		select{
+		
+			margin-left: 100px;
+			margin-top: 100px;
+		
+		}
+		a{
+			margin-left: 100px;
+		
+		}
+	</style>
 </head>
 <body>
 <!-- corps de la page -->
@@ -21,30 +43,158 @@
 	<hr>
 
 	<main>
-		<form method="GET" action="" id="saisons">
-			<select  onchange="saison()">
-				<option value="0">Selectionner la saison :</option>
-				<option id="1" value="1">Printemps</option>
-				<option id="2" value="2">Ete</option>
-				<option id="3" value="3">Automne</option>
-				<option id="4" value="4">Hiver</option>
-			</select>
-		</form>
 
+	<!--<input type="button" id="ButSubmit" value="Selectionner" onclick="saison()">-->
+		
 		<script type="text/javascript">
+
+			var Tabsaisons = ["Printemps","Eté","Automne","Hiver"];
+			var i = 0;
+			document.write("<form name='choixSaison' method='GET' action=''>");
+			document.write("<select id='saisons' name='saisons' onchange='selectsaison()'>");
+			document.write("<OPTION value='99'>saisir jours</OPTION>");
+			for(i=0;i<=Tabsaisons.length-1;i++)
+			{
+				document.write("<OPTION value='"+i+"'>"+Tabsaisons[i]+"</OPTION>");
+			}
+
+			document.write("</select></form><br>");
+
+
+			function selectsaison()
+			{
+				var selectElmt = document.getElementById("saisons");
+				var valeurselectionnee = selectElmt.options[selectElmt.selectedIndex].value;
+				var textselectionne = selectElmt.options[selectElmt.selectedIndex].text;
+				alert(valeurselectionnee);
+				alert(textselectionne);
+
+				var monformulaire = document.getElementById('choixSaison');
+				document.getElementById('choixSaison').action = textselectionne + ".html";
+				monformulaire.submit();
+
+			}
+
+
+
+
+
+
+
+
 			function saison()
 			{	
-				if(document.getElementById("1"))
+			
+				valueSelect = document.getElementById("SelectSaison").value;
+				console.log(valueSelect);	
+
+				if (valueSelect == 1) 
 				{
-					window.open('https://fr.wikipedia.org/wiki/Printemps');
+				
+					document.getElementById("AncreVersSaison").href = "#DivPrintemps";
+				
 				}
-				else{}
-				/*document.getElementById("saisons").action = "https://fr.wikipedia.org/wiki/Printemps";
-				wikiprintemps.innerHTML="wikiprintemps";
-				wikiprintemps.setAttribute('href', "https://fr.wikipedia.org/wiki/Printemps");*/
-				/*return false;	*/		
+				else
+				{
+				if (valueSelect == 2) 
+				{
+				
+					document.getElementById("AncreVersSaison").href = "#DivEte";
+				
+				}
+				else
+				{
+				if (valueSelect == 3) 
+				{
+				
+					document.getElementById("AncreVersSaison").href = "#DivAutomne";
+				
+				}
+				else
+				{
+				if (valueSelect == 4) 
+				{
+				
+					document.getElementById("AncreVersSaison").href = "#DivHiver";
+				
+				}
 			} 
+
+
+
 		</script>
+		
+			<div id="DivPrintemps">
+			<h2> Printemps </h2>
+			<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Tetsugakunomichi02.jpg/220px-Tetsugakunomichi02.jpg">
+			<p>Le printemps (de l'ancien français prins, premier, et temps) est l’une des quatre saisons de l’année, <br>
+			dans les zones tempérées. Il suit l'hiver et précède l'été.Il existe plusieurs définitions du printemps, <br>
+			notamment météorologique (demi-saison se trouvant entre les saisons froide et chaude) et calendaire <br>
+			(dont les dates varient selon les pays).</p>
+			
+			<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Chablais.jpg/220px-Chablais.jpg">
+			<p>Dans l’hémisphère nord, le printemps se situe entre le premier <br> 
+			et le deuxième trimestre de l'année et dans l'hémisphère sud, il se situe entre le troisième et le dernier <br>
+			trimestre de l'année.Cette saison, marquant traditionnellement le renouveau dans la nature, se caractérise <br>
+			par un radoucissement par à coups de la température, la fonte des neiges, le bourgeonnement et la floraison <br>
+			des plantes, le réveil des animaux hibernants et le retour de certains animaux migrateurs.</p>
+			
+			<a href="#AncreB"><input type="button" value="Retour"></a>
+		</div>
+		<br>
+		
+		<div id="DivEte">
+			<h2> Ete </h2>
+			<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Champs_002.jpg/220px-Champs_002.jpg">
+			<p>L’été est l'une des quatre saisons de l'année, dans les zones tempérées et polaires de la planète.<br> 
+			L'été suit le printemps et précède l'automne.Il existe plusieurs définitions de l'été : astronomique <br>
+			(saison définie par des phénomènes astronomiques marquants), météorologique (saison comprenant les mois les <br>
+			plus chauds de l’année) et calendaire (dont les dates varient selon les pays).Dans l’hémisphère nord, <br>
+			l'été se situe entre les deuxième et troisième trimestres de l'année et dans l'hémisphère sud, il se situe <br>
+			entre le dernier trimestre de l'année et le premier de l'année suivante.Quelle que soit sa définition <br>
+			(et l'hémisphère), l'été est la période de fructification pour la plupart des plantes et celle des vacances.<br>
+			C'est la saison la plus chaude, et où l'ensoleillement est à son maximum en corrélation avec les journées <br>
+			les plus longues de l'année. L'été est ainsi utilisé comme une métaphore d’une période faste, d’un apogée.</p>
+			
+			<a href="#AncreB"><input type="button" value="Retour"></a>
+		</div>
+		<br>
+		
+		<div id="DivAutomne">
+			<h2> Automne </h2>
+			<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Fagus_sylvatica_JPG2a.jpg/220px-Fagus_sylvatica_JPG2a.jpg">
+			<p>L’automne est l'une des quatre saisons de l’année dans les zones tempérées. L'automne suit l'été et précède l'hiver.<br>
+			Il existe plusieurs définitions de l'automne : astronomique, météorologique (demi-saison se trouvant entre <br>
+			les saisons chaude et froide), et calendaire (dont les dates varient selon les pays).Dans l’hémisphère nord, <br>
+			l'automne se situe entre le troisième et le dernier trimestre de l'année ; dans l'hémisphère sud, il se situe <br>
+			entre le premier et le deuxième trimestre de l'année.L'automne se caractérise par une baisse progressive des <br>
+			températures et un délai de plus en plus court entre le lever et le coucher du soleil. Cette saison est notamment<br> 
+			marquée par un temps devenant progressivement plus nuageux, pluvieux et venteux, parfois neigeux en fin de saison.<br>
+			Mais l'automne peut encore donner de belles journées ensoleillées et douces notamment en début de saison. Plus <br>
+			tard dans la saison jusqu'à la mi-novembre dans l'hémisphère nord ou jusqu'à la mi-mai dans l'hémisphère sud, <br>
+			après les premières gelées, peut se produire ou non selon les années une période de temps ensoleillé et radouci,<br>
+			qu'on appelle en Europe l'été de la Saint-Martin (fêté le 11 novembre) et en Amérique du Nord l'été indien.</p>
+			
+			<a href="#AncreB"><input type="button" value="Retour"></a>
+		</div>
+		<br>
+		
+		<div id="DivHiver">
+			<h2> Hiver </h2>
+			<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Le%C3%AFko_%28Bois_de_la_Cambre%29.jpg/220px-Le%C3%AFko_%28Bois_de_la_Cambre%29.jpg">
+			<p>L'hiver est l’une des quatre saisons de l’année dans les zones tempérées et polaires de la Terre. L'hiver <br>
+			suit l'automne et précède le printemps. Il existe plusieurs définitions de l'hiver : astronomique (saison <br>
+			comprenant les jours les plus courts de l'année), météorologique (saison comprenant les mois les plus froids de<br> 
+			l'année), et calendaire (dont les dates varient selon les pays).Dans l’hémisphère nord, l'hiver se situe entre <br>
+			le dernier trimestre de l'année et le premier de l'année suivante. Dans l'hémisphère sud comme en Australie, <br>
+			Madagascar ou l'île de La Réunion, il se situe entre les deuxième et troisième trimestres de l'année. Quelle que<br>
+			soit la définition, c'est la période du repos des plantes et de l'hibernation des animaux. La distance entre le <br>
+			Soleil et la Terre la plus petite, le périhélie, se produit lors de l'hiver dans l'hémisphère nord.</p>
+			
+			<a href="#AncreB"><input type="button" value="Retour"></a>
+		</div>
+
+
 	</main>
 
 	<a href="../index.html"> retourner a la page d'accueil</a>
