@@ -1,0 +1,67 @@
+<!DOCTYPE html><!-- ceci n'est pas une balise mais une directive
+	Indique la version de HTML utilisée : HTML5
+-->
+<!-- ceci est un commentaire-->
+<html>
+<head> <!-- en-tête de la page-->
+	<title></title>
+	<!--encodage de la page-->
+	<meta charset="utf-8"> 
+	<!--intégrer un fichier CSS externe-->
+	<!--<link rel="stylesheet" type="text/css" href="..css/monstyle.css">-->
+	<!--Afficher une image dans l'onglet de sa page-->
+	<link rel="shortcut icon" type="image/c-icon" href="../images/TOM.png">
+	<style type="text/css">
+		p
+		{
+			font-size: 40px;
+		}
+		/*#rouge:hover
+		{
+			color: red;
+		}*/
+		/*
+		#vert:active
+		{
+			color: green;
+		}*/
+	</style>
+</head>
+<body>
+<!-- corps de la page -->
+	<header>
+		<img src="../images/TOM.png" width="150">
+	</header>
+	<hr>
+
+	<main>
+		<p><span id="rouge" style="" onmouseover="rouge()" onmouseout="out()">Le texte </span><span id="vert" style="" onclick="vert()">va changer de </span><span id="navy" style="" ondblclick="navy()">couleur mais comment ?</span></p>
+
+		<script type="text/javascript">
+			function rouge()
+			{
+				document.getElementById("rouge").style="color : red";
+			}
+			function vert()
+			{
+				document.getElementById("vert").style="color : green";
+			}
+			function navy()
+			{
+				document.getElementById("navy").style="color : navy";
+			}
+			function out()
+			{
+				document.getElementById("rouge").style="color : black";
+			}
+		</script>
+	</main>
+
+	<hr>
+	<footer>
+		<a href="http://copyright.be" target="_blank">Copyright © 2020 - Tous droits réservés</a><br/>
+		<a href="mailto:t.lejeune@ludus-academie.com?subject=test_envoi"....> envoyez-moi un mail pour plus d'information</a>
+	</footer>
+
+</body>
+</html>

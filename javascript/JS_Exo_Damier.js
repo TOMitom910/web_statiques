@@ -55,8 +55,8 @@ function damier()
     {
         for (j = 0 ; j < dim ; j++) 
         {
-
         	/*verification des variables */
+
 			/*console.log(color1);
 			console.log(color2);
 			console.log(dim);*/

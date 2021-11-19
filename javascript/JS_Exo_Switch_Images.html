@@ -1,0 +1,89 @@
+<!DOCTYPE html><!-- ceci n'est pas une balise mais une directive
+	Indique la version de HTML utilisée : HTML5
+-->
+<!-- ceci est un commentaire-->
+<html>
+<head> <!-- en-tête de la page-->
+	<title></title>
+	<!--encodage de la page-->
+	<meta charset="utf-8"> 
+	<!--intégrer un fichier CSS externe-->
+	<!--<link rel="stylesheet" type="text/css" href="..css/monstyle.css">-->
+	<!--Afficher une image dans l'onglet de sa page-->
+	<link rel="shortcut icon" type="image/c-icon" href="../images/TOM.png">
+	<style type="text/css"></style>
+</head>
+<body>
+<!-- corps de la page -->
+	<header>
+		<img src="../images/TOM.png" width="150">
+	</header>
+	<hr>
+
+	<main>
+		<img id="images" src="../images/TOM.png" width="150">
+		<input type="button" value="entrer" onclick="changeImage()" name="">
+		<script type="text/javascript">
+			//var imgchng = document.getElementById("images").src;
+			var actuel = 0;
+			function changeImage()
+			{
+				var tabImg = ["../images/img1.png","../images/img2.png","../images/img3.png","../images/img4.png","../images/img5.png"];
+
+				console.log(document.getElementById("images").src);
+
+
+				if(actuel == 5)
+				{
+					console.log("toto2");
+					document.getElementById("images").src = tabImg[0];
+					actuel=0;
+				}
+
+				if(actuel == 4)
+				{
+					console.log("toto2");
+					document.getElementById("images").src = tabImg[4];
+					actuel++;
+				}
+
+				if(actuel == 3)
+				{
+					console.log("toto2");
+					document.getElementById("images").src = tabImg[3];
+					actuel++;
+				}
+
+				if(actuel == 2)
+				{
+					console.log("toto2");
+					document.getElementById("images").src = tabImg[2];
+					actuel++;
+				}
+
+				if(actuel == 1)
+				{
+					console.log("toto2");
+					document.getElementById("images").src = tabImg[1];
+					actuel++;
+				}
+
+				if(actuel == 0)
+				{
+					console.log("toto2");
+					document.getElementById("images").src = tabImg[0];
+					actuel++;
+				}
+
+			}
+		</script>
+	</main>
+
+	<hr>
+	<footer>
+		<a href="http://copyright.be" target="_blank">Copyright © 2020 - Tous droits réservés</a><br/>
+		<a href="mailto:t.lejeune@ludus-academie.com?subject=test_envoi"....> envoyez-moi un mail pour plus d'information</a>
+	</footer>
+
+</body>
+</html>

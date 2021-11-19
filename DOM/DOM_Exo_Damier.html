@@ -1,0 +1,312 @@
+<!DOCTYPE html><!-- ceci n'est pas une balise mais une directive
+	Indique la version de HTML utilisée : HTML5
+-->
+<!-- ceci est un commentaire-->
+<html>
+<head> <!-- en-tête de la page-->
+	<title>Damier DOM</title>
+	<!--encodage de la page-->
+	<meta charset="utf-8"> 
+	<!--intégrer un fichier CSS externe-->
+	<!--<link rel="stylesheet" type="text/css" href="..css/monstyle.css">-->
+	<!--Afficher une image dans l'onglet de sa page-->
+	<link rel="shortcut icon" type="image/c-icon" href="../images/TOM.png">
+	<style type="text/css">
+		main
+    	{
+			margin: auto;    	
+		}
+
+		fieldset
+		{
+			width: 300px;
+			border: dotted 3px blue;
+		}
+
+		.bord
+		{
+			border: solid 2px green;
+		}
+
+		/*style liée a la classe noir*/
+		.noir
+		{
+			display: inline-flex;
+		}
+
+		/*style liée a la classe blanc*/
+		.blanc
+		{
+			
+		}
+	</style>
+</head>
+<body>
+<!-- corps de la page -->
+	<header>
+		<img src="../images/TOM.png" width="150">
+	</header>
+	<hr>
+
+	<main>
+	    	<!--<h1>Damier dynamique</h1>
+	    	<fieldset>
+		    	//declaration des input dans la page
+		    	<label for="taille">Veuillez saisir une taille au damier :</label><br>
+		        <input class="bord" type="number" name="taille" id="taille" placeholder="veuillez saisir la taille" min="4" step="4" value="4"><hr>
+		        <label for="color1">Veuillez saisir les couleurs du damier :</label><br>
+		        <input class="bord" type="color" name="color1" id="color1"  value="#eeeeee">
+		        <input class="bord" type="color" name="color2" id="color2"  value="#111111"><hr>
+		        <button class="bord" onclick="Damier()">valider</button>//appel de la fonction damier()
+	        </fieldset>-->
+
+	        <script type="text/javascript">
+	        	var titre = document.createElement("h1");
+	        	var texte = document.createTextNode("Damier dynamique");
+	        	titre.appendChild(texte);
+	        	document.body.appendChild(titre);
+
+
+	        	//var champ = document.createElement("fieldset");
+	        	//document.body.appendChild(champ);
+
+	        	// création des 
+	        	var libelleTaille = document.createElement("label");
+	        	libelleTaille.setAttribute("for","taille");
+	        	var texte2 = document.createTextNode("Veuillez saisir une taille au damier :");
+	        	libelleTaille.appendChild(texte2);
+	        	document.body.appendChild(libelleTaille);
+	        	
+	        	var sautLigne = document.createElement("br");
+	        	document.body.appendChild(sautLigne);
+
+
+	        	var taille = document.createElement("input");
+	        	taille.setAttribute("class","bord");
+	        	taille.setAttribute("type","number");
+	        	taille.setAttribute("name","taille");
+	        	taille.setAttribute("id","taille");
+	        	taille.setAttribute("placeholder","veuillez saisir la taille");
+	        	taille.setAttribute("min","4");
+	        	taille.setAttribute("step","4");
+	        	taille.setAttribute("value","4");
+	        	document.body.appendChild(taille);
+
+
+	        	var sautTrait1 = document.createElement("hr");
+	        	document.body.appendChild(sautTrait1);
+
+
+	        	var libelleCouleur = document.createElement("label");
+	        	libelleCouleur.setAttribute("for","color1");
+	        	var texte3 = document.createTextNode("Veuillez saisir les couleurs du damier :");
+	        	libelleCouleur.appendChild(texte3);
+	        	document.body.appendChild(libelleCouleur);
+	        	document.body.appendChild(sautLigne);
+
+
+	        	var couleur = document.createElement("input");
+	        	couleur.setAttribute("class","bord");
+	        	couleur.setAttribute("type","color");
+	        	couleur.setAttribute("name","color1");
+	        	couleur.setAttribute("id","color1");
+	        	couleur.setAttribute("value","#eeeeee");
+	        	document.body.appendChild(couleur);
+	        	
+
+	        	var couleur2 = document.createElement("input");
+	        	couleur2.setAttribute("class","bord");
+	        	couleur2.setAttribute("type","color");
+	        	couleur2.setAttribute("name","color2");
+	        	couleur2.setAttribute("id","color2");
+	        	couleur2.setAttribute("value","#eeeeee");
+	        	document.body.appendChild(couleur2);
+
+	        	var sautTrait = document.createElement("hr");
+	        	document.body.appendChild(sautTrait);
+
+	        	var bouton = document.createElement("button");
+	        	bouton.setAttribute("class","bord");
+	        	bouton.setAttribute("onclick","Damier()");
+	        	bouton.innerHTML = "valider";
+	        	document.body.appendChild(bouton);
+
+	        	var sautLigne = document.createElement("br");
+	        	document.body.appendChild(sautLigne);
+
+	        	var k = 0;
+
+	        	function Damier()
+	        	{
+	        		//déclaration des variables
+	        			// dimension du damier
+	        		var dim= Number(document.getElementById("taille").value);
+	        			// choix des couleurs
+	        		var color = document.getElementById("color1").value;
+            		var color2 = document.getElementById("color2").value;
+				    var i = 0;
+				    var j = 0;
+				    	//booléen
+					var couleurSelect = false;
+
+					var divGlobale = document.createElement("div");
+					divGlobale.setAttribute("id","divEncadre")
+					//divGlobale.setAttribute("class","noir");
+					//divGlobale.setAttribute("style","border : 3px solid red ");
+
+			       
+					//exemple de solution qui fonctionne
+					/*document.body.insertBefore(div1,null);
+					document.body.insertBefore(div2,null);*/
+					console.log(k);
+					if(k==1)
+					{
+						var supr = document.getElementById("divEncadre");
+						document.body.removeChild(supr);
+					}
+
+					for (i = 0 ; i < dim ; i++) 
+				    {
+				        for (j = 0 ; j < dim ; j++) 
+				        {
+
+							if (couleurSelect == false) 	
+							{
+								var div1 = document.createElement("div");
+								div1.setAttribute("id","un");
+								div1.setAttribute("class","noir");
+								div1.setAttribute("style"," background-color :"+ color +"; border : solid 1px black; width : 50px; height : 50px; display : inline-block");
+								document.body.appendChild(divGlobale);
+								divGlobale.appendChild(div1);
+								//document.body.appendChild(div1);
+								couleurSelect = true;
+							}
+							else
+							{
+								var div2 = document.createElement("div");
+								div2.setAttribute("id","un");
+								div2.setAttribute("class","blanc");
+								div2.setAttribute("style"," background-color :"+ color2 +"; border : solid 1px black; width : 50px; height : 50px; display : inline-block");
+								document.body.appendChild(divGlobale);
+								divGlobale.appendChild(div2);
+								//document.body.appendChild(div2);
+								couleurSelect = false;
+							}	
+				        }
+						//inversion au saut de ligne
+						if (couleurSelect == false) 
+						{
+							couleurSelect = true;
+						}
+						else
+						{
+							couleurSelect = false;
+						}
+						var sautTrait3 = document.createElement("br");
+						divGlobale.appendChild(sautTrait3);
+	        			//document.body.appendChild(sautTrait3);
+				    }
+				    k=1;
+	        	}
+
+	        </script>
+
+
+
+
+
+
+		<!--<script type="text/javascript">
+			function accueil()
+			{
+				document.location.reload();
+			}
+
+			function reset()
+			{
+				if(document.getElementById('un'))
+			    {
+			    	while(document.getElementById('un'))
+			    	{
+			    		document.getElementById('tab1').remove();
+			    	}
+			    }
+			}
+
+			var k=0;
+			function Damier()
+			{
+
+				 //definition de variables 
+				    var dim= Number(document.getElementById("taille").value);
+				    var color1 = document.getElementById("color1").value;
+				    var color2 = document.getElementById("color2").value;
+				    var i = 0;
+				    var j = 0;
+					var couleurSelect = false;
+					var stringChg = ("<style>.noir{ background-color:"+color1+";} .blanc{ background-color:"+color2+";} .bord{border: solid 2px green;}</style>");
+					var afficherdiv = ("<style>div {width: 50px;height: 50px;border: solid 1px black; display : inline-block;} fieldset {width: 300px;border: dotted 3px blue;}</style>");
+
+
+					// création des style dans la page
+					document.write(stringChg+afficherdiv);
+
+				    // boucle permettant de creer le damier
+				    if (k==0) 
+				    {
+				    	document.write("<body>");
+				    	console.log('toto');
+					    // réaffichage des input et du boutton
+					    document.write("<fieldset>");
+					    document.write("<label for='taille'>Veuillez saisir une taille au damier :</label><br>");
+					    document.write("<input class='bord' type='number' name='taille' id='taille' placeholder='veuillez saisir la taille' min='4' step='4' value='4'><hr>");
+					    document.write("<label for='color1'>Veuillez saisir les couleurs du damier :</label><br>");
+					    document.write("<input class='bord' type='color' name='color1' id='color1' value='#eeeeee'>");
+					    document.write("<input class='bord' type='color' name='color2' id='color2'  value='#111111'><hr>");
+					    document.write("<button class='bord' onclick='reset(),Damier()'>valider</button><hr>");
+					    document.write("<button class='bord' onclick='accueil()'>retourner a la page du debut </button>")
+					    document.write("</fieldset>");
+				    }
+					document.write("<div style='display: inline; border: none' id='tab1'>");
+				    for (i = 0 ; i < dim ; i++) 
+				    {
+				        for (j = 0 ; j < dim ; j++) 
+				        {
+
+				        	/*verification des variables */
+							/*console.log(color1);
+							console.log(color2);
+							console.log(dim);*/
+
+							if (couleurSelect == false) 
+							{
+								document.write("<div id='un' class='noir'></div>");
+								//document.write("<div style=' background-color:"+color1+";width: 50px; height: 50px; display : inline-block'></div>");
+								couleurSelect = true;
+							}
+							else
+							{
+								document.write("<div id='un' class='blanc'></div>");
+								//document.write("<div style=' background-color:"+color2+"; width: 50px; height: 50px; display : inline-block'></div>");
+								couleurSelect = false;
+							}	
+				        }
+						//inversion au saut de ligne
+						if (couleurSelect == false) 
+						{
+							couleurSelect = true;
+						}
+						else
+						{
+							couleurSelect = false;
+						}
+						document.write("<br>");
+				    }
+				    k+=1;
+				    document.write("</div>");
+				    document.write("</body>");
+			}
+		</script>-->
+	</main>
+</body>
+</html>
