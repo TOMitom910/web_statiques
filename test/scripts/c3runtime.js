@@ -4082,6 +4082,7 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.System.Acts.GoToLayout,
 		C3.Plugins.Sprite.Acts.SetPos,
 		C3.Plugins.System.Acts.AddVar,
+		C3.Plugins.Browser.Acts.GoToURLWindow,
 		C3.Plugins.Json.Acts.SetValue,
 		C3.ScriptsInEvents["[Niveau_1]_Event33_Act2"],
 		C3.Plugins.Browser.Acts.ConsoleLog,
@@ -4256,6 +4257,11 @@ self.C3_ExpressionFuncs = [
 			return () => f0(200, 950);
 		},
 		() => 1200,
+		p => {
+			const v0 = p._GetNode(0).GetVar();
+			return () => and("sauvegarde_Jetons.html?jetons=", v0.GetValue());
+		},
+		() => "NewWindow",
 		() => 4,
 		() => -10,
 		() => "test.jetons",

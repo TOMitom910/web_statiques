@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+
+<head>
+	
+</head>
+
+<body>
+	<script type="text/javascript">
+		var recupvale = [];
+
+		//recuperer les information comprise dans l'url
+		recupvale = document.location.search;
+		recupvale = recupvale.split('=');
+
+		//Stocker recupvale[1] dans le localstorage
+		localStorage.setItem('jetons', recupvale[1]);
+
+		Window.close();
+	</script>
+</body>
