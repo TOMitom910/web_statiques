@@ -4066,6 +4066,8 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.System.Acts.SetTimescale,
 		C3.Behaviors.Physics.Acts.CreateLimitedRevoluteJoint,
 		C3.Plugins.Audio.Acts.Play,
+		C3.Plugins.System.Acts.SetVar,
+		C3.Plugins.Json.Exps.Get,
 		C3.Plugins.System.Cnds.EveryTick,
 		C3.Behaviors.Physics.Acts.ApplyImpulse,
 		C3.Plugins.Keyboard.Cnds.IsKeyDown,
@@ -4080,12 +4082,13 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.System.Acts.GoToLayout,
 		C3.Plugins.Sprite.Acts.SetPos,
 		C3.Plugins.System.Acts.AddVar,
-		C3.Plugins.System.Cnds.OnLayoutEnd,
-		C3.Plugins.Audio.Acts.StopAll,
-		C3.Plugins.Json.Acts.SetObject,
 		C3.Plugins.Json.Acts.SetValue,
+		C3.ScriptsInEvents["[Niveau_1]_Event33_Act2"],
 		C3.Plugins.Browser.Acts.ConsoleLog,
 		C3.Plugins.Json.Exps.ToBeautifiedString,
+		C3.Plugins.System.Cnds.OnLayoutEnd,
+		C3.Plugins.Audio.Acts.StopAll,
+		C3.Plugins.Json.Cnds.OnParseError,
 		C3.Plugins.Keyboard.Cnds.OnAnyKey,
 		C3.Plugins.Text.Acts.SetText
 	];
@@ -4227,6 +4230,10 @@ self.C3_ExpressionFuncs = [
 		() => 45,
 		() => -20,
 		() => "",
+		p => {
+			const n0 = p._GetNode(0);
+			return () => n0.ExpObject("jetons");
+		},
 		() => 2,
 		() => -5,
 		() => -500,
@@ -4251,8 +4258,7 @@ self.C3_ExpressionFuncs = [
 		() => 1200,
 		() => 4,
 		() => -10,
-		() => "Cpt_tiquet",
-		() => "Cpt_tiquet.jetons",
+		() => "test.jetons",
 		p => {
 			const v0 = p._GetNode(0).GetVar();
 			return () => v0.GetValue();
@@ -4260,7 +4266,8 @@ self.C3_ExpressionFuncs = [
 		p => {
 			const n0 = p._GetNode(0);
 			return () => n0.ExpObject();
-		}
+		},
+		() => "test 1"
 ];
 
 
